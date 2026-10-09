@@ -714,3 +714,7 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 
 /* Matching query/reset dimensions across all four search pages. */
 #target-query-submit,#target-reset,#material-query-submit,#material-reset,#stock-query-submit,#stock-reset,#collection-query-submit,#collection-reset{width:64.32px;min-width:64.32px;height:38.54px;min-height:38.54px;padding:8.2px 0;font-size:13.12px!important;line-height:1.5;flex-shrink:0}
+
+/* Distinguish Journey's collection-library identity from the workbench. */
+.breadcrumbs .journey-home{color:#8b713e}
+.breadcrumbs .journey-home:hover{color:#70582d;background:#f5edda}
