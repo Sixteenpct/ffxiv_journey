@@ -612,12 +612,6 @@ table{table-layout:fixed}th,td{overflow-wrap:anywhere}#collection-list th select
 .expanded-list-card th{position:static}
 .expanded-list-card input[type=number]{max-width:68px}
 #tab-home .home-link{position:relative;overflow:hidden;border-radius:18px;border:1px solid #cbe3ed;box-shadow:0 4px 14px #6a9cb212}
-#tab-home .home-link:nth-child(1){background:#eef9ff;border-color:#bddfea}
-#tab-home .home-link:nth-child(2){background:#edf9f1;border-color:#bfe2d2}
-#tab-home .home-link:nth-child(3){background:#fff5ec;border-color:#efd3bb}
-#tab-home .home-link:nth-child(4){background:#f5f0fd;border-color:#d8ccee}
-#tab-home .home-link:nth-child(5){background:#fff8e4;border-color:#eddfb1}
-#tab-home .home-link:nth-child(6){background:#edf8f8;border-color:#bfe0df}
 #tab-home .home-link:after{content:'✦';position:absolute;right:20px;top:8px;font-size:22px;color:#77a9ba;opacity:.22;pointer-events:none}
 #tab-home .home-link:nth-child(3):after,#tab-home .home-link:nth-child(5):after{color:#d7a666}
 #tab-home .home-link:nth-child(4):after{color:#af91ce}
