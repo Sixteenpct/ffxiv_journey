@@ -685,3 +685,16 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 
 /* Compact family footer: readable type with less vertical padding. */
 .foot{line-height:1.35;padding:12px 0}.foot .footer-rights{line-height:1.35;margin-top:2px}
+
+
+/* Softer action colours; sage information panel keeps quantities prominent. */
+.query-submit,#stock-query-submit,#send-route-a{background:linear-gradient(115deg,#deedf3,#e9f3f4);border-color:#b5d1dc;color:#335e70;box-shadow:0 2px 7px #50798a0c}
+.query-submit:hover,#stock-query-submit:hover,#send-route-a:hover{background:#d2e7ee;border-color:#99bfce;filter:none}
+#scroll-bottom{background:linear-gradient(120deg,#dfedf2,#e8f3f4);border-color:#b8d1da;color:#3e6474}
+#scroll-top{background:linear-gradient(120deg,#e0ece5,#edf3e9);border-color:#b9d0c3;color:#476e60}
+#scroll-bottom:hover{background:#d2e6ee;filter:none}#scroll-top:hover{background:#d4e5d9;filter:none}
+.backup-action .backup-export{background:linear-gradient(115deg,#deedf3,#edf5f7);border-color:#b5d1dc;color:#335e70}
+.backup-action .backup-import{background:linear-gradient(115deg,#dfece5,#edf4eb);border-color:#b9d0c3;color:#426859}
+.backup-action .backup-export:hover{background:#d2e7ee;filter:none}.backup-action .backup-import:hover{background:#d4e5d9;filter:none}
+.mother-info{background:linear-gradient(110deg,#e7eee3,#f1f5ed);border:1px solid #c4d2bb;border-left:3px solid #92a986;border-radius:9px;padding:12px 15px;margin:9px 0 15px;color:#4b6145;font-size:13.12px;line-height:1.85}
+.info-number{display:inline-block;vertical-align:baseline;min-width:2em;padding:0 8px;margin:2px 3px;background:#fafff7;border:1px solid #bfceb5;border-radius:6px;color:#3c5737;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.55;text-align:center;white-space:nowrap}
