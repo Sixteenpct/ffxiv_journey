@@ -682,3 +682,6 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 #tab-home .home-link:nth-child(3) .home-glyph{color:#918158}
 .foot .footer-rights{display:block;margin-top:5px;font-size:10px;line-height:1.7;color:#72848b}
 @media(max-width:650px){#tab-home .home-art{width:126px;height:110px;opacity:.13}}
+
+/* Compact family footer: readable type with less vertical padding. */
+.foot{line-height:1.35;padding:12px 0}.foot .footer-rights{line-height:1.35;margin-top:2px}
