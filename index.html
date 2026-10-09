@@ -50,8 +50,37 @@ dialog{border:1px solid var(--line);border-radius:10px;padding:34px;width:min(44
 .battle{--header-gradient:linear-gradient(120deg,#e4eff1 0%,#dae7e9 52%,#e4e9ed 100%);--panel-gradient:linear-gradient(160deg,#f3f7f7 0%,#eaf0f2 100%);--entry-gradient:linear-gradient(110deg,#fffefd 0%,#f3f8f9 60%,#eaf2f4 100%)}
 .lore{--header-gradient:linear-gradient(120deg,#f2e4e9 0%,#e9dee7 52%,#e4e7ee 100%);--panel-gradient:linear-gradient(160deg,#faf4f7 0%,#f0ebf3 100%);--entry-gradient:linear-gradient(110deg,#fffdfc 0%,#f9f3f7 60%,#f0ecf5 100%)}
 .branch{background:var(--panel-gradient)}.branch-heading{background:var(--header-gradient)}.entrance,.entrance:hover{background:var(--entry-gradient)}
+
+/* Visual preview only: existing approved layout stays unchanged. */
+body{background-color:#f4f0e7;background-image:linear-gradient(115deg,rgba(250,248,242,.78) 0%,rgba(249,246,239,.83) 48%,rgba(247,244,237,.78) 100%),url("assets/journey-library.png");background-size:cover;background-position:center 42%;background-repeat:no-repeat;background-attachment:fixed}
+@media(max-width:900px){body{background-attachment:scroll;background-size:auto 100vh;background-position:55% top}}
+
+
+/* Broad welcome banner: homepage palette, generous breathing room. */
+.identity{position:relative;isolation:isolate;width:100%;margin-left:auto;margin-right:auto;padding:26px 90px 28px}
+.welcome-portal{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;filter:drop-shadow(0 6px 12px rgba(108,91,58,.05))}
+@media(min-width:901px) and (max-height:800px){.identity{padding-top:20px;padding-bottom:22px}}
+@media(min-width:901px) and (max-height:700px){.identity{padding-top:16px;padding-bottom:18px}}
+@media(max-width:900px){.identity{padding:26px 16px 28px}.identity .wordmark{font-size:clamp(30px,7.5vw,40px)}.identity .lead{font-size:15px}.welcome-landscape{opacity:.65}}
+
 </style></head><body>
-<main><div class="identity"><p class="wordmark">FF14 Journey</p><h1>冒險者百科書庫</h1><p class="lead">珍藏旅途所得，探索尚未讀完的世界。</p></div>
+<main><div class="identity"><svg class="welcome-portal" viewBox="0 0 1240 200" preserveAspectRatio="none" aria-hidden="true"><defs>
+<linearGradient id="welcome-glass" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#f4ead4" stop-opacity=".96"/><stop offset=".5" stop-color="#faf7ed" stop-opacity=".96"/><stop offset="1" stop-color="#e7e9df" stop-opacity=".94"/></linearGradient>
+<linearGradient id="welcome-rim"><stop stop-color="#d5c6a5"/><stop offset=".5" stop-color="#e4dac3"/><stop offset="1" stop-color="#cad2c3"/></linearGradient>
+<clipPath id="welcome-shape"><path d="M27 1 H1213 L1239 27 V173 L1213 199 H27 L1 173 V27 Z"/></clipPath>
+</defs>
+<path d="M27 1 H1213 L1239 27 V173 L1213 199 H27 L1 173 V27 Z" fill="url(#welcome-glass)" stroke="url(#welcome-rim)"/>
+<g class="welcome-landscape" clip-path="url(#welcome-shape)" fill="none">
+<defs>
+<linearGradient id="welcome-ray" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#fffef8" stop-opacity="0"/><stop offset=".55" stop-color="#fffef8" stop-opacity=".65"/><stop offset="1" stop-color="#fffef8" stop-opacity=".1"/></linearGradient>
+<linearGradient id="welcome-rule"><stop stop-color="#b6a177" stop-opacity="0"/><stop offset=".5" stop-color="#b6a177" stop-opacity=".35"/><stop offset="1" stop-color="#b6a177" stop-opacity="0"/></linearGradient>
+</defs>
+<path d="M861 200 1010 0 H1084 L937 200Z" fill="url(#welcome-ray)"/>
+<path d="M990 200 1139 0 H1170 L1023 200Z" fill="url(#welcome-ray)" opacity=".6"/>
+<path d="M34 18 H1206 L1222 34 V166 L1206 182 H34 L18 166 V34Z" stroke="#c5b38f" stroke-opacity=".24" stroke-width=".8"/>
+<path d="M86 181 H1154" stroke="url(#welcome-rule)" stroke-width=".8"/>
+<path d="M34 18 H91 M18 34 V72 M1149 182 H1206 M1222 128 V166" stroke="#af9870" stroke-opacity=".38" stroke-width="1"/>
+</g></svg><p class="wordmark">FF14 Journey</p><h1>冒險者百科書庫</h1><p class="lead">珍藏旅途所得，探索尚未讀完的世界。</p></div>
 <div class="catalogue" aria-label="三大分館與六個館藏入口"><section class="branch collection" aria-labelledby="collection-title">
       <div class="branch-heading"><div class="geometry"><svg viewBox="0 0 160 160" aria-hidden="true"><circle class="disc" cx="80" cy="80" r="66"/><path d="M30 50v60m100-60v60M50 30h60m-60 100h60"/><path class="solid" d="m80 37 39 39-39 47-39-47z"/><path class="facet" d="m80 37 18 39H62z"/><path class="surface" d="m62 76 18 47 18-47z"/><path class="light-line" d="M41 76h78M80 37v39"/><circle class="solid" cx="30" cy="30" r="3"/><circle class="solid" cx="130" cy="130" r="3"/></svg></div><p class="english">Collection</p><h2 id="collection-title">收藏分館</h2><p class="intro">將一路獲得的珍藏，安放於此。</p></div>
       <div class="entrances"><a class="entrance" href="https://sixteenpct.github.io/ffxiv_journey/collection/workbench/" target="_blank" rel="noopener noreferrer"><span class="entry-copy"><span class="entry-name">素材製作工坊</span><span class="entry-description">製作、素材與背包整理</span></span><span class="arrow" aria-hidden="true">↗</span></a><button class="entrance" type="button" data-title="永久收藏圖鑑" data-branch="收藏分館"><span class="entry-copy"><span class="entry-name">永久收藏圖鑑</span><span class="entry-description">記錄值得長久珍藏的冒險成果</span></span><span class="arrow" aria-hidden="true">↗</span></button></div>
