@@ -63,3 +63,25 @@
 .page-course-library .content-version{width:80px}
 .page-course-library .content-read{width:58px}
 .page-course-library .content-track .course-table thead th{white-space:nowrap}
+
+/* c29: the library owns job discovery and direct lecture access. */
+.page-course-library .learning-maps{margin:12px 0}
+.page-course-library .learning-map-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #acd0e7;border-radius:10px;background:#e5f4ff;color:#286584;text-decoration:none}
+.page-course-library .learning-map-link:hover{background:#d3ecfc;border-color:#83badd}
+.page-course-library .learning-map-link img{flex:none}
+.page-course-library .learning-map-link strong{display:block;font-size:16px;line-height:1.6}
+.page-course-library .learning-map-link small{display:block;font-size:13px;line-height:1.7;color:#4d7185}
+.page-course-library .job-picker{margin:12px 0 16px}
+.page-course-library .job-picker>summary{font-size:14px;color:#486b73;cursor:pointer}
+.page-course-library .job-picker>p{font-size:13px;line-height:1.7;color:#55717c;margin:7px 0 10px}
+.page-course-library .job-grid{gap:10px}
+.page-course-library .group-stack{gap:10px}
+.page-course-library .group>header{padding:7px 9px}
+.page-course-library .group h2{font-size:14px;margin:0;line-height:1.6}
+.page-course-library .jobs{grid-template-columns:1fr;gap:5px;padding:7px}
+.page-course-library .job{min-height:36px;padding:5px 7px;font-size:14px;line-height:1.5}
+.page-course-library .job-icon{width:23px;height:23px;flex-basis:23px}
+.page-course-library .job-name{gap:7px}
+.page-course-library .library-subheading{font-size:15px;color:#426772;margin:14px 0 8px}
+#job-learning,#content-learning{scroll-margin-top:16px}
+@media(max-width:420px){.page-course-library .job-grid{grid-template-columns:1fr}}

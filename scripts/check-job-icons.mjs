@@ -32,7 +32,7 @@ const jobs = [
   { role:"caster", name:"赤魔道士", code:"RDM", iconId:"062415", slug:"red-mage", color:"#c77c56" },
   { role:"caster", name:"繪靈法師", code:"PCT", iconId:"062422", slug:"pictomancer", color:"#c77c56" }
 ];
-const html = await readFile(path.join(root,"pve/jobs/index.html"),"utf8");
+const html = await readFile(path.join(root,"pve/courses/index.html"),"utf8");
 const problems = [];
 const groups = [...html.matchAll(/<section class="group role-([\w-]+)"[^>]*>([\s\S]*?)<\/section>/g)];
 const expects = ["tank","melee","healer","ranged","caster"];
@@ -43,7 +43,7 @@ for (const group of groups) {
   for (const row of rows) entries.push({role:group[1],src:row[2],name:row[3],tag:row[1]});
 }
 if (entries.length !== 21) problems.push("Expected 21 job entries, found "+entries.length);
-if (!html.includes("<h1>職業圖鑑</h1>")) problems.push("Atlas H1 職業圖鑑 must never disappear");
+if (!html.includes("<h1>PvE 課程書庫</h1>")) problems.push("Course library H1 is missing");
 if ([...html.matchAll(/class="job-icon"/g)].length !== 21) problems.push("Wrong total icon count");
 const used = new Set();
 for (const j of jobs) {
@@ -88,8 +88,8 @@ if (/<small>\d+ 職<\/small>/.test(html)) problems.push("Role counts must remain
 if (/<small>(?:籌備中|閱讀 →)<\/small>/.test(html)) problems.push("Job status labels must remain hidden");
 if (!html.includes("<h2>➕ 治療</h2>")) problems.push("Healer must use medical-cross emoji");
 if (!html.includes('aria-label="學者尚未開放"')) problems.push("Scholar must remain named and accessible");
-if (!html.includes('href="ninja/" target="_blank" rel="noopener noreferrer"')) problems.push("Ninja must open new tab");
-if (/<a class="job open"[^>]*href="(?!ninja\/)/.test(html)) problems.push("Unexpected newly enabled job link");
+if (!html.includes('href="../jobs/ninja/" target="_blank" rel="noopener noreferrer"')) problems.push("Ninja must open new tab");
+if (/<a class="job open"[^>]*href="(?!\.\.\/jobs\/ninja\/)/.test(html)) problems.push("Unexpected newly enabled job link");
 if (problems.length) {
   console.error("FAIL job atlas icons:");
   for (const problem of problems) console.error(" - "+problem);

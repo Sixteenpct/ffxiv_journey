@@ -1,0 +1,20 @@
+/* Learning routes: short course summaries, retained advanced knowledge. */
+html:has(body.page-learning-map){scroll-behavior:auto}
+.page-learning-map .chapter-top{border-left:0;border-bottom:0}
+.page-learning-map .chapter-body{font-size:15px;line-height:1.8}
+.page-learning-map .chapter-body p{margin:0 0 13px;font-size:15px;line-height:1.8}
+.page-learning-map .chapter-body p:last-child{margin-bottom:0}
+.page-learning-map .review-context{margin:16px 0 0;padding:12px 14px;border:1px solid #c6e2f3;border-radius:12px;background:#f2f9ff}
+.page-learning-map .review-context p{margin:0 0 8px;color:#286584;font-size:15px;font-weight:500;line-height:1.8}
+.page-learning-map .review-portals{display:flex;flex-wrap:wrap;gap:9px;margin:0}
+.page-learning-map a.review-portal{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:9px 13px;border:1px solid #acd0e7;border-radius:9px;background:#e5f4ff;color:#286584;font-size:15px;font-weight:700;line-height:1.6;text-decoration:none;overflow-wrap:anywhere}
+.page-learning-map a.review-portal:hover{background:#d3ecfc;border-color:#83badd;color:#205977}
+.page-learning-map .stage-status{color:#5b6b65;font-size:14px}
+.page-learning-map .stage-knowledge{margin-top:10px}
+.page-learning-map .stage-knowledge>summary{cursor:pointer;color:#426772;font-size:15px;font-weight:600}
+.page-learning-map .stage-knowledge-body{padding-top:12px}
+.page-learning-map .stage-knowledge .skills{margin-bottom:0}
+.page-learning-map .legacy-anchor{display:block;height:0;scroll-margin-top:calc(var(--reading-masthead-height,130px) + 14px)}
+.page-learning-map .cross{font-size:15px;line-height:1.8}
+.page-learning-map .source{font-size:12px;line-height:1.8}
+@media(max-width:810px){.page-learning-map .legacy-anchor{scroll-margin-top:calc(var(--reading-masthead-height,140px) + var(--reading-sidebar-height,52px) + 12px)}}
