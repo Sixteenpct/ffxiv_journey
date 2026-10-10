@@ -27,10 +27,10 @@ body.page-r005 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
 .page-r005 .scene-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .page-r005 .scene-pair .scene{margin:8px 0}
 .page-r005 .scene-pair .scene img{aspect-ratio:16/10;object-fit:contain;background:#25353a}
-.page-r005 .action-flow{display:flex;align-items:center;flex-wrap:wrap;gap:7px 9px;margin:15px 0;padding:13px;border:1px solid #d2dfd7;border-radius:7px;background:linear-gradient(110deg,#edf5ee,#f8faf7)}
+.page-r005 .action-flow{display:flex;align-items:flex-start;flex-wrap:wrap;gap:7px 9px;margin:15px 0;padding:13px;border:1px solid #d2dfd7;border-radius:7px;background:linear-gradient(110deg,#edf5ee,#f8faf7)}
 .page-r005 .action-token{display:grid;justify-items:center;gap:5px;font-size:18px;font-weight:700;line-height:1.4;color:#426a60;min-width:56px}
 .page-r005 .action-token img{width:40px;height:40px;border-radius:5px;box-shadow:0 2px 6px #223d4526}
-.page-r005 .flow-arrow{color:#9d8250;font-size:18px}
+.page-r005 .flow-arrow{flex:none;display:grid;place-items:center;width:26px;height:40px;line-height:1;color:#977326;font-size:30px;font-weight:800}
 .page-r005 .arsenal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
 .page-r005 .arsenal-item{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #dde7de;border-radius:7px;background:#f5f8f2;min-width:0}
 .page-r005 .arsenal-item img{flex:none;align-self:start;width:40px;height:40px;border-radius:5px}
@@ -78,7 +78,7 @@ body.page-r005 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
  .page-r005 .action-flow{gap:6px;padding:10px 7px}
  .page-r005 .action-token{min-width:49px;font-size:17px}
  .page-r005 .action-token img{width:36px;height:36px}
- .page-r005 .flow-arrow{font-size:15px}
+ .page-r005 .flow-arrow{height:36px;font-size:28px;width:24px}
  .page-r005 .lead{font-size:16px}
  .page-r005 .source-panel{padding:16px}
  .page-r005 .manual-label{display:inline-block;margin-bottom:4px}
@@ -93,6 +93,12 @@ body.page-r005 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
  .page-r005 .scene,.page-r005 .tactical-diagram,.page-r005 .action-flow{break-inside:avoid}
 }
 
-.page-r005 .journal-snapshot{display:grid;gap:6px;padding:16px 18px;border:1px solid #b9d5c0;border-left:4px solid #739f80;border-radius:7px;background:#edf5eb;color:#446452}
-.page-r005 .journal-snapshot strong{font-size:18px}
-.page-r005 .journal-snapshot span{font-size:15px;line-height:1.6}
+
+/* Each arrow shares the icon's height; the skill label never affects its center. */
+.page-r005 .rhythm-panels{display:grid;grid-template-columns:1.2fr .7fr 1.2fr;gap:10px;margin:15px 0}
+.page-r005 .rhythm-panel{min-width:0;padding:13px 12px;border:1px solid #d2dfd7;border-radius:7px;background:linear-gradient(110deg,#edf5ee,#f8faf7)}
+.page-r005 .rhythm-panel .rhythm-label{margin:0 0 13px;font-size:15px;color:#806c43;line-height:1.5}
+.page-r005 .rhythm-panel .action-flow{margin:0;padding:0;border:0;background:none;gap:7px;justify-content:center}
+.page-r005 .rhythm-panel .action-token{min-width:0}
+.page-r005 .rhythm-panel .rhythm-note{margin:10px 0 0;font-size:13px;line-height:1.6;color:#60776c;text-align:center}
+@media(max-width:1100px){.page-r005 .rhythm-panels{grid-template-columns:1fr}}
