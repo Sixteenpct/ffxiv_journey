@@ -1,6 +1,6 @@
 /* R022 job lecture only; approved reader r14, job atlas and library are untouched. */
 body.page-r022{background:#e8eeed;isolation:isolate}
-body.page-r022::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84))}
+body.page-r022::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84)),url('media/aery-background.webp') center/cover no-repeat}
 .page-r022 .reading-masthead{background:#f5f8f4}
 .page-r022 .reading-masthead .top{background:linear-gradient(90deg,#26373ee8 0%,#26373e90 60%,#26373eb3 100%),url('../r005/media/nin-scene-1.png') center center/cover no-repeat;border-bottom:2px solid #b59c66}
 body.page-r022 .top .banner{min-height:150px;align-items:center;padding:12px 0 14px;gap:16px}

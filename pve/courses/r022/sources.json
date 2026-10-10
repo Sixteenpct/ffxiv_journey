@@ -259,6 +259,16 @@
       "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/ninja/images/icon/47.png",
       "rights": "© SQUARE ENIX",
       "sha256": "9a347554b0614d00da04390992b031c244736f177e1488fd6109799fafe7a2c2"
+    },
+    {
+      "file": "media/aery-background.webp",
+      "source": "https://na.finalfantasyxiv.com/heavensward/",
+      "url": "https://lds-img.finalfantasyxiv.com/promo/h/t/lq7VX1i7GyiDL00mxtmp-MUWXk.png",
+      "rights": "© SQUARE ENIX",
+      "use": "Official historical The Aery scenery, background only; converted to WebP for web delivery, not current mechanism evidence",
+      "width": 853,
+      "height": 480,
+      "sha256": "118f9cb082c7c02ddaff79bdb7337188e6d4d19268788a158a8b465aef521a8f"
     }
   ]
 }
