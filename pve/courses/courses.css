@@ -56,28 +56,22 @@
 .page-course-library .content-read{width:58px}
 .page-course-library .content-track .course-table thead th{white-space:nowrap}
 
-/* c31: academy-first navigation. Reuse the approved 21-job atlas and role colours. */
-.page-course-library .academy-hall{min-width:0;padding:14px;border:1px solid #c3dce4;border-radius:12px;background:linear-gradient(130deg,#f0f9fc,#fffefa 62%,#f3faf6)}
-.page-course-library .academy-heading{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin:0 0 12px}
-.page-course-library .academy-eyebrow{margin:0 0 3px;color:#4b91ae;font-size:11px;font-weight:700;letter-spacing:.1em}
-.page-course-library .academy-heading h2{margin:0 0 3px;font-size:20px;line-height:1.4;color:#285b74}
-.page-course-library .academy-lead{margin:0;color:#587781;font-size:14px;line-height:1.6}
-.page-course-library .academy-index-link{display:inline-block;flex:none;padding:6px 11px;border:1px solid #a8cddb;border-radius:7px;background:#f8fdff;color:#286b86;font-size:13px;font-weight:650;text-decoration:none}
-.page-course-library .academy-index-link:hover{background:#e6f6fe;border-color:#7dafc7}
-.page-course-library .academy-index-link:focus-visible{outline:2px solid #438b84;outline-offset:3px}
-.page-course-library .academy-hall .job-grid{gap:14px}
-.page-course-library .academy-hall .group-stack{gap:12px}
-.page-course-library .academy-hall .group>header{padding:9px 12px}
-.page-course-library .academy-hall .group h2{font-size:17px;line-height:1.5;color:var(--role)}
-.page-course-library .academy-hall .jobs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:9px}
-.page-course-library .academy-hall .job{min-height:44px;padding:7px 9px;font-size:16px;line-height:1.4}
-.page-course-library .academy-hall .job-icon{width:27px;height:27px;flex-basis:27px}
-.page-course-library .academy-hall .job-name{gap:8px}
-.page-course-library .academy-footnote{font-size:12px;color:#6c858c;line-height:1.55;margin:10px 2px 0}
-.page-course-library .academy-index{margin-top:18px}
+/* c33: restore the original 2026-10-10 job atlas geometry from reader.css r14.
+   Do NOT override .job-grid/.group-stack/.group/.jobs/.job/.job-icon here:
+   the owner-tuned two-column layout, tall-desktop card sizes, gaps and
+   role colours are already canonical in the shared reader.css.
+   Keep the hall in normal document flow; never fake no-scroll with clipping. */
+.page-academy .academy-hall{min-width:0}
+.page-academy .academy-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 13px}
+.page-academy .academy-toolbar .library-summary{flex:1 1 0;min-width:0;margin:0;font-size:14px;line-height:1.6}
+.page-academy .academy-index-link{display:inline-flex;align-items:center;justify-content:center;flex:none;min-height:29px;padding:4px 10px;border:1px solid #a8cddb;border-radius:7px;background:#f8fdff;color:#286b86;font-size:12.5px;font-weight:650;line-height:1.4;text-decoration:none}
+.page-academy .academy-index-link:hover{background:#e6f6fe;border-color:#7dafc7}
+.page-academy .academy-index-link:focus-visible{outline:2px solid #438b84;outline-offset:3px}
 #job-learning,#lecture-index,#content-learning{scroll-margin-top:16px}
-@media(max-width:810px){.page-course-library .academy-hall .job-grid{grid-template-columns:1fr}}
-@media(max-width:440px){.page-course-library .academy-hall .jobs{grid-template-columns:1fr}.page-course-library .academy-hall .job{min-height:42px}}
+@media(max-width:620px){
+ .page-academy .academy-toolbar{flex-wrap:wrap;align-items:flex-start;gap:8px}
+ .page-academy .academy-toolbar .library-summary{flex:1 1 100%}
+}
 
 /* Keep identification columns compact in the full-width job catalogue. */
 .page-course-library .job-course-id{width:64px}

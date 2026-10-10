@@ -286,3 +286,6 @@ R005完整七種忍術的印數／末印說明由small改入同級h3「名稱：
 
 ## 2026-10-11 c32｜學院講義總索引獨立查閱頁
 由本人確認學院大廳不應在 21 職業後直接接課表，本輪只拆分導覽，不改教材。施工前備份 `backup/pve-before-lecture-index-split-20261011`（`ca56cec79d18e2174a9537cfd65178e97c948d88`）。保留職業大廳的 21 SVG／五職能（治療 ➕），將原本 `#lecture-index` 的正式原生表格、篩選功能與 R005／R022 資料，搬到 `pve/courses/lectures/`；舊課號跳轉、相對資產路徑及 `#lecture-index` 轉址一併調整。首頁僅保留「講義總索引 ↗」獨立入口；沿用同一頁首／頁尾、favicon、表格 CSS、共用 JS、TOP 與捲到底部工具。PvE 內容專修、忍者養成路線與兩堂正式講義原文全部保持，下一次才另行設計忍者養成頁。
+
+## 2026-10-11 c33｜恢復精修職業圖鑑布局
+本人指出 c31 學院 CSS 覆蓋了先前調整的職能卡／按鈕幾何。核對備份 `206fdc5e8574e2489f209ede6ed860862915b46f` 的原 `pve/jobs/index.html` 職業順序及現行 `pve/reader.css` r14 樣式。新增施工前備份 `backup/pve-before-atlas-layout-restore-20261011`（`fccb73b835d4d4bdceee8bce721968c3d2cec5ff`）。只重整學院 `pve/courses/index.html` 的首頁展示與其 `courses.css` 作用域：移除二次包框、重複說明、壓縮卡片 CSS；原 21 職職能排版、17.5px 職能標題、16px 職業名稱、27px SVG、桌面 48px 高按鈕及既有間距由 reader.css 直接承接。頂部將內容專修提示＋獨立講義索引排成簡約同列。修正 `scripts/check-job-icons.mjs` 原先錯誤要求職業格必須在索引捷徑前的檢查，並加入原版型防回歸。無其他頁面改動；維持頁面自然高度，原 1754×831 是特定桌面瀏覽器參考，不是硬裁切邊界。

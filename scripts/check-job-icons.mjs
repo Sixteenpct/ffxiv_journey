@@ -52,8 +52,15 @@ if (!html.includes('id="job-learning"') || !html.includes('href="lectures/"') ||
 if (!lectureHTML.includes('id="job-course-filter"') || !lectureHTML.includes('id="job-course-rows"') ||
     !lectureHTML.includes('href="../r005/"') || !lectureHTML.includes('href="../r022/"'))
   problems.push("Separate lecture index lost its existing filter or course links");
-if (!html.includes('class="job-grid"') || html.indexOf('class="job-grid"') > html.indexOf('href="lectures/"'))
-  problems.push("Academy must retain the career-selection grid");
+if (!html.includes('class="academy-toolbar"') || !html.includes('class="job-grid"') ||
+    html.indexOf('class="job-grid"') < html.indexOf('id="job-learning"'))
+  problems.push("Academy must show the real career-selection grid beneath its compact navigation");
+const academyCSS = await readFile(path.join(root,"pve/courses/courses.css"),"utf8");
+const readerCSS = await readFile(path.join(root,"pve/reader.css"),"utf8");
+if (/\.academy-hall\s+\.(?:job|jobs|group|job-grid|group-stack)/.test(academyCSS) ||
+    !readerCSS.includes(".page-atlas .jobs{column-gap:16px;row-gap:15px}") ||
+    !readerCSS.includes(".page-atlas .job{min-height:48px;padding:8px 11px}"))
+  problems.push("Approved job atlas button spacing or geometry was overridden/lost");
 if ([...html.matchAll(/class="job-icon"/g)].length !== 21) problems.push("Wrong total icon count");
 const used = new Set();
 for (const j of jobs) {
