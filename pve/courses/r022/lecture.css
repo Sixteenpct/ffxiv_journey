@@ -151,3 +151,5 @@ html:has(body.page-r022){scroll-behavior:auto}
 .page-r022 .reading-links a{font-size:16px;font-weight:600;color:#386b7c;text-decoration:underline;text-decoration-color:#afc8ce;text-underline-offset:4px}
 .page-r022 .reading-links a:hover{color:#205b75;text-decoration-color:currentColor}
 .page-r022 .reading-links p{margin:4px 0 0;color:#405e60}
+
+.page-r022 .chapter-top{border-left:0;border-bottom:0}
