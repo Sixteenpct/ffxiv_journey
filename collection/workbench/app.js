@@ -135,7 +135,7 @@ const compareCollectionRecipes=(a,b)=>compareJobs(a?.job,b?.job)||collectionScop
 function collectionEntries(t){return t.entries||[t];}
 function collectionDone(t){return collectionEntries(t).every(x=>state.completion[x.key]===true);}
 // Collection-facing display category only; item IDs and catalog source categories remain unchanged.
-const collectionDisplayCategoryOverride=new Map([[21052,'坐騎'],[26782,'坐騎']]);
+const collectionDisplayCategoryOverride=new Map([[7552,'陸行鳥裝甲'],[8570,'陸行鳥裝甲'],[9355,'陸行鳥裝甲'],[12081,'陸行鳥裝甲'],[12991,'陸行鳥裝甲'],[21052,'坐騎'],[26782,'坐騎']]);
 const columnKeys=['done','version','job','level','name','category'];
 function collectionValue(t,key){const item=byId(t.item);if(key==='done')return collectionDone(t)?'true':'false';if(key==='version')return item?.version||'未確認';if(key==='name')return e.name(t.item);if(key==='category')return collectionDisplayCategoryOverride.get(t.item)||item?.category||'其他';return [...new Set(t.recipes.map(r=>key==='job'?r.job:String(r.level)))].sort(key==='job'?compareJobs:(a,b)=>Number(a)-Number(b));}
 const allCollectionRows=[...collectionRows.recipe,...collectionRows.unlock];
@@ -143,7 +143,7 @@ const collectionGroups=new Map();
 for(const row of allCollectionRows){if(!collectionGroups.has(row.item))collectionGroups.set(row.item,{item:row.item,entries:[],recipes:[]});const group=collectionGroups.get(row.item);if(!group.entries.some(x=>x.key===row.key))group.entries.push(row);for(const recipe of row.recipes)if(!group.recipes.some(x=>x.id===recipe.id))group.recipes.push(recipe);}
 collectionRows.all=[...collectionGroups.values()];
 for(const group of collectionRows.all)group.entries.sort((a,b)=>compareCollectionRecipes(a.recipes[0],b.recipes[0])||a.key.localeCompare(b.key));
-const collectionCategoryGroups=['鍊金原料','食材','木材','皮革','石材','金屬','布料','釣餌','藥品','頭','身','手','腿','腳','耳環','項環','手環','戒指','主手','副手','坐騎','寵物','樂譜','家具','庭具','栽培','組件','雜貨'];
+const collectionCategoryGroups=['鍊金原料','食材','木材','皮革','石材','金屬','布料','釣餌','藥品','頭','身','手','腿','腳','耳環','項環','手環','戒指','主手','副手','坐騎','陸行鳥裝甲','寵物','樂譜','家具','庭具','栽培','組件','雜貨'];
 const categoryAliases={'食品':'食材','頭部防具':'頭','身體防具':'身','手部防具':'手','腿部防具':'腿','腳部防具':'腳','耳飾':'耳環','項鍊':'項環','手鐲':'手環','管弦樂琴樂譜':'樂譜','栽培用品':'栽培','其他':'雜貨','雜貨（季節活動）':'雜貨'};
 const mainHandCategories=new Set(['二刀流武器','刺劍','單手劍','單手咒杖','單手幻杖','大斧','天球儀','弓','投擲武器','格鬥武器','槍刃','武士刀','火槍','筆','賢具','長槍','雙劍','雙手劍','雙手咒杖','雙手幻杖','雙手鐮刀','魔導書','魔導書（學者專用）']);
 const indoorCategories=new Set(['傢俱','內牆','地板','地毯','壁掛','屋頂照明','桌上','桌台']);
