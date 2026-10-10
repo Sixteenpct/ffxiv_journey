@@ -20,6 +20,12 @@
 .page-course-library .catalog-title{display:flex;align-items:center;gap:12px}
 .page-course-library .catalog-title img{width:38px;height:38px;flex:none}
 .page-course-library .library-summary{font-size:17px;margin:0 0 20px}
+.page-course-library .library-track{margin:0 0 24px;padding:20px;border:1px solid #d5e5e8;border-radius:10px;background:#fcfefe}
+.page-course-library .library-track>h2{margin:4px 0 10px;font-size:23px;color:#376873}
+.page-course-library .library-track>p{line-height:1.7}
+.page-course-library .track-label{margin:0;font-size:13px;letter-spacing:.04em;color:#647f89}
+.page-course-library .track-status{font-size:14px;color:#617c82}
+.page-course-library .track-empty{margin-bottom:0;padding:14px;background:#f1f6f8;border-radius:7px;color:#55717c}
 .page-course .course-entry[href]{text-decoration:none;transition:background .15s}
 .page-course .course-entry[href]:hover{background:#edf8ef}
 @media(max-width:810px){

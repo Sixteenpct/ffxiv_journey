@@ -17,6 +17,7 @@
 - 每次增修 HTML 或 footer 必須執行 `node scripts/check-site-footers.mjs` 和現行 favicon 檢查，確認三行內容、標籤、後續頁面對共用樣式的有效引用。再讀回 Git 與 Pages 驗證，不可只說「已規定」卻沒實作。
 
 ## PvE 公共課程閱讀層
+- **兩條平行學程**：書庫入口必須分開「執行課表 R／X → 職業養成」與「PvE專修課表 D／T／N／A → 內容專修」。同一副本可各自授課，結課不互算。R005 是忍者職業課，密約之塔僅是練習場景；完整副本教學另屬內容專修。DG／TR／NR／AR 永久 ID 與課號分開。未開放教材只作狀態說明，不造假連結。私人課表狀態、日期與熟練度不公開。
 - 已開放 R005：`pve/courses/r005/`，入口 `pve/courses/`。Notion 保留歷史來源，Journey GitHub Pages 為本網站教材的最終閱讀目的地；此工程不將網頁資料寫回 Notion。PvE Git 仍是領域教學 canonical，私人進度／熟練度不公開。
 - 新課沿用已核准 r14 閱讀版型與 favicon/footer 硬規則；課程專屬樣式作用域只在 `pve/courses/courses.css`，不藉搬遷重構已核准職業頁。
 - 「完整搬遷」是保存現存教學的完整解釋與條件，來源缺少的副本／Lore 內容須明標，不虛構補齊；回溯重建稿不可稱原始逐字講義。詳細來源核對與下一步見 DEVELOPMENT.md 的 c01 紀錄。
