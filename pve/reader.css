@@ -451,3 +451,10 @@ body.page-ninja .top .banner .description{
   .page-ninja .sidebar a.stage-link{grid-template-columns:max-content max-content;white-space:nowrap}
   .page-ninja .sidebar .stage-name{white-space:nowrap}
 }
+
+/* User screenshot overlay: identical header x on pages with/without scrollbar · r14 */
+/* With classic Windows scrollbars the long Ninja reader loses ~17px of
+   usable width; centering its 1120px column shifts it ~8px left of the
+   short, non-scrolling Job Atlas. Reserve that gutter on both pages.
+   The same rule leaves banner height, fonts and cards entirely untouched. */
+html{scrollbar-gutter:stable}

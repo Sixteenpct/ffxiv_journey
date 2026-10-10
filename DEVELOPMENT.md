@@ -141,3 +141,9 @@ LiouLiou 新裁決：**職業圖鑑是文字教材，不是工坊密集表格，
 - **兩頁彩色橫幅一起縮短，沒有裁切**：刪除 r12 的固定 149px floor。共用同一組 CSS：一般桌面 `min-height:124px`、`padding:7px 0 8px`、文字上緣對齊；窄視窗 `max-width:980px` 約146px、`max-width:620px` 約149px、`max-width:420px` 約165px。均採 `min-height` 而非 `height`，文字需要額外行數時可自然撐開。背景全寬保留，麵包屑依舊獨立置頂，**不納入橫幅高度**。
 - 標題字級／行高在兩頁用同一組 CSS，桌面 H1 29px、說明 15.5px；手機 H1 25px、說明 14.5px；忍者 NIN 圖示仍在右側垂直置中。兩頁主要教材與職業總覽、21 SVG、職能配色、footer、favicon、麵包屑內容均不改。
 - 本地 Chromium 使用真實兩頁標題與說明文字的簡化排版重現，測試 1752、1280、1024、980、810、680、620、520、380px 視窗：兩頁在這些測試中皆等高，麵包屑與各 H1 X 座標相等。**這是本地簡化測試，不冒稱線上實際 DOM 像素量測**；發佈後還要核對 Pages 下載的 r13 CSS 和實際畫面。後續更動不得重新把 header 與 main 分成兩套欄寬。
+
+## 2026-10-10｜雙頁像素對位：消除捲軸造成的 8px 水平差（r14）
+- 本人上傳兩張**相同 1920×911 原始截圖**，以 Pillow／NumPy 疊圖及像素邊界量測（非猜測）：職能總覽的彩色橫幅 Y32～Y155、忍者頁同為 Y32～Y155（124px）；兩頁眉題文字上緣同為 Y66。職能總覽大標題左緣約 X428，忍者頁左緣約 X420；兩張圖麵包屑左緣也相差約 8px。
+- **真正成因**：職能總覽不用垂直捲動，因此無右側經典 scrollbar；忍者長篇教材會出現約 15～17px 的右捲軸，導致相同 `max-width:1120px` 的居中版面左移約半個捲軸寬度。不能再擅自調整 banner padding 或 container max-width 去對齊這個差異。
+- **一次性最小修正**：在兩頁共用 `pve/reader.css` 的 `html` 加上 `scrollbar-gutter:stable`，即使沒有垂直捲動也保留捲軸空間；兩頁 center 的有效 viewport 寬度因此相同。使用本地 Chromium（經典捲軸環境）對照：未啟用時，寬 1920px 的無捲軸頁 `x=400`、有捲軸頁 `x=400`（Linux 預設 overlay scrollbar 不反映 Windows 狀況）；啟用 stable 後兩頁均 `x=392.5`、`document.documentElement.clientWidth=1905`，驗證 reserve gutter 跨頁相同。上傳 Windows 截圖本身提供實際 8px 差異證據。注意不同 OS 的捲軸可能為 overlay；不要強迫追加 margin、padding 或固定 scrollbar 寬度。
+- 只修改共用 CSS、兩頁 CSS 版本號 `r14` 與本紀錄；**不改** 124px/手機既有橫幅規則、1120px 容器寬度、側邊欄 fixed 位置計算、21 職 SVG、其他卡片、麵包屑文字、footer 或 favicon。若未來改成不同的捲軸模型，優先比對實際 viewport 的 `clientWidth` 再更動。
