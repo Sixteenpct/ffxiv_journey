@@ -2,3 +2,98 @@
 @media(max-width:810px){.wrap,.container{padding-left:20px;padding-right:20px}.guide-layout{display:block}.sidebar{position:static;display:flex;overflow-x:auto;gap:4px;margin-bottom:20px;white-space:nowrap}.sidebar strong{flex:none;align-self:center}.sidebar a{flex:none}.job-grid{gap:14px}.jobs{grid-template-columns:1fr}.banner-mark{width:100px;height:100px;font-size:48px}}
 @media(max-width:590px){.banner{gap:12px;padding:26px 0 30px}.banner-mark{display:none}.banner h1{font-size:34px}.banner p.description{font-size:15px}.job-grid{grid-template-columns:1fr}.group-stack{gap:16px}.jobs{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px}.job{min-height:64px;font-size:14px;padding:10px}.container{padding-top:25px}.chapter-top{padding:16px 19px}.chapter-body{padding:20px 19px 23px}.skills{grid-template-columns:1fr}.cross{padding:20px 18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Compact Sky Atlas · PvE reader v2 · 2026-10-10
+   Match the workbench's approximately 14px reading scale and tighter content rhythm.
+   Preserve the user-approved yellow Ninja level headings. */
+:root{
+  --paper:#f4fafb;--ink:#294756;--muted:#647d89;--accent:#287eaa;--border:#d8e8eb;
+}
+body{font-size:13.94px;line-height:1.66;letter-spacing:.01em;background:radial-gradient(ellipse at 10% 0%,#fffefd 0%,transparent 55%),linear-gradient(115deg,#f6fbfc,#eff8f9 56%,#f8faf5)}
+a{color:#287eaa}
+.top{background:linear-gradient(106deg,#dff3fd 0%,#e7f8f7 55%,#fff0d9 100%);border-color:#c9e5ed}
+.wrap,.container{max-width:1330px;padding-left:27px;padding-right:27px}
+.crumbs{padding-top:12px;font-size:11.48px;gap:8px;color:#678793}
+.crumbs a{color:#287eaa}
+.banner{padding:16px 0 22px;gap:20px}
+.banner .eyebrow{font-size:10.66px;color:#3b83a3;letter-spacing:.16em;margin-bottom:4px}
+.banner h1{font-size:clamp(26px,2.6vw,32px);line-height:1.25;margin-bottom:7px;color:#224c64}
+.banner p.description{font-size:13.94px;line-height:1.7;max-width:880px;color:#55727b}
+.banner-mark{width:84px;height:84px;font-size:41px;color:#245e85;border:3px solid #fff;box-shadow:0 4px 17px #3e9dc123}
+.banner-mark.atlas-mark{background:conic-gradient(from 205deg,#bedff6,#d5f3ec,#fff0ae,#f7cebd,#dcd3fc,#bedff6)}
+.container{padding-top:19px;padding-bottom:32px}
+.intro-note{font-size:12.7px;line-height:1.6;margin-bottom:15px;color:#5e7882}
+.intro-note strong{color:#2a7498}
+.job-grid{gap:16px}
+.group-stack{gap:15px}
+.group{border:1px solid #cfe2e7;background:#fff;border-radius:12px;box-shadow:0 4px 18px #4980a40d}
+.group.role-tank{--role:#2686b5;--tint:#e3f4fc;--cell:#f5fbfe}
+.group.role-melee{--role:#c77c56;--tint:#fff0e4;--cell:#fff9f4}
+.group.role-healer{--role:#258c71;--tint:#e1f6ee;--cell:#f5fcf8}
+.group.role-ranged{--role:#ac7c2e;--tint:#fff2cf;--cell:#fffaf0}
+.group.role-caster{--role:#7b66b4;--tint:#f0eafe;--cell:#faf8ff}
+.group>header{padding:11px 16px;background:linear-gradient(105deg,var(--tint,#e3f4fc),#fff 115%);border-bottom:1px solid #dce9eb;border-left:4px solid var(--role,#2686b5)}
+.group h2{font-size:15.58px;color:var(--role,#2686b5);letter-spacing:.01em}
+.group header small{font-size:10.66px;color:#6e828a}
+.jobs{padding:11px;gap:8px}
+.job{min-height:45px;padding:8px 11px;font-size:13.5px;font-weight:600;background:var(--cell,#f6fafb);border-color:#dfe9e9;color:#455f68;border-radius:7px;line-height:1.35}
+.job small{font-size:10px;color:#8999a1}
+.job.open{background:linear-gradient(110deg,#dcf5e7,#eaf9e9);border-color:#70ba92;color:#236c58;box-shadow:0 2px 9px #46a97a19}
+.job.open:hover{background:#cef1dd;border-color:#399a77}
+.job.open small{color:#237755}
+.book-note{margin-top:17px;font-size:11px;line-height:1.55;color:#78909a}
+.guide-layout{grid-template-columns:185px minmax(0,1fr);gap:18px}
+.sidebar{top:15px;padding:10px 8px;gap:3px;border-color:#d7e9e9;background:#f8fcfd}
+.sidebar strong{font-size:10.66px;margin:1px 8px 3px}
+.sidebar a{font-size:11.8px;line-height:1.5;padding:7px 9px;color:#4e7180}
+.sidebar a:hover{background:#e5f3f8;color:#267ea4}
+.chapters{gap:14px}
+.chapter{border-color:#e0e6db;border-radius:10px;box-shadow:0 4px 17px #4d79690b}
+.chapter-top{padding:12px 18px 13px;background:linear-gradient(110deg,#f8e5ac,#f8edc6 55%,#f6f4e5);border-bottom-color:#e5d4a5}
+.chapter-top span{font-size:9.84px;letter-spacing:.13em}
+.chapter-top h2{font-size:clamp(18px,1.9vw,21px);line-height:1.4;margin-top:2px}
+.chapter-body{padding:15px 19px 18px}
+.theme{font-size:14px;line-height:1.67;margin-bottom:11px;border-left-color:#d1b66e;padding-left:10px}
+.lesson{gap:8px}
+.lesson p{font-size:13.94px;line-height:1.72}
+.microheading{font-size:12.7px;margin:18px 0 9px}
+.skills{gap:9px}
+.skill{padding:9px 11px;gap:10px;border-radius:7px}
+.skill img{height:38px;width:38px}
+.skill strong{font-size:13px}
+.skill small{font-size:11.48px;line-height:1.4}
+.lesson-link{margin-top:14px;padding:10px 13px;font-size:11.48px;gap:2px}
+.lesson-link>span{font-size:10px}
+.lesson-link>strong{font-size:13px}
+.lesson-link p{line-height:1.55}
+.cross{padding:19px 21px}
+.cross h2{font-size:18px;margin-bottom:9px}
+.cross ul{gap:7px}
+.source{font-size:11.48px;line-height:1.65;padding-top:12px}
+footer{padding:12px 20px;font-size:10.66px;line-height:1.45}
+@media(max-width:810px){
+  .wrap,.container{padding-left:19px;padding-right:19px}
+  .guide-layout{display:block}
+  .sidebar{position:static;display:flex;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;margin-bottom:15px;gap:4px}
+  .sidebar strong{align-self:center}
+  .job-grid{gap:13px}
+  .jobs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .banner-mark{width:72px;height:72px;font-size:36px}
+}
+@media(max-width:620px){
+  .wrap,.container{padding-left:15px;padding-right:15px}
+  .banner{padding:15px 0 19px}
+  .banner h1{font-size:27px}
+  .banner p.description{font-size:13px}
+  .banner-mark{display:none}
+  .job-grid{grid-template-columns:1fr;gap:13px}
+  .group-stack{gap:13px}
+  .group>header{padding:10px 13px}
+  .jobs{padding:9px;gap:7px}
+  .job{min-height:42px;padding:7px 9px;font-size:13px}
+  .chapter-top{padding:11px 14px}
+  .chapter-body{padding:13px 14px 16px}
+  .theme,.lesson p{font-size:13px}
+  .skills{grid-template-columns:1fr;gap:7px}
+  .cross{padding:15px 14px}
+}
