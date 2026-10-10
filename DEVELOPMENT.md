@@ -128,3 +128,9 @@ LiouLiou 新裁決：**職業圖鑑是文字教材，不是工坊密集表格，
 - 修復：**不改忍者頁**；圖鑑的彩色橫幅不分寬度使用 `min-height:149px`（依本人截圖 Ninja 橫幅 y29～y178 之參考高度，非固定 `height`，內容需要可自然長高），以 `align-items:flex-start` 保持上緣與 Ninja 標題文字相同的起點；原已一致的上／下 padding 沿用，不把麵包屑算進橫幅。
 - 麵包屑／圖鑑大標題／主卡片的外層寬度共同採 **1120px** 上限：以一組顯式 `body.page-atlas > .wrap`、`body.page-atlas > header.top > .wrap`、`body.page-atlas > main.container` 的相同寬度與 `margin-inline:auto` 控制；移除 r06、r08 的重複寬度設定，直接 `margin-block:0` 防止第一塊麵包屑在 flex 版面吸收垂直空間。切勿新增獨立的 1330px 欄寬或以絕對定位硬湊。
 - 僅改 `pve/reader.css`、圖鑑首頁 CSS cache `?v=20261010-r11` 與本紀錄；不更動 Ninja 內容／頁首、21 職圖示、職能色系、footer、工坊及 Journey 入口網頁。必須驗證較窄視窗的 banner floor 仍生效，不能只驗桌面。
+
+## 2026-10-10｜統一雙頁橫幅最小高度（r12）
+- r11 雖把圖鑑 `.banner` 的 `149px` 下限取消 media gate，但實際布局調查發現 **Ninja 本身的自然 banner 高度會隨視窗寬度與段落換行變動**，例如寬螢幕只占兩行時可比 149px 矮。因此僅替圖鑑設定 min-height，仍不能保證兩頁在不同瀏覽器寬度下等高。
+- 本輪由「單頁高度補丁」改為**兩頁共用同一組彩色橫幅下限**：在 `pve/reader.css` 讓 `.page-atlas .top .banner` 與 `.page-ninja .top .banner` 同享桌面及一般窄窗 **149px**，手機極窄 `max-width:420px` 採 **180px**，並使橫幅內文由上緣起排。這只統一外層視覺高度；標題內容、字級、內距、背景、麵包屑位置完全沿用既有裁決。忍者頁右上角自有透明職業圖示以 `align-self:center` 保持置中。超出下限的文字仍自然增高、不裁切。
+- 為檢查實際不同視窗，將兩頁 header 的真實文字與相關版型規則帶入本地 Chromium／Playwright 簡化重現，測試 CSS 視窗寬 380、520、550、620、680、1008、1153、1754px，兩頁在測試中同為：380px 時各 180px，其他寬度各 149px；麵包屑與該頁眉標題 X 左緣一致。這是本地重現測試，不冒充線上計算結果。
+- `pve/jobs/index.html` 和 `pve/jobs/ninja/index.html` 同步載入 `reader.css?v=20261010-r12`，避免瀏覽器沿用舊版。保持先前 1120px 圖鑑欄寬、Ninja 自有 1330px 欄寬、學習側欄錨點和所有圖示、Footer、favicon 不動。Git Pages 部署後仍需針對新版本讀回，不可只以提交成功稱作視覺完美。

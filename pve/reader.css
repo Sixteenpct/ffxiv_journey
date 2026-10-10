@@ -369,10 +369,20 @@ body.page-atlas > .wrap{
    narrow browser windows. Keep the Ninja screenshot's colored banner height
    as the universal floor and position the text from the TOP of the band.
    Content can still grow beyond the floor when zoomed/wrapped. */
-.page-atlas .top .banner{
+/* Shared readable banner height across both PvE pages. Both reference the
+   Ninja benchmark instead of using different intrinsic text-row heights. */
+.page-atlas .top .banner,
+.page-ninja .top .banner{
   min-height:149px;
   box-sizing:border-box;
   align-items:flex-start;
+}
+/* The emblem remains vertically centered while the text starts at the same
+   top inset in both banners. */
+.page-ninja .job-emblem{align-self:center}
+@media(max-width:420px){
+  .page-atlas .top .banner,
+  .page-ninja .top .banner{min-height:180px}
 }
 
 /* Hanging-indent chapter navigation: the level prefix occupies one column;
