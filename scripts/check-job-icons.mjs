@@ -44,6 +44,22 @@ for (const group of groups) {
   for (const row of rows) entries.push({role:group[1],href:row[1],aria:row[2],src:row[3],name:row[4]});
 }
 if (entries.length !== 21) problems.push("Expected 21 job entries, found "+entries.length);
+/* The native grouped select must match the academy's exact role headings and roster. */
+const roleSelect = lectureHTML.match(/<select id="job-course-filter" aria-label="篩選職業">([\s\S]*?)<\/select>/)?.[1] ?? "";
+const expectedRoleSelect = '<option value="">全部</option>' +
+  groups.map(g => {
+    const name = g[2].match(/<h2>([^<]+)<\/h2>/)?.[1] ?? "";
+    const members = entries.filter(entry => entry.role === g[1]).map(entry => entry.name);
+    return '<optgroup label="'+name+'">' +
+      members.map(job => '<option value="'+job+'">'+job+'</option>').join('') +
+      '</optgroup>';
+  }).join('');
+if (roleSelect !== expectedRoleSelect)
+  problems.push("Lecture-index optgroups must match the academy's 5 roles / 21 jobs");
+if (!lectureHTML.includes('class="lecture-content-portal"') ||
+    !lectureHTML.includes('href="../../content/"'))
+  problems.push("Lecture-index PvE content portal is missing");
+
 if (!html.includes("<h1>職業養成學院</h1>")) problems.push("Academy H1 is missing");
 if (html.includes('class="job-picker"')) problems.push("Academy job choices must not be collapsed");
 if (!html.includes('id="job-learning"') || !html.includes('href="lectures/"') ||

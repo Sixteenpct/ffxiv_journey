@@ -15,6 +15,9 @@
 .page-course-library .library-summary{font-size:15px;line-height:1.7;margin:0 0 18px}
 /* Align the PvE content portal copy with the 14px / 1.6 academy hint. */
 .page-content-library .library-summary{font-size:14px;line-height:1.6}
+/* Align lecture-index introduction with the academy and PvE specialisation 14px / 1.6 hints. */
+.page-lecture-index .library-summary{font-size:14px;line-height:1.6}
+.page-lecture-index .lecture-content-portal{display:block}
 .page-course-library .library-track{min-width:0;border:1px solid #bed5d9;border-radius:10px;background:#fcfefe;overflow:hidden}
 .page-course-library .library-track>.track-header{display:block;position:relative;padding:10px 12px;background:linear-gradient(116deg,#e9f7ec,#fbfdfa)}
 .page-course-library .content-track>.track-header{background:linear-gradient(116deg,#e6f2f8,#fcfefe)}
