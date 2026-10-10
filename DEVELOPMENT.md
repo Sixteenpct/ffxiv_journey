@@ -70,3 +70,34 @@ LiouLiou 新裁決：**職業圖鑑是文字教材，不是工坊密集表格，
 - **所有開放閱讀職業的互動狀態**：底色和字色應延續對應職能的淡彩；一般狀態和 hover 的邊框使用低飽和混色，**不能直接以鮮豔 `var(--role)` 作硬亮邊框或 hover outline**。只有 `:focus-visible` 為鍵盤可及性保留明顯外框。近戰維持本人已核准暖紅 `#b8554b`。
 - **忍者各階段／課堂配色**：Lv.50～90 階段小標題區塊調為低彩度**淡黃色 → 近白**漸層（不加胖、不加大正文）；每一個「相關課堂」容器改為**淡綠 → 近白**漸層，並以淡綠邊框、深綠文字維持閱讀辨識。相關課堂仍採單容器雙欄排版預留，多堂可一左一右；不改課號、正文或導覽。
 - 此項只改 1～4；**21 職各別透明 SVG** 為 LiouLiou 提議但本回合明確暫緩，沒有開始製作或放進職業按鈕。下一批若獲授權才按每職正式職業圖標建檔，不混淆基本職／進階職。
+
+## 2026-10-10｜職能總覽正式職業 SVG（21 職）
+- LiouLiou 在前批明確允許施工：**21 職業的職能總覽按鈕文字前一律加上各自的透明職業 SVG**。不以同一圖示代替不同職業，不把上游基礎職／進階職混淆。現有忍者 NIN 062410 的 `assets/job-ninja.svg` 保持原檔；另外建置 20 個 SVG，均直接存放 `assets/job-<職業英文slug>.svg`，無外部圖片依賴。頁面只改圖示與必要文字排版，保留使用者認可的卡片密度、麵包屑、暖紅配色與 footer。
+- 來源／判別：輪廓參考公開 [Ennea/ffxiv-job-icons](https://github.com/Ennea/ffxiv-job-icons) 中的 `isvg/<職能>/<iconId>.svg` 與 `notes.txt`（其 README 指向 xivapi/classjob-icons）。從已確認的圖形向量抽取單一路徑，拿掉背景、原來的發光濾鏡及外框，沿用忍者網站徽記的透明剪影風格；統一依五種職能採單色，保留原職業造型與輪廓。這是網站自有託管，不代表取得遊戲圖示著作權；**FINAL FANTASY XIV © SQUARE ENIX**。
+- NIN (062410) ≠ ROG (062309)，PLD／WAR ≠ GLA／MRD 等。以下代碼在網站中具有可稽核的固定身分，請用 `node scripts/check-job-icons.mjs` 測試，**再加上既有 favicon 與 footer 兩項檢查**。若新增職業或升級職業映射，必須同時修正 icon 資產、映射和驗證；不得只看圖像外觀推定類別。
+- 在頁面以 `<img class="job-icon" alt="" aria-hidden="true">` 當裝飾，真實職業名稱仍是可閱讀文字。SVG 依 role 色系：坦克 `#2686b5`、治療 `#258c71`、近戰 `#b8554b`、遠敏 `#ac7c2e`、遠魔 `#c77c56`。僅忍者維持已開放新分頁，其他 20 職仍保持「籌備中」，不得偽造連結。
+- 這批僅建設職能總覽使用的 21 icon，不啟動其他職業教材與 Notion 搬遷。
+
+| 職能 | 代號 | 中文職業 | 向量原始 ID | 本站 SVG |
+| --- | --- | --- | --- | --- |
+| tank | PLD | 騎士 | 062401 | `assets/job-paladin.svg` |
+| tank | WAR | 戰士 | 062403 | `assets/job-warrior.svg` |
+| tank | DRK | 暗黑騎士 | 062412 | `assets/job-dark-knight.svg` |
+| tank | GNB | 絕槍戰士 | 062417 | `assets/job-gunbreaker.svg` |
+| melee | MNK | 武僧 | 062402 | `assets/job-monk.svg` |
+| melee | DRG | 龍騎士 | 062404 | `assets/job-dragoon.svg` |
+| melee | NIN | 忍者 | 062410 | `assets/job-ninja.svg` |
+| melee | SAM | 武士 | 062414 | `assets/job-samurai.svg` |
+| melee | RPR | 奪魂者 | 062419 | `assets/job-reaper.svg` |
+| melee | VPR | 毒蛇劍士 | 062421 | `assets/job-viper.svg` |
+| healer | WHM | 白魔道士 | 062406 | `assets/job-white-mage.svg` |
+| healer | SCH | 學者 | 062409 | `assets/job-scholar.svg` |
+| healer | AST | 占星術師 | 062413 | `assets/job-astrologian.svg` |
+| healer | SGE | 賢者 | 062420 | `assets/job-sage.svg` |
+| ranged | BRD | 吟遊詩人 | 062405 | `assets/job-bard.svg` |
+| ranged | MCH | 機工士 | 062411 | `assets/job-machinist.svg` |
+| ranged | DNC | 舞者 | 062418 | `assets/job-dancer.svg` |
+| caster | BLM | 黑魔道士 | 062407 | `assets/job-black-mage.svg` |
+| caster | SMN | 召喚士 | 062408 | `assets/job-summoner.svg` |
+| caster | RDM | 赤魔道士 | 062415 | `assets/job-red-mage.svg` |
+| caster | PCT | 繪靈法師 | 062422 | `assets/job-pictomancer.svg` |

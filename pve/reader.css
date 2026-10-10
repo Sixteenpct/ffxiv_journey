@@ -268,3 +268,19 @@ body.page-atlas>.wrap{width:100%;max-width:1330px}
   .page-atlas .jobs{padding:11px;gap:9px}
   .page-atlas .job{min-height:48px;padding:8px 11px}
 }
+
+/* 2026-10-10 · 21 unique FFXIV job emblems in the job atlas.
+   Transparent SVGs retain each job's actual shape and map to the role's tone.
+   They are decoration before the existing readable job name. */
+.page-atlas .job-name{display:inline-flex;align-items:center;gap:8px;min-width:0;flex:0 1 auto}
+.page-atlas .job-label{display:inline-block;white-space:nowrap;min-width:0}
+.page-atlas .job-icon{display:block;width:27px;height:27px;flex:0 0 27px;object-fit:contain;opacity:.85;filter:drop-shadow(0 1px 1px #2b536111)}
+.page-atlas .job.open .job-icon{opacity:1}
+@media(max-width:620px){
+ .page-atlas .job-name{gap:6px}
+ .page-atlas .job-icon{width:23px;height:23px;flex-basis:23px}
+}
+@media(max-width:380px){
+ /* Full names and not-open status stay readable even on narrow phones. */
+ .page-atlas .jobs{grid-template-columns:1fr}
+}
