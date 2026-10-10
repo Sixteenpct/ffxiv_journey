@@ -55,3 +55,12 @@
 }
 
 .page-course-library .library-track:not(.content-track) .course-table{min-width:460px}
+
+.page-course-library .column-filter{display:flex;align-items:center;gap:5px;white-space:nowrap}
+.page-course-library .column-filter select{width:64px;min-width:0;padding:2px 4px;border:1px solid #b8cdd2;border-radius:4px;background:#fff;color:#3e6570;font:inherit;font-size:12px;cursor:pointer}
+.page-course-library .content-track .course-table{table-layout:fixed}
+.page-course-library .content-course-id{width:58px}
+.page-course-library .content-id{width:68px}
+.page-course-library .content-version{width:112px}
+.page-course-library .content-read{width:58px}
+.page-course-library .content-track .course-table thead th{white-space:nowrap}
