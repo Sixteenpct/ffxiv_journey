@@ -7,7 +7,7 @@
  <meta name="theme-color" content="#e7f8f1">
  <link rel="icon" type="image/svg+xml" href="../../assets/favicon-pve.svg">
  <link rel="stylesheet" href="../reader.css?v=20261010-r14">
- <link rel="stylesheet" href="courses.css?v=20261010-c03">
+ <link rel="stylesheet" href="courses.css?v=20261010-c04">
  <link rel="stylesheet" href="../../assets/site-footer.css">
 </head>
 <body class="page-atlas page-course-library">
@@ -15,28 +15,35 @@
  <header class="top"><div class="wrap"><div class="banner"><div><p class="eyebrow">PVE · COURSE LIBRARY</p><h1>PvE 課程書庫</h1><p class="description"><strong>把職業知識帶進實戰，理解每一次按鍵的理由。</strong><br>從同步等級的操作骨架，到目標選擇與副本判斷，逐堂展開完整的課堂閱讀。</p></div></div></div></header>
  <main class="container">
   <p class="library-summary">兩條平行學程，各自學習、各自驗收。同一座副本可以是職業課的練習場，也可以是內容專修的主題。</p>
-  <section class="library-track" aria-labelledby="job-track">
-   <p class="track-label">執行課表 · R / X</p>
-   <h2 id="job-track">職業養成講義</h2>
-   <p>以職業操作為主：理解同步等級的技能、連段與爆發，將操作帶進實戰。副本是練習場景。</p>
-   <p class="track-status">目前可閱讀 1 堂職業主修講義。</p>
-  <div class="course-catalog">
-   <a class="catalog-card" href="r005/" target="_blank" rel="noopener noreferrer">
-    <span class="catalog-meta">2.x · 近戰 DPS · 同步 Lv.50</span>
-    <div class="catalog-title"><img src="../../assets/job-ninja.svg" alt="" aria-hidden="true"><h2>R005 忍者50(幻龍密約)</h2></div>
-    <p>水遁如何接上爆發？攻其不備與奪取的節拍怎麼分？從基本連段到群怪忍術，建立 Lv.50 的完整操作關係。</p>
-    <span>閱讀講義 ↗</span>
-   </a>
+  <div class="library-tracks">
+   <details class="library-track" open>
+    <summary><span class="track-label">執行課表 · R / X</span><h2>職業養成講義</h2><span class="track-count">1 堂開放閱讀</span></summary>
+    <div class="track-body">
+     <p class="track-description">以職業操作為主：理解同步等級的技能、連段與爆發，將操作帶進實戰。副本是練習場景。</p>
+     <div class="course-table-scroll" role="region" aria-label="職業養成講義資料表" tabindex="0">
+      <table class="course-table"><caption class="visually-hidden">已開放的職業養成講義</caption>
+       <thead><tr><th scope="col">課號</th><th scope="col">職業與課程</th><th scope="col">同步</th><th scope="col">講義</th></tr></thead>
+       <tbody><tr><th scope="row">R005</th><td><span class="table-job"><img src="../../assets/job-ninja.svg" alt="" aria-hidden="true">忍者50</span><span class="table-subtitle">練習場景：幻龍密約</span></td><td class="nowrap">Lv.50</td><td class="nowrap"><a href="r005/" target="_blank" rel="noopener noreferrer" aria-label="閱讀 R005 忍者50 講義（新分頁）">閱讀 ↗</a></td></tr></tbody>
+      </table>
+     </div>
+    </div>
+   </details>
+   <details class="library-track content-track" open>
+    <summary><span class="track-label">PvE專修課表 · D / T / N / A</span><h2>PvE 內容專修講義</h2><span class="track-count">教材整理中</span></summary>
+    <div class="track-body">
+     <p class="track-description">以內容理解為主：完整走讀流程、機制與各職能責任。推薦職業是這次學習的入場載具。</p>
+     <div class="course-table-scroll" role="region" aria-label="PvE 內容專修講義資料表" tabindex="0">
+      <table class="course-table"><caption class="visually-hidden">PvE 內容專修講義</caption>
+       <thead><tr><th scope="col">課號</th><th scope="col">內容 ID</th><th scope="col">內容名稱</th><th scope="col">講義</th></tr></thead>
+       <tbody><tr><td colspan="4" class="table-empty">尚未開放講義，教材將依迷宮、討伐殲滅、大型任務與團隊任務逐步收錄。</td></tr></tbody>
+      </table>
+     </div>
+     <p class="track-note">完成職業課不等於完成內容專修；兩套課程各自結課，職業與內容熟練度分開判定。</p>
+    </div>
+   </details>
   </div>
-  </section>
-  <section class="library-track content-track" aria-labelledby="content-track">
-   <p class="track-label">PvE專修課表 · D / T / N / A</p>
-   <h2 id="content-track">PvE 內容專修講義</h2>
-   <p>以內容理解為主：完整走讀流程、機制與各職能責任。推薦職業是這次學習的入場載具。</p>
-   <p class="track-status">迷宮 / 討伐殲滅 / 大型任務 / 團隊任務</p>
-   <p class="track-empty">教材整理中，尚未開放講義。完成職業課不等於完成內容專修；兩套課程的結課與熟練度分開判定。</p>
-  </section>
  </main>
  <footer class="site-footer"><span class="footer-credit">© sixteenpct · FF14 JOURNEY</span><span class="footer-brand">冒險者百科書庫 · 戰鬥分館 / PvE 課程書庫</span><small class="footer-rights">FINAL FANTASY XIV © SQUARE ENIX · 非官方玩家網站</small></footer>
+ <script src="library.js?v=20261010-c04"></script>
 </body>
 </html>
