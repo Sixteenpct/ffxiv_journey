@@ -267,3 +267,6 @@ R022移除章名冒號副標，兩堂課正文与側欄皆只用「常見問題�
 
 ## 2026-10-11 c26｜忍術配方與閱讀層級
 R005完整七種忍術的印數／末印說明由small改入同級h3「名稱：條件」，含展開區；R022FAQ及群怪的複習提示與入口包成同組，提示與按鈕僅5px間距，整組與上一段保持16px區隔。兩堂技能用途改深中性色#55514b／400字重，技能名維持綠色粗體18px。保留所有連結目的地，CSS版號更新；檢查七配方、HTML層級、連結、favicon／Footer與whitespace，Git讀回與同提交部署後實頁驗收。
+
+## 2026-10-11 c27｜工坊同款180ms側欄滑動
+定點讀collection/workbench/app.js的fastTocScroll，確認180ms／cubic ease-out。兩堂新增共用chapter-scroll.js，沿用節奏並依各章scroll-margin計算固定表頭偏移；保留hash／返回記錄、修飾鍵開啟方式與reduced-motion，連續點選取消前輪動畫。原生跳轉作無JS後備，TOP／工坊原碼不改。檢查腳本、導航錨點、資產及diff，Git讀回與同提交部署後點選驗收。
