@@ -317,3 +317,33 @@ body.page-atlas>.wrap{width:100%;max-width:1330px}
   .page-atlas .job.open{transition:none}
   .page-atlas .job.open:hover{transform:none}
 }
+
+/* Job atlas readable title, generous tile gutters and Ninja rail alignment · r09 */
+/* Atlas title uses the exact compact content rhythm of Ninja's banner.
+   Keep the real heading prominently readable; only the colored header's
+   padding, not the workbench-style breadcrumb, is shortened. */
+.page-atlas .banner{padding:9px 0 11px;gap:13px}
+.page-atlas .banner .eyebrow{font-size:11.5px;margin:0 0 2px}
+.page-atlas .banner h1{
+  display:block;visibility:visible;opacity:1;
+  font-size:29px;font-weight:800;line-height:1.28;
+  letter-spacing:.035em;color:#224c64;margin:0 0 3px;
+}
+.page-atlas .banner .description{font-size:15.5px;line-height:1.45;max-width:960px}
+/* Space each pair of buttons apart rather than inflating the whole page.
+   Leave cards, SVG emblems and job names at their approved sizes. */
+.page-atlas .jobs{column-gap:16px;row-gap:15px}
+/* Align the sidebar's OUTER left edge to Ninja H1's actual rendered X.
+   The resize observer reads it after layout, avoiding scrollbar-gutter drift. */
+@media(min-width:811px){
+  .page-ninja .sidebar{
+    left:var(--reading-title-left,max(27px,calc((100vw - 1330px)/2 + 27px)));
+  }
+}
+@media(max-width:620px){
+  .page-atlas .banner{padding:8px 0 10px}
+  .page-atlas .banner .eyebrow{font-size:11px}
+  .page-atlas .banner h1{font-size:27px}
+  .page-atlas .banner .description{font-size:14.5px;line-height:1.45}
+  .page-atlas .jobs{column-gap:10px;row-gap:12px}
+}
