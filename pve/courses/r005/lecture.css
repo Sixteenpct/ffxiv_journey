@@ -105,3 +105,7 @@ body.page-r005 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
 
 /* The rhythm chart is a compact reference, with evenly padded two-line boxes. */
 .page-r005 .rhythm-diagram{max-width:560px;margin:18px auto}
+
+/* Legacy active-ninjutsu links land inside the burst chapter below the masthead. */
+.page-r005 .burst-subtopic{scroll-margin-top:calc(var(--reading-masthead-height,165px) + 12px)}
+@media(max-width:810px){.page-r005 .burst-subtopic{scroll-margin-top:calc(var(--reading-masthead-height,165px) + var(--reading-sidebar-height,52px) + 12px)}}

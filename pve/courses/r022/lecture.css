@@ -105,3 +105,7 @@ body.page-r022 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
 
 .page-r022 .rhythm-panels{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:1100px){.page-r022 .rhythm-panels{grid-template-columns:1fr}}
+
+/* Legacy active-ninjutsu links land inside the burst chapter below the masthead. */
+.page-r022 .burst-subtopic{scroll-margin-top:calc(var(--reading-masthead-height,165px) + 12px)}
+@media(max-width:810px){.page-r022 .burst-subtopic{scroll-margin-top:calc(var(--reading-masthead-height,165px) + var(--reading-sidebar-height,52px) + 12px)}}
