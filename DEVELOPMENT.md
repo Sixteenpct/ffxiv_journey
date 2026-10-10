@@ -59,3 +59,7 @@ LiouLiou 新裁決：**職業圖鑑是文字教材，不是工坊密集表格，
 - 忍者課程閱讀側欄改為**真正固定位置**（`position:fixed`，桌面維持左側柱、手機變成黏在固定頁首下方的橫向導覽），避免 `sticky` 起始捲動距離造成微小位移。右側章節仍使用正常頁面捲動、anchor offset 隨 masthead 實際高度更新。
 - 等級章節標題從不協調的灰米棕色改回乾淨**低彩度天空藍／霧白**，維持已認可的瘦小標題高度與 17px 正文。不得回到過飽和亮黃。
 - 本人不喜歡有不透明方框的職業水晶物品圖；忍者改用獨立的 **NIN** 職業圖標，與初始的 **ROG 雙劍士**圖示嚴格區別。圖片來源為 [xivapi/classjob-icons/risingstones/ninja.png](https://github.com/xivapi/classjob-icons/blob/master/risingstones/ninja.png) 的 Rising Stones 職業圖示集；不再顯示帶底色的物品水晶。圖示權利仍屬 SQUARE ENIX。
+
+## 2026-10-10｜透明 NIN 徽記與 CSS 快取修正
+- 修正前批以 `risingstones/ninja.png` 代替水晶時仍可能出現底色／外框的問題，改採本 repo 自有 `assets/job-ninja.svg`，取自正確的 FFXIV Ninja 職業 icon（**NIN 062410**，非 ROG 062309）的單一路徑輪廓，透明背景、不帶物品欄黑框，主色柔和暖紅。向量輪廓取材於 Ennea/ffxiv-job-icons 的 NIN SVG（其上游 xivapi/classjob-icons）；保留版權署名 `© SQUARE ENIX`。
+- PvE 兩個 HTML 頁面的 `reader.css` URL 加上版本查詢 `?v=20261010-r05`，避免瀏覽器／CDN 沿用尚未移除強制滿版與米灰標題的舊 CSS。今後 CSS 內容更新若牽涉視覺修復，須同批更新受影響閱讀頁的版本標籤以確保部署立即生效。favicon/footer 硬規則照舊。
