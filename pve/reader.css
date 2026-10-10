@@ -362,27 +362,75 @@ body.page-atlas > .wrap{
   margin-block:0;
 }
 
-/* Match the *existing* Ninja banner height (~149px in the reference screen).
-   Ninja's banner is the authority and is NOT resized. Breadcrumb stays above.
-   min-height, not height, allows wrapping/zoom without clipping. */
-/* A previous min-width:621px gate silently removed the reference height in
-   narrow browser windows. Keep the Ninja screenshot's colored banner height
-   as the universal floor and position the text from the TOP of the band.
-   Content can still grow beyond the floor when zoomed/wrapped. */
-/* Shared readable banner height across both PvE pages. Both reference the
-   Ninja benchmark instead of using different intrinsic text-row heights. */
-.page-atlas .top .banner,
-.page-ninja .top .banner{
-  min-height:149px;
+/* FF14 Journey PvE header correction r13 (2026-10-10).
+   Canonical shared column for both pages: keep breadcrumb, eyebrow, H1,
+   banner and reading content aligned. Do not alter the sitewide breadcrumb
+   styling or reintroduce two competing max-width rules. */
+body.page-atlas > .wrap,
+body.page-atlas > header.top > .wrap,
+body.page-atlas > main.container,
+body.page-ninja > .reading-masthead > .wrap,
+body.page-ninja > .reading-masthead > header.top > .wrap,
+body.page-ninja > main.container{
+  box-sizing:border-box;
+  width:100%;
+  max-width:1120px;
+  margin-inline:auto;
+}
+
+/* The previous 149px floor was making Ninja unnecessarily tall.
+   Share the shorter banner sizing AND vertical text rhythm across pages.
+   min-height permits additional lines when viewport/text zoom requires. */
+body.page-atlas .top .banner,
+body.page-ninja .top .banner{
+  min-height:124px;
+  padding:7px 0 8px;
   box-sizing:border-box;
   align-items:flex-start;
 }
-/* The emblem remains vertically centered while the text starts at the same
-   top inset in both banners. */
+body.page-atlas .top .banner .eyebrow,
+body.page-ninja .top .banner .eyebrow{
+  font-size:11.5px;
+  margin:0 0 2px;
+}
+body.page-atlas .top .banner h1,
+body.page-ninja .top .banner h1{
+  font-size:29px;
+  line-height:1.28;
+  margin:0 0 3px;
+}
+body.page-atlas .top .banner .description,
+body.page-ninja .top .banner .description{
+  font-size:15.5px;
+  line-height:1.45;
+  max-width:960px;
+}
 .page-ninja .job-emblem{align-self:center}
+
+/* The fixed Ninja chapter rail must continue to track the new H1 position.
+   Use a matching 1120px fallback if JS is not yet running. */
+@media(min-width:811px){
+  body.page-ninja .sidebar{
+    left:var(--reading-title-left,max(27px,calc((100vw - 1120px)/2 + 27px)));
+  }
+}
+@media(max-width:980px){
+  body.page-atlas .top .banner,
+  body.page-ninja .top .banner{min-height:146px}
+}
+@media(max-width:620px){
+  body.page-atlas .top .banner,
+  body.page-ninja .top .banner{min-height:149px}
+  body.page-atlas .top .banner .eyebrow,
+  body.page-ninja .top .banner .eyebrow{font-size:11px}
+  body.page-atlas .top .banner h1,
+  body.page-ninja .top .banner h1{font-size:25px}
+  body.page-atlas .top .banner .description,
+  body.page-ninja .top .banner .description{font-size:14.5px;line-height:1.45}
+}
 @media(max-width:420px){
-  .page-atlas .top .banner,
-  .page-ninja .top .banner{min-height:180px}
+  body.page-atlas .top .banner,
+  body.page-ninja .top .banner{min-height:165px}
 }
 
 /* Hanging-indent chapter navigation: the level prefix occupies one column;
