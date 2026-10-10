@@ -121,3 +121,10 @@ LiouLiou 新裁決：**職業圖鑑是文字教材，不是工坊密集表格，
 - **橫幅高度（以忍者現況為準）**：LiouLiou 明確要求「職業圖鑑橫幅用忍者頁的高度」，**不要擅自另設新標準並修改忍者頁**。參考本人 2026-10-10 兩頁並排截圖：忍者頁淡彩橫幅約從 Y29 至 Y178，即約 149px；圖鑑頁原本約從 Y29 至 Y133，少約 45px。此批只對 `page-atlas .banner` 桌面及平板 `min-width:621px` 設 `min-height:149px`（留足自然溢出，非固定 height），讓圖鑑標題區跟忍者原有橫幅視覺高度一致。**不變更 Ninja banner 原尺寸**，麵包屑位於橫幅外，完全不納入高度。窄螢幕依內容自然增高。
 - **目錄換行**：忍者固定側欄原 `Lv.70 · 忍氣與天地人` 被視為單一文字，最後一字「人」換行時落在 `Lv.70` 的 X 座標。每條章節連結改為兩個語意 span `stage-level` 與 `stage-name`，使用兩欄 CSS grid；章節名二行起以 `stage-name` 的第一字 X 座標對齊（「人」對「忍」）。維持原有五個錨點及固定側欄行為；小螢幕橫向導覽不在項目內換行。
 - 只更新 `pve/reader.css`、`pve/jobs/index.html`、`pve/jobs/ninja/index.html` 與本施工紀錄；CSS 版本 `20261010-r10`。原有 21 職自有 SVG、職能顏色、字體、footer、favicon、工坊／Journey 首頁均維持不變。
+
+## 2026-10-10｜職能總覽 header 複查與真正修復（r11）
+- 前一輪網頁驗收已明確回報職業圖鑑與忍者彩色橫幅「仍不等高」，但未做修正即誤報完成。不得將 Git 已提交／CSS 有該字樣當成實際版面已驗收。
+- 根因一：`min-height:149px` 被包在 `@media(min-width:621px)`，半螢幕、縮放或窄視窗下消失；根因二：`.banner` 原有 `align-items:center` 會在短文字的圖鑑頁使文字下移，與忍者頁原本內容起點不一致；根因三：CSS 歷次累積多組寬度規則，造成後續修改仍難以讀出真正生效者。
+- 修復：**不改忍者頁**；圖鑑的彩色橫幅不分寬度使用 `min-height:149px`（依本人截圖 Ninja 橫幅 y29～y178 之參考高度，非固定 `height`，內容需要可自然長高），以 `align-items:flex-start` 保持上緣與 Ninja 標題文字相同的起點；原已一致的上／下 padding 沿用，不把麵包屑算進橫幅。
+- 麵包屑／圖鑑大標題／主卡片的外層寬度共同採 **1120px** 上限：以一組顯式 `body.page-atlas > .wrap`、`body.page-atlas > header.top > .wrap`、`body.page-atlas > main.container` 的相同寬度與 `margin-inline:auto` 控制；移除 r06、r08 的重複寬度設定，直接 `margin-block:0` 防止第一塊麵包屑在 flex 版面吸收垂直空間。切勿新增獨立的 1330px 欄寬或以絕對定位硬湊。
+- 僅改 `pve/reader.css`、圖鑑首頁 CSS cache `?v=20261010-r11` 與本紀錄；不更動 Ninja 內容／頁首、21 職圖示、職能色系、footer、工坊及 Journey 入口網頁。必須驗證較窄視窗的 banner floor 仍生效，不能只驗桌面。

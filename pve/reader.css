@@ -254,7 +254,7 @@ body.page-atlas{display:flex;flex-direction:column;min-height:100svh}
 /* The atlas is a flex-column page. Its first .wrap is a direct flex item and
    would otherwise shrink to the width of the breadcrumb. Stretch it to the
    exact same max-width/left edge as the banner's own .wrap. */
-body.page-atlas>.wrap{width:100%;max-width:1120px}
+/* Width authority is consolidated below; do not reintroduce a second width rule. */
 
 /* Give the cards a little room to breathe in taller desktops without
    restoring the broken 100svh height lock or proportional grid rows. */
@@ -287,12 +287,7 @@ body.page-atlas>.wrap{width:100%;max-width:1120px}
 
 /* 2026-10-10 r08: visually compact atlas, roomier only where it aids reading.
    Keep natural page height; do not lock 100svh or stretch cards. */
-.page-atlas > .wrap,
-.page-atlas .top > .wrap,
-.page-atlas .container {
-  width: 100%;
-  max-width: 1120px;
-}
+/* Shared breadcrumb/hero/main width now controlled by one selector group below. */
 .page-atlas .group>header{justify-content:flex-start}
 .page-atlas .job{justify-content:flex-start}
 .page-atlas .job:not(.open){cursor:default}
@@ -352,15 +347,32 @@ body.page-atlas>.wrap{width:100%;max-width:1120px}
 /* The body is flex-column, and its direct child .wrap previously had a
    higher-specificity 1330px max-width while heading/cards used 1120px.
    The original rule above is repaired. All three now share 1120px. */
-body.page-atlas>.wrap,
-.page-atlas .top>.wrap,
-.page-atlas .container{width:100%;max-width:1120px;box-sizing:border-box}
+/* Canonical atlas horizontal geometry; all three visible shells start at
+   the same X coordinate at desktop, split screen and mobile widths. */
+body.page-atlas > .wrap,
+body.page-atlas > header.top > .wrap,
+body.page-atlas > main.container{
+  box-sizing:border-box;
+  width:100%;
+  max-width:1120px;
+  margin-inline:auto;
+}
+body.page-atlas > .wrap{
+  flex:0 0 auto;
+  margin-block:0;
+}
 
 /* Match the *existing* Ninja banner height (~149px in the reference screen).
    Ninja's banner is the authority and is NOT resized. Breadcrumb stays above.
    min-height, not height, allows wrapping/zoom without clipping. */
-@media(min-width:621px){
-  .page-atlas .banner{min-height:149px;box-sizing:border-box}
+/* A previous min-width:621px gate silently removed the reference height in
+   narrow browser windows. Keep the Ninja screenshot's colored banner height
+   as the universal floor and position the text from the TOP of the band.
+   Content can still grow beyond the floor when zoomed/wrapped. */
+.page-atlas .top .banner{
+  min-height:149px;
+  box-sizing:border-box;
+  align-items:flex-start;
 }
 
 /* Hanging-indent chapter navigation: the level prefix occupies one column;
