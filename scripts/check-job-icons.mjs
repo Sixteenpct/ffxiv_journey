@@ -43,7 +43,10 @@ for (const group of groups) {
   for (const row of rows) entries.push({role:group[1],src:row[2],name:row[3],tag:row[1]});
 }
 if (entries.length !== 21) problems.push("Expected 21 job entries, found "+entries.length);
-if (!html.includes("<h1>職業養成書庫</h1>")) problems.push("Course library H1 is missing");
+if (!html.includes("<h1>職業養成學院</h1>")) problems.push("Academy H1 is missing");
+if (html.includes('class="job-picker"')) problems.push("Academy job choices must not be collapsed");
+if (!html.includes('id="job-learning"') || !html.includes('id="lecture-index"') ||
+    html.indexOf('class="job-grid"') > html.indexOf('id="lecture-index"')) problems.push("Academy job discovery must precede the lecture index");
 if ([...html.matchAll(/class="job-icon"/g)].length !== 21) problems.push("Wrong total icon count");
 const used = new Set();
 for (const j of jobs) {

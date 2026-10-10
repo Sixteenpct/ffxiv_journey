@@ -56,27 +56,28 @@
 .page-course-library .content-read{width:58px}
 .page-course-library .content-track .course-table thead th{white-space:nowrap}
 
-/* c29: the library owns job discovery and direct lecture access. */
-.page-course-library .learning-maps{margin:12px 0}
-.page-course-library .learning-map-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #acd0e7;border-radius:10px;background:#e5f4ff;color:#286584;text-decoration:none}
-.page-course-library .learning-map-link:hover{background:#d3ecfc;border-color:#83badd}
-.page-course-library .learning-map-link img{flex:none}
-.page-course-library .learning-map-link strong{display:block;font-size:16px;line-height:1.6}
-.page-course-library .learning-map-link small{display:block;font-size:13px;line-height:1.7;color:#4d7185}
-.page-course-library .job-picker{margin:12px 0 16px}
-.page-course-library .job-picker>summary{font-size:14px;color:#486b73;cursor:pointer}
-.page-course-library .job-picker>p{font-size:13px;line-height:1.7;color:#55717c;margin:7px 0 10px}
-.page-course-library .job-grid{gap:10px}
-.page-course-library .group-stack{gap:10px}
-.page-course-library .group>header{padding:7px 9px}
-.page-course-library .group h2{font-size:14px;margin:0;line-height:1.6}
-.page-course-library .jobs{grid-template-columns:1fr;gap:5px;padding:7px}
-.page-course-library .job{min-height:36px;padding:5px 7px;font-size:14px;line-height:1.5}
-.page-course-library .job-icon{width:23px;height:23px;flex-basis:23px}
-.page-course-library .job-name{gap:7px}
-.page-course-library .library-subheading{font-size:15px;color:#426772;margin:14px 0 8px}
-#job-learning,#content-learning{scroll-margin-top:16px}
-@media(max-width:420px){.page-course-library .job-grid{grid-template-columns:1fr}}
+/* c31: academy-first navigation. Reuse the approved 21-job atlas and role colours. */
+.page-course-library .academy-hall{min-width:0;padding:14px;border:1px solid #c3dce4;border-radius:12px;background:linear-gradient(130deg,#f0f9fc,#fffefa 62%,#f3faf6)}
+.page-course-library .academy-heading{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin:0 0 12px}
+.page-course-library .academy-eyebrow{margin:0 0 3px;color:#4b91ae;font-size:11px;font-weight:700;letter-spacing:.1em}
+.page-course-library .academy-heading h2{margin:0 0 3px;font-size:20px;line-height:1.4;color:#285b74}
+.page-course-library .academy-lead{margin:0;color:#587781;font-size:14px;line-height:1.6}
+.page-course-library .academy-index-link{display:inline-block;flex:none;padding:6px 11px;border:1px solid #a8cddb;border-radius:7px;background:#f8fdff;color:#286b86;font-size:13px;font-weight:650;text-decoration:none}
+.page-course-library .academy-index-link:hover{background:#e6f6fe;border-color:#7dafc7}
+.page-course-library .academy-index-link:focus-visible{outline:2px solid #438b84;outline-offset:3px}
+.page-course-library .academy-hall .job-grid{gap:14px}
+.page-course-library .academy-hall .group-stack{gap:12px}
+.page-course-library .academy-hall .group>header{padding:9px 12px}
+.page-course-library .academy-hall .group h2{font-size:17px;line-height:1.5;color:var(--role)}
+.page-course-library .academy-hall .jobs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:9px}
+.page-course-library .academy-hall .job{min-height:44px;padding:7px 9px;font-size:16px;line-height:1.4}
+.page-course-library .academy-hall .job-icon{width:27px;height:27px;flex-basis:27px}
+.page-course-library .academy-hall .job-name{gap:8px}
+.page-course-library .academy-footnote{font-size:12px;color:#6c858c;line-height:1.55;margin:10px 2px 0}
+.page-course-library .academy-index{margin-top:18px}
+#job-learning,#lecture-index,#content-learning{scroll-margin-top:16px}
+@media(max-width:810px){.page-course-library .academy-hall .job-grid{grid-template-columns:1fr}}
+@media(max-width:440px){.page-course-library .academy-hall .jobs{grid-template-columns:1fr}.page-course-library .academy-hall .job{min-height:42px}}
 
 /* Keep identification columns compact in the full-width job catalogue. */
 .page-course-library .job-course-id{width:64px}
