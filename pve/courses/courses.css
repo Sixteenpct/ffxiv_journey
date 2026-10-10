@@ -84,3 +84,12 @@
 .page-course-library .job-course-sync{width:80px}
 .page-course-library .job-course-read{width:76px}
 .page-course-library .learning-map-link{max-width:520px}
+
+/* Native optgroup role tints are best-effort: some OS menus ignore them.
+   Scope to the lecture filter only; keep native selection, keyboard and hover. */
+.page-lecture-index #job-course-filter optgroup[label="🛡️ 坦克"]{background-color:#e3f4fc;color:#286b91}
+.page-lecture-index #job-course-filter optgroup[label="⚔️ 近戰 DPS"]{background-color:#fff1ed;color:#9b514a}
+.page-lecture-index #job-course-filter optgroup[label="➕ 治療"]{background-color:#e1f6ee;color:#26745d}
+.page-lecture-index #job-course-filter optgroup[label="🏹 遠程物理"]{background-color:#fff2cf;color:#94712e}
+.page-lecture-index #job-course-filter optgroup[label="🪄 遠程魔法"]{background-color:#fff0e4;color:#a76543}
+.page-lecture-index #job-course-filter optgroup option{background-color:#fff;color:#3e6570}
