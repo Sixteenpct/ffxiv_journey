@@ -154,6 +154,6 @@ html:has(body.page-r005){scroll-behavior:auto}
 
 .page-r005 .chapter-top{border-left:0;border-bottom:0}
 
-.page-r005 .review-context{margin-top:16px}
-.page-r005 .review-context p{margin:0 0 5px}
+.page-r005 .review-context{margin:16px 0 0;padding:12px 14px;border:1px solid #c6e2f3;border-radius:12px;background:#f2f9ff}
+.page-r005 .review-context p{margin:0 0 8px;color:#286584;font-size:15px;font-weight:500;line-height:1.8}
 .page-r005 .review-context .review-portals{margin:0;gap:9px}

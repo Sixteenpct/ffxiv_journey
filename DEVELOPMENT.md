@@ -270,3 +270,6 @@ R005完整七種忍術的印數／末印說明由small改入同級h3「名稱：
 
 ## 2026-10-11 c27｜工坊同款180ms側欄滑動
 定點讀collection/workbench/app.js的fastTocScroll，確認180ms／cubic ease-out。兩堂新增共用chapter-scroll.js，沿用節奏並依各章scroll-margin計算固定表頭偏移；保留hash／返回記錄、修飾鍵開啟方式與reduced-motion，連續點選取消前輪動畫。原生跳轉作無JS後備，TOP／工坊原碼不改。檢查腳本、導航錨點、資產及diff，Git讀回與同提交部署後點選驗收。
+
+## 2026-10-11 c28｜提示與傳送門的晴空藍整組
+兩堂講義統一review-context樣式：淡藍底#f2f9ff／细藍框#c6e2f3／12px圓角，提示#286584／500字重，内距12×14px、提示到按鈕8px，外部16px間距。R022群體輸出與常見問題的提示／入口由同一視覺容器歸組，不能與上方正文混讀；無提示的按鈕保持原樣。規範適用後續課程，教學正文不當作傳送門提示收納；所有href／target保持。CSS版號更新，HTML／資產／diff檢查、Git讀回與同提交Pages部署後實頁驗收。
