@@ -47,7 +47,7 @@ body.page-r022 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
 .page-r022 .mechanic-table-wrap{overflow-x:auto;margin:17px 0}
 .page-r022 .mechanic-table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.7}
 .page-r022 .mechanic-table th{text-align:left;background:#e9f0e9;color:#476a5b;font-size:15px;font-weight:700}
-.page-r022 .mechanic-table th,.page-r022 .mechanic-table td{padding:11px 12px;border:1px solid #d5e1d8;vertical-align:top}
+.page-r022 .mechanic-table th,.page-r022 .mechanic-table td{padding:8px 10px;border:1px solid #d5e1d8;vertical-align:top}
 .page-r022 .mechanic-table td:first-child{width:30%;color:#876d45;font-weight:600}
 .page-r022 .mechanic-table tbody tr:nth-child(even){background:#f8faf5}
 .page-r022 .tactical-diagram{margin:18px 0;border:1px solid #d3dfd6;border-radius:8px;overflow:hidden;background:#f7faf6}
@@ -118,7 +118,7 @@ body.page-r022 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
 .page-r022 .troubleshoot dt{counter-increment:faq;display:flex;align-items:baseline;gap:9px}
 .page-r022 .troubleshoot dt::before{content:counter(faq,decimal-leading-zero);flex:none;font-size:13px;font-weight:600;color:#927443}
 .page-r022 .troubleshoot dd{margin-left:29px}
-.page-r022 .mechanic-table th:first-child{width:22%}
+.page-r022 .mechanic-table th:first-child{width:16%}
 .page-r022 .review-portals{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
 .page-r022 a.review-portal{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:9px 13px;border:1px solid #acd0e7;border-radius:9px;background:#e5f4ff;color:#286584;font-size:15px;font-weight:700;line-height:1.6;text-decoration:none;overflow-wrap:anywhere}
 .page-r022 a.review-portal:hover{background:#d3ecfc;border-color:#83badd;color:#205977}
