@@ -120,8 +120,26 @@ body.page-r022 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
 .page-r022 .troubleshoot dd{margin-left:29px}
 .page-r022 .mechanic-table th:first-child{width:22%}
 .page-r022 .review-portals{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
-.page-r022 a.review-portal{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:9px 13px;border:1px solid #adcdb8;border-radius:9px;background:#e5f4e9;color:#286d54;font-size:15px;font-weight:700;line-height:1.6;text-decoration:none;overflow-wrap:anywhere}
-.page-r022 a.review-portal:hover{background:#d3ebda;border-color:#8fb99d;color:#235d48}
+.page-r022 a.review-portal{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:9px 13px;border:1px solid #acd0e7;border-radius:9px;background:#e5f4ff;color:#286584;font-size:15px;font-weight:700;line-height:1.6;text-decoration:none;overflow-wrap:anywhere}
+.page-r022 a.review-portal:hover{background:#d3ecfc;border-color:#83badd;color:#205977}
 .page-r022 .field-steps{padding-left:22px;margin:0}
 .page-r022 .field-steps li{margin:8px 0}
 html:has(body.page-r022){scroll-behavior:auto}
+
+/* Both lectures use the FAQ's reading hierarchy: 15px prose, 16px subheads. */
+.page-r022 .chapter-body{font-size:15px;line-height:1.8;color:#405e60}
+.page-r022 .chapter-body p,.page-r022 .chapter-body li,.page-r022 .troubleshoot dd{font-size:15px;line-height:1.8}
+.page-r022 .chapter-body p{margin:0 0 12px}
+.page-r022 .chapter-body p:last-child{margin-bottom:0}
+.page-r022 .chapter-body h3{font-size:16px;font-weight:700;line-height:1.6;color:#436b62;margin:18px 0 8px}
+.page-r022 .chapter-body h3:first-child{margin-top:0}
+.page-r022 .lead{font-size:15px}
+.page-r022 .fine-note{font-size:15px!important;line-height:1.8;color:#405e60}
+.page-r022 .chapter-body ul,.page-r022 .chapter-body ol{margin:10px 0 12px;padding-left:23px}
+.page-r022 .chapter-body li{margin:6px 0}
+.page-r022 .callout p{margin:0}
+.page-r022 .mechanic-table{font-size:15px;line-height:1.8}
+.page-r022 .arsenal-item span{font-size:15px;line-height:1.8;color:#405e60}
+.page-r022 .rhythm-panel .rhythm-note{font-size:15px;line-height:1.8;color:#405e60}
+.page-r022 .mudra-recipe h3 small{font-size:15px;line-height:1.8}
+.page-r022 .course-entry p{font-size:15px;line-height:1.8}
