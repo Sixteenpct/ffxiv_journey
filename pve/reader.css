@@ -185,10 +185,10 @@ body.page-atlas{display:flex;flex-direction:column;min-height:100svh}
 .group.role-healer{--active:#d8f3e7}
 .group.role-ranged{--active:#fff1cf}
 .group.role-caster{--active:#fae2d6}
-.group .job.open,.group .job.open:hover{color:var(--role);border-color:var(--role);background:var(--active);box-shadow:0 2px 9px color-mix(in srgb,var(--role) 17%,transparent)}
-.group .job.open small{color:var(--role);font-weight:750}
-.group .job.open:hover{filter:brightness(.976);outline:1px solid var(--role);outline-offset:0}
-.group .job.open:focus-visible{outline:3px solid var(--role);outline-offset:3px}
+.group .job.open,.group .job.open:hover{color:color-mix(in srgb,var(--role) 76%,#294756);border-color:color-mix(in srgb,var(--role) 24%,#fff);background:linear-gradient(112deg,color-mix(in srgb,var(--role) 8%,#fff),var(--cell));box-shadow:0 2px 7px #446b6a0b}
+.group .job.open small{color:color-mix(in srgb,var(--role) 76%,#294756);font-weight:750}
+.group .job.open:hover{filter:none;background:linear-gradient(112deg,color-mix(in srgb,var(--role) 12%,#fff),var(--cell));border-color:color-mix(in srgb,var(--role) 33%,#fff);outline:none;box-shadow:0 3px 9px #446b6a15}
+.group .job.open:focus-visible{outline:2px solid var(--role);outline-offset:3px}
 /* Repaired 2026-10-10: natural-size cards and original banner flow.
    Never lock the whole atlas to 100svh or stretch the two unequal job columns. */
 /* Ninja: freeze the original breadcrumb AND the shorter identity block.
@@ -207,22 +207,22 @@ body.page-atlas{display:flex;flex-direction:column;min-height:100svh}
 .page-ninja .chapter,.page-ninja .cross{scroll-margin-top:calc(var(--reading-masthead-height,130px) + 14px)}
 
 /* Less visual mass and no saturated yellow in stage headings. */
-.page-ninja .chapter-top{padding:7px 15px 8px;background:linear-gradient(110deg,#e6f3fa 0%,#f3f9fc 62%,#f7fbfb 100%);border-bottom:1px solid #d7e7ee;border-left:3px solid #86b9d1}
-.page-ninja .chapter-top span{font-size:10.5px;color:#6a91a3;letter-spacing:.1em}
-.page-ninja .chapter-top h2{font-size:clamp(19px,2vw,22px);line-height:1.38;margin-top:1px;color:#305d74}
-.page-ninja .chapter{border-color:#d7e7ed}
+.page-ninja .chapter-top{padding:7px 15px 8px;background:linear-gradient(110deg,#fff3d7 0%,#fff9e9 62%,#fffdf7 100%);border-bottom:1px solid #f0e6cc;border-left:3px solid #dac699}
+.page-ninja .chapter-top span{font-size:10.5px;color:#967e56;letter-spacing:.1em}
+.page-ninja .chapter-top h2{font-size:clamp(19px,2vw,22px);line-height:1.38;margin-top:1px;color:#655d4e}
+.page-ninja .chapter{border-color:#e8e5d9}
 
 /* Related courses are an actual highlighted reading destination.
    One course uses full width; two or more share side-by-side columns. */
-.page-ninja .lesson-link{margin-top:14px;padding:11px 13px 13px;background:linear-gradient(116deg,#e2f2f9,#edf8f6);border:1px solid #a7cfdf;border-left:4px solid #348aaa;border-radius:9px;display:block}
+.page-ninja .lesson-link{margin-top:14px;padding:11px 13px 13px;background:linear-gradient(116deg,#e9f7ec 0%,#f2faf4 58%,#fbfdfa 100%);border:1px solid #c7e3d0;border-left:4px solid #86bca0;border-radius:9px;display:block}
 .page-ninja .lesson-heading{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;margin-bottom:9px}
-.page-ninja .lesson-heading strong{font-size:17px;line-height:1.4;color:#276e91}
-.page-ninja .lesson-heading span{font-size:12.5px;color:#6a8a9a}
+.page-ninja .lesson-heading strong{font-size:17px;line-height:1.4;color:#36745c}
+.page-ninja .lesson-heading span{font-size:12.5px;color:#6a8d79}
 .page-ninja .course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.page-ninja .course-entry{min-width:0;padding:10px 13px;border:1px solid #c4e2e8;border-radius:7px;background:#fff;display:grid;gap:4px}
+.page-ninja .course-entry{min-width:0;padding:10px 13px;border:1px solid #d0e8d7;border-radius:7px;background:#fff;display:grid;gap:4px}
 .page-ninja .course-entry:only-child{grid-column:1/-1}
-.page-ninja .course-entry strong{font-size:17px;color:#246e8d;line-height:1.5}
-.page-ninja .course-entry p{font-size:14px;line-height:1.55;color:#597681;margin:0}
+.page-ninja .course-entry strong{font-size:17px;color:#376f57;line-height:1.5}
+.page-ninja .course-entry p{font-size:14px;line-height:1.55;color:#627d6c;margin:0}
 @media(max-width:810px){
   .page-ninja .reading-masthead{z-index:50}
   .page-ninja .banner{padding:8px 0 10px}
@@ -248,4 +248,23 @@ body.page-atlas{display:flex;flex-direction:column;min-height:100svh}
   .page-ninja .course-grid{grid-template-columns:1fr}
   .page-ninja .course-entry:only-child{grid-column:auto}
   .page-ninja .course-entry strong{font-size:16px}
+}
+
+/* PvE atlas spacing and reader palette — owner checkpoint 2026-10-10 r06 */
+/* The atlas is a flex-column page. Its first .wrap is a direct flex item and
+   would otherwise shrink to the width of the breadcrumb. Stretch it to the
+   exact same max-width/left edge as the banner's own .wrap. */
+body.page-atlas>.wrap{width:100%;max-width:1330px}
+
+/* Give the cards a little room to breathe in taller desktops without
+   restoring the broken 100svh height lock or proportional grid rows. */
+@media(min-width:901px) and (min-height:760px){
+  .page-atlas .banner{padding:12px 0 16px}
+  .page-atlas .container{padding-top:16px;padding-bottom:14px}
+  .page-atlas .intro-note{margin-bottom:13px}
+  .page-atlas .job-grid{gap:22px}
+  .page-atlas .group-stack{gap:16px}
+  .page-atlas .group>header{padding:10px 15px}
+  .page-atlas .jobs{padding:11px;gap:9px}
+  .page-atlas .job{min-height:48px;padding:8px 11px}
 }
