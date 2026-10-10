@@ -254,7 +254,7 @@ body.page-atlas{display:flex;flex-direction:column;min-height:100svh}
 /* The atlas is a flex-column page. Its first .wrap is a direct flex item and
    would otherwise shrink to the width of the breadcrumb. Stretch it to the
    exact same max-width/left edge as the banner's own .wrap. */
-body.page-atlas>.wrap{width:100%;max-width:1330px}
+body.page-atlas>.wrap{width:100%;max-width:1120px}
 
 /* Give the cards a little room to breathe in taller desktops without
    restoring the broken 100svh height lock or proportional grid rows. */
@@ -346,4 +346,38 @@ body.page-atlas>.wrap{width:100%;max-width:1330px}
   .page-atlas .banner h1{font-size:27px}
   .page-atlas .banner .description{font-size:14.5px;line-height:1.45}
   .page-atlas .jobs{column-gap:10px;row-gap:12px}
+}
+
+/* Atlas width, Ninja-height reference and hanging-indent lessons · r10 */
+/* The body is flex-column, and its direct child .wrap previously had a
+   higher-specificity 1330px max-width while heading/cards used 1120px.
+   The original rule above is repaired. All three now share 1120px. */
+body.page-atlas>.wrap,
+.page-atlas .top>.wrap,
+.page-atlas .container{width:100%;max-width:1120px;box-sizing:border-box}
+
+/* Match the *existing* Ninja banner height (~149px in the reference screen).
+   Ninja's banner is the authority and is NOT resized. Breadcrumb stays above.
+   min-height, not height, allows wrapping/zoom without clipping. */
+@media(min-width:621px){
+  .page-atlas .banner{min-height:149px;box-sizing:border-box}
+}
+
+/* Hanging-indent chapter navigation: the level prefix occupies one column;
+   if the chapter name wraps, the second line starts directly below its
+   first character (e.g. 人 aligns with 忍, not with Lv.70). */
+.page-ninja .sidebar a.stage-link{
+  display:grid;
+  grid-template-columns:max-content minmax(0,1fr);
+  column-gap:6px;
+  align-items:start;
+  white-space:normal;
+  line-height:1.55;
+}
+.page-ninja .sidebar .stage-level{white-space:nowrap}
+.page-ninja .sidebar .stage-name{min-width:0;overflow-wrap:anywhere}
+@media(max-width:810px){
+  /* The mobile sidebar is a fixed horizontally scrolling row. */
+  .page-ninja .sidebar a.stage-link{grid-template-columns:max-content max-content;white-space:nowrap}
+  .page-ninja .sidebar .stage-name{white-space:nowrap}
 }

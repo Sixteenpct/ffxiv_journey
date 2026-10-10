@@ -115,3 +115,9 @@ LiouLiou 新裁決：**職業圖鑑是文字教材，不是工坊密集表格，
 - **各職業按鈕要有真正的獨立留白**：桌面兩欄 grid `column-gap:16px`、`row-gap:15px`，手機 `10px／12px`；不依賴放大卡片或字體來撐距離，不重啟過去造成首頁跑版的 `height:100svh` 強制填滿規則；21 職、職能排列、SVG、hover 色與鎖定狀態全保留。
 - **忍者閱讀頁左側固定目錄與「忍者」標題的 X 軸精準對齊**：前一版固定 sidebar 用 `100vw` 推導左緣，瀏覽器有捲軸時可能比 header 的實際內容左緣多偏右半個捲軸寬。現有的 `reading-masthead` 高度同步程式增加 `title.getBoundingClientRect().left`，輸出 `--reading-title-left`；桌面 `fixed sidebar` 直接讀取這個左緣。小螢幕維持既定水平固定導覽，不強制用桌面座標。
 - 這批只修改 `pve/reader.css`、`pve/jobs/index.html`、`pve/jobs/ninja/index.html` 與以上治理文字／主標題檢查。公共網站樣式版本提升 `?v=20261010-r09`，避免瀏覽器快取。素材工坊、其他分館、21 個 SVG、Ninja 課程正文、favicon 與 footer 都不在本次施工範圍。
+
+## 2026-10-10｜麵包屑同軸、Ninja 橫幅高度基準與目錄換行對齊
+- **總覽麵包屑 X 座標根因**：舊的高優先權 `body.page-atlas>.wrap{width:100%;max-width:1330px}` 比後續 `.page-atlas > .wrap{max-width:1120px}` 多了 `body` element 的 specificity，前者勝出；因此麵包屑基於 1330px 對齊，但彩色標題與主卡片基於 1120px 對齊。直接把原有高優先權規則更正為 **1120px**，額外確保 breadcrumb / hero / main 一致寬度，禁止再以 margin 或 left 位移遮掩。
+- **橫幅高度（以忍者現況為準）**：LiouLiou 明確要求「職業圖鑑橫幅用忍者頁的高度」，**不要擅自另設新標準並修改忍者頁**。參考本人 2026-10-10 兩頁並排截圖：忍者頁淡彩橫幅約從 Y29 至 Y178，即約 149px；圖鑑頁原本約從 Y29 至 Y133，少約 45px。此批只對 `page-atlas .banner` 桌面及平板 `min-width:621px` 設 `min-height:149px`（留足自然溢出，非固定 height），讓圖鑑標題區跟忍者原有橫幅視覺高度一致。**不變更 Ninja banner 原尺寸**，麵包屑位於橫幅外，完全不納入高度。窄螢幕依內容自然增高。
+- **目錄換行**：忍者固定側欄原 `Lv.70 · 忍氣與天地人` 被視為單一文字，最後一字「人」換行時落在 `Lv.70` 的 X 座標。每條章節連結改為兩個語意 span `stage-level` 與 `stage-name`，使用兩欄 CSS grid；章節名二行起以 `stage-name` 的第一字 X 座標對齊（「人」對「忍」）。維持原有五個錨點及固定側欄行為；小螢幕橫向導覽不在項目內換行。
+- 只更新 `pve/reader.css`、`pve/jobs/index.html`、`pve/jobs/ninja/index.html` 與本施工紀錄；CSS 版本 `20261010-r10`。原有 21 職自有 SVG、職能顏色、字體、footer、favicon、工坊／Journey 首頁均維持不變。
