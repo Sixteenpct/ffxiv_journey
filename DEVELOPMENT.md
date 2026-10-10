@@ -243,3 +243,6 @@ R005／R022延伸閱讀從回場速查拆出成第11章與側欄獨立入口 #re
 
 ## 2026-10-10 c18｜常見問題純章名
 R022移除章名冒號副標，兩堂課正文与側欄皆只用「常見問題」四字，統一後續規則。適用檢查、Git讀回與同提交部署後實頁驗收。
+
+## 2026-10-10 c19｜R022章節主題小字
+六處重複NINJA LEVEL 56替換為對應的CORE RHYTHM、TARGET PRIORITY、KAZEMATOI MANAGEMENT、ENEMY PACKS、COMMON QUESTIONS、PRACTICE & REFERENCE；其餘既有主題標籤保留，頁首正式同步等級不變。Git讀回與同提交Pages部署後確認章節小字。
