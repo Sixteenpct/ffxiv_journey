@@ -1,9 +1,16 @@
 /* Independent catalogues: always-visible tables, shared native-select filters. */
 (() => {
-  // Preserve bookmarks to the former combined catalogue's content section.
-  if (!document.body.classList.contains('page-content-library') && location.hash === '#content-learning') {
-    location.replace('../content/#content-learning');
-    return;
+  // Redirect historical academy-section bookmarks to their independent pages.
+  // Only the academy homepage redirects; a catalogue opened directly must stay put.
+  if (document.body.classList.contains('page-academy')) {
+    if (location.hash === '#content-learning') {
+      location.replace('../content/#content-learning');
+      return;
+    }
+    if (location.hash === '#lecture-index') {
+      location.replace('lectures/#lecture-index');
+      return;
+    }
   }
   const bindFilter = (filterId, rowSelector, emptyId, key) => {
     const filter = document.querySelector(filterId);

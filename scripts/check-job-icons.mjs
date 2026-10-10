@@ -33,6 +33,7 @@ const jobs = [
   { role:"caster", name:"繪靈法師", code:"PCT", iconId:"062422", slug:"pictomancer", color:"#c77c56" }
 ];
 const html = await readFile(path.join(root,"pve/courses/index.html"),"utf8");
+const lectureHTML = await readFile(path.join(root,"pve/courses/lectures/index.html"),"utf8");
 const problems = [];
 const groups = [...html.matchAll(/<section class="group role-([\w-]+)"[^>]*>([\s\S]*?)<\/section>/g)];
 const expects = ["tank","melee","healer","ranged","caster"];
@@ -45,8 +46,14 @@ for (const group of groups) {
 if (entries.length !== 21) problems.push("Expected 21 job entries, found "+entries.length);
 if (!html.includes("<h1>職業養成學院</h1>")) problems.push("Academy H1 is missing");
 if (html.includes('class="job-picker"')) problems.push("Academy job choices must not be collapsed");
-if (!html.includes('id="job-learning"') || !html.includes('id="lecture-index"') ||
-    html.indexOf('class="job-grid"') > html.indexOf('id="lecture-index"')) problems.push("Academy job discovery must precede the lecture index");
+if (!html.includes('id="job-learning"') || !html.includes('href="lectures/"') ||
+    html.includes('id="lecture-index"') || !lectureHTML.includes('id="lecture-index"'))
+  problems.push("Lecture index must be separate from the job academy and linked from its hall");
+if (!lectureHTML.includes('id="job-course-filter"') || !lectureHTML.includes('id="job-course-rows"') ||
+    !lectureHTML.includes('href="../r005/"') || !lectureHTML.includes('href="../r022/"'))
+  problems.push("Separate lecture index lost its existing filter or course links");
+if (!html.includes('class="job-grid"') || html.indexOf('class="job-grid"') > html.indexOf('href="lectures/"'))
+  problems.push("Academy must retain the career-selection grid");
 if ([...html.matchAll(/class="job-icon"/g)].length !== 21) problems.push("Wrong total icon count");
 const used = new Set();
 for (const j of jobs) {
