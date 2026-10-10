@@ -10,3 +10,8 @@
 - 依分館／主題挑選有辨識度的小圖示：主要入口可沿用分館 icon，獨立職業或內容頁優先使用主題專屬 favicon。SVG 優先使用本站 `assets/` 的自有靜態檔；既有頁面採有效 inline SVG favicon 可保留，避免不穩定的外站依賴。
 - 發布之前**必跑 `node scripts/check-favicons.mjs`**（無需安裝 npm 依賴），確認所有 `*.html` 均有 icon 且本地檔案路徑存在。發布後再讀回網頁 `<head>` 與圖示 URL；不能只因 Git 提交成功就宣稱瀏覽器縮圖正常。若有漏項先修復，不帶病交付。
 - 這是 Git canonical 的永久網頁施工要求；不可因模型記憶或換聊天消失。社群分享預覽 `og:image` 與分頁 favicon 是不同東西，不得混稱已完成。
+
+## 全站頁尾一致性｜硬規則
+- **所有 FF14 Journey 網站公開 HTML 頁面**的 footer 必須忠於 Journey 入口網站和素材製作工坊的正式三行小字樣式：`footer-credit`／`footer-brand`／`footer-rights`，順序不變；信用與商標聲明不能省略。底部置中、低彩度、間距精簡，不得因頁面正文、表格、卡片字級調整而被放大。
+- 新館／新職業／新課程頁一律採 `<footer class="site-footer">...`，並引用 `assets/site-footer.css`（依頁深度使用正確相對路徑）；此檔以入口／工坊共同規格 11.48px（手機 10px）、第三行 10px 為 canonical。入口首頁和既有工坊已有同等樣式，保持原有 CSS，不因共享樣式而冒險重構既有功能。
+- 每次增修 HTML 或 footer 必須執行 `node scripts/check-site-footers.mjs` 和現行 favicon 檢查，確認三行內容、標籤、後續頁面對共用樣式的有效引用。再讀回 Git 與 Pages 驗證，不可只說「已規定」卻沒實作。
