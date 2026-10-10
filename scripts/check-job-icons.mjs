@@ -43,7 +43,7 @@ for (const group of groups) {
   for (const row of rows) entries.push({role:group[1],src:row[2],name:row[3],tag:row[1]});
 }
 if (entries.length !== 21) problems.push("Expected 21 job entries, found "+entries.length);
-if (!html.includes("<h1>PvE 課程書庫</h1>")) problems.push("Course library H1 is missing");
+if (!html.includes("<h1>職業養成書庫</h1>")) problems.push("Course library H1 is missing");
 if ([...html.matchAll(/class="job-icon"/g)].length !== 21) problems.push("Wrong total icon count");
 const used = new Set();
 for (const j of jobs) {

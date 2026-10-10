@@ -1,24 +1,10 @@
-/* Desktop: two open tables. Mobile: two independent native disclosures. */
+/* Independent catalogues: always-visible tables, shared native-select filters. */
 (() => {
-  const tracks = [...document.querySelectorAll('.page-course-library .library-track')];
-  const desktop = window.matchMedia('(min-width:900px)');
-  const applyLayout = () => {
-    for (const track of tracks) {
-      const summary = track.querySelector('summary');
-      track.open = desktop.matches;
-      summary.tabIndex = desktop.matches ? -1 : 0;
-      if (desktop.matches) summary.setAttribute('aria-disabled', 'true');
-      else summary.removeAttribute('aria-disabled');
-    }
-  };
-  for (const track of tracks) {
-    track.querySelector('summary').addEventListener('click', event => {
-      if (desktop.matches) event.preventDefault();
-    });
+  // Preserve bookmarks to the former combined catalogue's content section.
+  if (!document.body.classList.contains('page-content-library') && location.hash === '#content-learning') {
+    location.replace('../content/#content-learning');
+    return;
   }
-  applyLayout();
-  desktop.addEventListener('change', applyLayout);
-
   const bindFilter = (filterId, rowSelector, emptyId, key) => {
     const filter = document.querySelector(filterId);
     const rows = [...document.querySelectorAll(rowSelector)];

@@ -13,11 +13,9 @@
 .page-course .source{scroll-margin-top:calc(var(--reading-masthead-height,130px) + 14px)}
 /* Library tables use the workbench density; lecture typography is separate. */
 .page-course-library .library-summary{font-size:15px;line-height:1.7;margin:0 0 18px}
-.page-course-library .library-tracks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
 .page-course-library .library-track{min-width:0;border:1px solid #bed5d9;border-radius:10px;background:#fcfefe;overflow:hidden}
-.page-course-library .library-track>summary{display:block;position:relative;padding:10px 12px;background:linear-gradient(116deg,#e9f7ec,#fbfdfa);list-style:none;cursor:default}
-.page-course-library .library-track>summary::-webkit-details-marker{display:none}
-.page-course-library .content-track>summary{background:linear-gradient(116deg,#e6f2f8,#fcfefe)}
+.page-course-library .library-track>.track-header{display:block;position:relative;padding:10px 12px;background:linear-gradient(116deg,#e9f7ec,#fbfdfa)}
+.page-course-library .content-track>.track-header{background:linear-gradient(116deg,#e6f2f8,#fcfefe)}
 .page-course-library .library-track h2{margin:0 0 3px;font-size:18px;line-height:1.4;color:#376873}
 .page-course-library .track-count{display:block;font-size:11px;line-height:1.5;color:#617e85}
 .page-course-library .track-body{padding:10px 12px 12px}
@@ -37,12 +35,6 @@
 .page-course-library .course-table .table-empty{padding:12px 8px;color:#647d85;font-size:14px}
 .page-course-library .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 .page-course-library summary:focus-visible,.page-course-library .course-table-scroll:focus-visible{outline:2px solid #438b84;outline-offset:-3px}
-@media(max-width:899px){
- .page-course-library .library-tracks{grid-template-columns:1fr;gap:12px}
- .page-course-library .library-track>summary{cursor:pointer;padding-right:44px}
- .page-course-library .library-track>summary::after{content:"＋";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:22px;color:#64878d}
- .page-course-library .library-track[open]>summary::after{content:"−"}
-}
 .page-course .course-entry[href]{text-decoration:none;transition:background .15s}
 .page-course .course-entry[href]:hover{background:#edf8ef}
 @media(max-width:810px){
@@ -53,7 +45,7 @@
  .page-course .course-config{font-size:13px}
 }
 
-.page-course-library .library-track:not(.content-track) .course-table{min-width:460px}
+.page-course-library .library-track:not(.content-track) .course-table{min-width:460px;table-layout:fixed}
 
 .page-course-library .column-filter{display:flex;flex-direction:column;align-items:stretch;gap:4px;white-space:nowrap}
 .page-course-library .column-filter select{width:100%;min-width:0;padding:2px 4px;border:1px solid #b8cdd2;border-radius:4px;background:#fff;color:#3e6570;font:inherit;font-size:12px;cursor:pointer}
@@ -85,3 +77,10 @@
 .page-course-library .library-subheading{font-size:15px;color:#426772;margin:14px 0 8px}
 #job-learning,#content-learning{scroll-margin-top:16px}
 @media(max-width:420px){.page-course-library .job-grid{grid-template-columns:1fr}}
+
+/* Keep identification columns compact in the full-width job catalogue. */
+.page-course-library .job-course-id{width:64px}
+.page-course-library .job-course-job{width:140px}
+.page-course-library .job-course-sync{width:80px}
+.page-course-library .job-course-read{width:76px}
+.page-course-library .learning-map-link{max-width:520px}
