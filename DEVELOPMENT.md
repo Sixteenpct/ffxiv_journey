@@ -192,3 +192,9 @@ LiouLiou 新裁決：**職業圖鑑是文字教材，不是工坊密集表格，
 - 下一個獨立 checkpoint：完整回搬 R022，沿用此課程殼層，核對實際同步 Lv.56，開通 Ninja Lv.60 相關課堂。
 - 提交前驗證：全站 favicon 6 頁、footer 6 頁、21 職 SVG 檢查通過；首頁／Ninja／課程入口／R005 的本地 href、src、錨點、重複 ID 與公共教材排除私人日期／評分／Sheet／實戰證據檢查通過；`git diff --check` 通過。已核准 reader.css 未修改。
 - 視覺驗證限制：本機 Playwright 缺少 Chromium，瀏覽器下載受環境限制回傳無效壓縮檔，停止下載；未取得手機實際渲染與章節遮擋量測結果，不能將靜態檢查當成視覺驗收。部署後讀回仍須確認本批 HTML／CSS／圖示，視覺另待本人驗收。
+
+## 2026-10-10 c10 checkpoint
+
+完成 R005 去除正文裝飾照片／來源章節／副本教材，表頭置中並僅留職業 SVG；放大技能名及導覽。書庫與 R005 使用工坊樣式共用捲動按鈕，未來兩類講義沿用。D029 待搬片段已保存，未發布空白課程。R005 新增本人指定公開的 2026-09-20 上課歷史與心得；來源為 PvE canonical `learning_progress/忍者/Lv50.md`（blob ec87c5fdfb8065b2c866bf7c997cc746c9925fc7）與 R005 Notion 歷史頁。沒有讀寫 Sheet，也沒有輸出其他課程動態進度。素材來源仍在 `r005/media/sources.json`，教材依 R005 c09 的來源核對。
+
+驗證：favicon、全站 Footer、職業 SVG、自動檢查講義章節／資產／技能圖標／移除項目、JS 語法、git diff whitespace；部署後桌面實頁驗收捲到底部與 TOP、表頭、技能文字及課堂紀錄。手機只完成 CSS 範圍檢查，待使用者實機驗收。
