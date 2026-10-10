@@ -9,7 +9,7 @@
 | Journey 總首頁 | index.html |
 | 收藏分館／素材製作工坊 | collection/workbench/ |
 | 收藏分館／永久收藏圖鑑（未建置） | 未來放 collection/catalog/ |
-| 戰鬥分館／職業圖鑑（未建置） | 未來放 pve/jobs/ |
+| 戰鬥分館／職業圖鑑（忍者試作已開放） | pve/jobs/、pve/jobs/ninja/ |
 | 戰鬥分館／PvE 課程書庫（未建置） | 未來放 pve/courses/ |
 | 故事分館／Lore 故事書庫（未建置） | 未來放 lore/stories/ |
 | 故事分館／歷代 FF 致敬（未建置） | 未來放 lore/references/ |
