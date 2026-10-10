@@ -719,3 +719,8 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 /* Distinguish Journey's collection-library identity from the workbench. */
 .breadcrumbs .journey-home{color:#8b713e}
 .breadcrumbs .journey-home:hover{color:#70582d;background:#f5edda}
+
+/* Import confirmation: separation from instructions and reset-button palette. */
+#import-preview:not(:empty){margin-top:24px}
+#apply-import.import-confirm-progress{background:#FAF0CA;border-color:color-mix(in srgb,#FAF0CA 80%,#69572B);color:#69572B;box-shadow:0 2px 5px #ab985412}
+#apply-import.import-confirm-progress:hover{background:#F5EBC6;border-color:#d5c597;filter:none}
