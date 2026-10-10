@@ -109,3 +109,5 @@ body.page-r005 .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing
 /* Legacy active-ninjutsu links land inside the burst chapter below the masthead. */
 .page-r005 .burst-subtopic{scroll-margin-top:calc(var(--reading-masthead-height,165px) + 12px)}
 @media(max-width:810px){.page-r005 .burst-subtopic{scroll-margin-top:calc(var(--reading-masthead-height,165px) + var(--reading-sidebar-height,52px) + 12px)}}
+
+.page-r005 .troubleshoot dt:first-child{border-top:0;padding-top:0;margin-top:0}
