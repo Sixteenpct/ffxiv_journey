@@ -147,3 +147,13 @@ LiouLiou 新裁決：**職業圖鑑是文字教材，不是工坊密集表格，
 - **真正成因**：職能總覽不用垂直捲動，因此無右側經典 scrollbar；忍者長篇教材會出現約 15～17px 的右捲軸，導致相同 `max-width:1120px` 的居中版面左移約半個捲軸寬度。不能再擅自調整 banner padding 或 container max-width 去對齊這個差異。
 - **一次性最小修正**：在兩頁共用 `pve/reader.css` 的 `html` 加上 `scrollbar-gutter:stable`，即使沒有垂直捲動也保留捲軸空間；兩頁 center 的有效 viewport 寬度因此相同。使用本地 Chromium（經典捲軸環境）對照：未啟用時，寬 1920px 的無捲軸頁 `x=400`、有捲軸頁 `x=400`（Linux 預設 overlay scrollbar 不反映 Windows 狀況）；啟用 stable 後兩頁均 `x=392.5`、`document.documentElement.clientWidth=1905`，驗證 reserve gutter 跨頁相同。上傳 Windows 截圖本身提供實際 8px 差異證據。注意不同 OS 的捲軸可能為 overlay；不要強迫追加 margin、padding 或固定 scrollbar 寬度。
 - 只修改共用 CSS、兩頁 CSS 版本號 `r14` 與本紀錄；**不改** 124px/手機既有橫幅規則、1120px 容器寬度、側邊欄 fixed 位置計算、21 職 SVG、其他卡片、麵包屑文字、footer 或 favicon。若未來改成不同的捲軸模型，優先比對實際 viewport 的 `clientWidth` 再更動。
+
+## 2026-10-10｜PvE 課程書庫首堂 R005（c01）
+- 本 checkpoint 新增 `pve/courses/index.html` 與 `pve/courses/r005/index.html`，開通 Journey 首頁「PvE 課程書庫」和忍者 Lv.50 的 R005 卡片；R022 與其餘課堂維持原狀，不建立假頁。
+- 課程閱讀直接沿用 `reader.css?v=20261010-r14` 的 `page-ninja` 閱讀殼層（1120px、固定目錄、手機橫向導覽、淡黃章節、淡綠相關閱讀、stable scrollbar gutter），附加樣式只放 `pve/courses/courses.css` 並作用於課程 class。既有 reader.css、21 SVG、職業總覽與工坊不變；沿用現有 footer、favicon 檢查。
+- 來源已讀：Notion R005 `3ee5bb24-31bc-810f-b6c3-e21a74d79ccc`（last edited 2026-10-03T08:50:29.283Z）；PvE `learning_progress/忍者/Lv50.md`；`content_mastery/dungeons/2x/Lv050_2.5_01_幻龍殘骸密約之塔.md`；PvE 學習污染規範與 TW Reference 名稱政策。來源沒有返回截斷／unknown-block 警告。Notion 為回溯閱讀重建稿，不是原始授課逐字稿；以 Git 核對教學，不公開個人進度或實戰證據。
+- Notion 教學段落 01、03～08、10 全數保留其操作關係、原因、條件與同步提醒，重排為公共講義；02 的私人學習起點改為通用概念（公共第02章）；09 的個人突破與評分不公開；10 合併複習速查為公共第09章。日期、熟練狀態、Sheet 驗證收據與私人紀錄連結均未輸出。
+- **內容完整度邊界**：R005 已搬入完整現存職業教學；原 Notion 與 PvE canonical 都缺完整路線／一二王攻略，故只公開已存在的尾王同心圓／外場雙龍提醒，頁內明標範圍，不宣稱完整三王攻略。Lore 原文沒有正文，此批不新增未經核對的故事或場景圖。
+- 下一個獨立 checkpoint：完整回搬 R022，沿用此課程殼層，核對實際同步 Lv.56，開通 Ninja Lv.60 相關課堂。
+- 提交前驗證：全站 favicon 6 頁、footer 6 頁、21 職 SVG 檢查通過；首頁／Ninja／課程入口／R005 的本地 href、src、錨點、重複 ID 與公共教材排除私人日期／評分／Sheet／實戰證據檢查通過；`git diff --check` 通過。已核准 reader.css 未修改。
+- 視覺驗證限制：本機 Playwright 缺少 Chromium，瀏覽器下載受環境限制回傳無效壓縮檔，停止下載；未取得手機實際渲染與章節遮擋量測結果，不能將靜態檢查當成視覺驗收。部署後讀回仍須確認本批 HTML／CSS／圖示，視覺另待本人驗收。

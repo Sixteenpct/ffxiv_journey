@@ -15,3 +15,8 @@
 - **所有 FF14 Journey 網站公開 HTML 頁面**的 footer 必須忠於 Journey 入口網站和素材製作工坊的正式三行小字樣式：`footer-credit`／`footer-brand`／`footer-rights`，順序不變；信用與商標聲明不能省略。底部置中、低彩度、間距精簡，不得因頁面正文、表格、卡片字級調整而被放大。
 - 新館／新職業／新課程頁一律採 `<footer class="site-footer">...`，並引用 `assets/site-footer.css`（依頁深度使用正確相對路徑）；此檔以入口／工坊共同規格 11.48px（手機 10px）、第三行 10px 為 canonical。入口首頁和既有工坊已有同等樣式，保持原有 CSS，不因共享樣式而冒險重構既有功能。
 - 每次增修 HTML 或 footer 必須執行 `node scripts/check-site-footers.mjs` 和現行 favicon 檢查，確認三行內容、標籤、後續頁面對共用樣式的有效引用。再讀回 Git 與 Pages 驗證，不可只說「已規定」卻沒實作。
+
+## PvE 公共課程閱讀層
+- 已開放 R005：`pve/courses/r005/`，入口 `pve/courses/`。Notion 保留歷史來源，Journey GitHub Pages 為本網站教材的最終閱讀目的地；此工程不將網頁資料寫回 Notion。PvE Git 仍是領域教學 canonical，私人進度／熟練度不公開。
+- 新課沿用已核准 r14 閱讀版型與 favicon/footer 硬規則；課程專屬樣式作用域只在 `pve/courses/courses.css`，不藉搬遷重構已核准職業頁。
+- 「完整搬遷」是保存現存教學的完整解釋與條件，來源缺少的副本／Lore 內容須明標，不虛構補齊；回溯重建稿不可稱原始逐字講義。詳細來源核對與下一步見 DEVELOPMENT.md 的 c01 紀錄。
