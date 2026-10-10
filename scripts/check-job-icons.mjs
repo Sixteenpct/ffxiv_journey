@@ -40,8 +40,8 @@ const expects = ["tank","melee","healer","ranged","caster"];
 if (groups.length !== 5 || groups.map(m => m[1]).join(",") !== expects.join(",")) problems.push("Wrong group count/order");
 const entries = [];
 for (const group of groups) {
-  const rows = [...group[2].matchAll(/<(span|a) class="job(?: open)?"[^>]*><span class="job-name"><img class="job-icon" src="([^"]+)" alt="" aria-hidden="true" width="27" height="27" decoding="async"><span class="job-label">([^<]+)<\/span><\/span><\/\1>/g)];
-  for (const row of rows) entries.push({role:group[1],src:row[2],name:row[3],tag:row[1]});
+  const rows = [...group[2].matchAll(/<a class="job open" href="([^"]+)" target="_blank" rel="noopener noreferrer" aria-label="([^"]+)"><span class="job-name"><img class="job-icon" src="([^"]+)" alt="" aria-hidden="true" width="27" height="27" decoding="async"><span class="job-label">([^<]+)<\/span><\/span><\/a>/g)];
+  for (const row of rows) entries.push({role:group[1],href:row[1],aria:row[2],src:row[3],name:row[4]});
 }
 if (entries.length !== 21) problems.push("Expected 21 job entries, found "+entries.length);
 if (!html.includes("<h1>職業養成學院</h1>")) problems.push("Academy H1 is missing");
@@ -71,10 +71,11 @@ for (const j of jobs) {
   if (entry.role !== j.role || entry.src !== expectedSrc) problems.push(j.code+": role/icon route mismatch");
   if (used.has(entry.src)) problems.push(j.code+": duplicate icon source");
   used.add(entry.src);
-  if ((j.code === "NIN" && entry.tag !== "a") ||
-      (j.code !== "NIN" && entry.tag !== "span")) {
-    problems.push(j.code+": job availability altered");
-  }
+  if (entry.href !== "lectures/?job="+encodeURIComponent(j.name) ||
+      !entry.aria.includes("依此職業篩選"))
+    problems.push(j.code+": direct lecture-index route missing or wrong");
+  if (!lectureHTML.includes('<option value="'+j.name+'">'+j.name+'</option>'))
+    problems.push(j.code+": lecture filter is missing this job");
   const asset = path.join(root,"assets","job-"+j.slug+".svg");
   try {
     await access(asset);
@@ -104,9 +105,15 @@ if (used.size !== 21) problems.push("SVG filenames aren't all distinct");
 if (/<small>\d+ 職<\/small>/.test(html)) problems.push("Role counts must remain hidden");
 if (/<small>(?:籌備中|閱讀 →)<\/small>/.test(html)) problems.push("Job status labels must remain hidden");
 if (!html.includes("<h2>➕ 治療</h2>")) problems.push("Healer must use medical-cross emoji");
-if (!html.includes('aria-label="學者尚未開放"')) problems.push("Scholar must remain named and accessible");
-if (!html.includes('href="../jobs/ninja/" target="_blank" rel="noopener noreferrer"')) problems.push("Ninja must open new tab");
-if (/<a class="job open"[^>]*href="(?!\.\.\/jobs\/ninja\/)/.test(html)) problems.push("Unexpected newly enabled job link");
+if (html.includes('href="../jobs/ninja/"')) problems.push("Academy must not route through retired Ninja map");
+const libraryJS = await readFile(path.join(root,"pve/courses/library.js"),"utf8");
+if (!libraryJS.includes("new URLSearchParams(location.search).get('job')") ||
+    !libraryJS.includes("history.replaceState"))
+  problems.push("Job filter must honor query defaults and shareable URLs");
+const retiredNinja = await readFile(path.join(root,"pve/jobs/ninja/index.html"),"utf8");
+if (!retiredNinja.includes('http-equiv="refresh"') ||
+    !retiredNinja.includes("courses/lectures/?job="+encodeURIComponent("忍者")))
+  problems.push("Retired Ninja route must redirect into filtered lectures");
 if (problems.length) {
   console.error("FAIL job atlas icons:");
   for (const problem of problems) console.error(" - "+problem);
