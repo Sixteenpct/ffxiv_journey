@@ -27,7 +27,7 @@
 .page-course-library .course-table th,.page-course-library .course-table td{padding:6px 8px;border-right:1px solid #c5d6da;border-bottom:1px solid #c5d6da;vertical-align:middle}
 .page-course-library .course-table th:last-child,.page-course-library .course-table td:last-child{border-right:0}
 .page-course-library .course-table tbody tr:last-child>*{border-bottom:0}
-.page-course-library .course-table thead{background:#eaf3f5;color:#3e6570;font-size:13px}
+.page-course-library .course-table thead{background:#eaf3f5;color:#3e6570;font-size:14px}
 .page-course-library .course-table tbody th{font-weight:600;color:#486b73;white-space:nowrap}
 .page-course-library .course-table a{color:#28715a;text-decoration:underline;text-underline-offset:3px}
 .page-course-library .course-table tbody tr:hover{background:#f1f8f5}
