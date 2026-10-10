@@ -246,3 +246,6 @@ R022移除章名冒號副標，兩堂課正文与側欄皆只用「常見問題�
 
 ## 2026-10-10 c19｜R022章節主題小字
 六處重複NINJA LEVEL 56替換為對應的CORE RHYTHM、TARGET PRIORITY、KAZEMATOI MANAGEMENT、ENEMY PACKS、COMMON QUESTIONS、PRACTICE & REFERENCE；其餘既有主題標籤保留，頁首正式同步等級不變。Git讀回與同提交Pages部署後確認章節小字。
+
+## 2026-10-11 c20｜A款複習入口與閱讀密度
+套用薄荷綠真實連結樣式，保留目的地與原target，群怪複習及第04章拆兩顆；同類操作懶人包改條列：R022生存、結印用途、活殺按法及技能箱特性／限制；R005活殺用途與生存工具。兩堂FAQ縮小上方空白、CSS counter自動01起編號；操作表頭與資料皆15px、首欄22%。兩堂章節錨點直接定位以減少平滑動畫暈動，共用reader與TOP工具不改。驗證唯一ID／連結保留、章節順序、JS、favicon／Footer及whitespace，提交讀回與同提交部署後實頁驗收。
