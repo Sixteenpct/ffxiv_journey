@@ -181,7 +181,7 @@ body.page-atlas{display:flex;flex-direction:column;min-height:100svh}
 .page-atlas .group h2{font-size:17.5px}
 /* Melee uses real red, not rose or pink. Active jobs reflect the same role palette. */
 .group.role-tank{--active:#d8effa}
-.group.role-melee{--role:#ad2228;--tint:#f8e1df;--cell:#fff7f6;--active:#f4d3d0}
+.group.role-melee{--role:#b8554b;--tint:#fff1ed;--cell:#fffaf9;--active:#fae8e2}
 .group.role-healer{--active:#d8f3e7}
 .group.role-ranged{--active:#fff1cf}
 .group.role-caster{--active:#fae2d6}
