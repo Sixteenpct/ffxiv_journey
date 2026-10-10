@@ -39,8 +39,8 @@ const expects = ["tank","melee","healer","ranged","caster"];
 if (groups.length !== 5 || groups.map(m => m[1]).join(",") !== expects.join(",")) problems.push("Wrong group count/order");
 const entries = [];
 for (const group of groups) {
-  const rows = [...group[2].matchAll(/<(span|a) class="job(?: open)?"[^>]*><span class="job-name"><img class="job-icon" src="([^"]+)" alt="" aria-hidden="true" width="27" height="27" decoding="async"><span class="job-label">([^<]+)<\/span><\/span><small>([^<]+)<\/small><\/\1>/g)];
-  for (const row of rows) entries.push({role:group[1],src:row[2],name:row[3],status:row[4],tag:row[1]});
+  const rows = [...group[2].matchAll(/<(span|a) class="job(?: open)?"[^>]*><span class="job-name"><img class="job-icon" src="([^"]+)" alt="" aria-hidden="true" width="27" height="27" decoding="async"><span class="job-label">([^<]+)<\/span><\/span><\/\1>/g)];
+  for (const row of rows) entries.push({role:group[1],src:row[2],name:row[3],tag:row[1]});
 }
 if (entries.length !== 21) problems.push("Expected 21 job entries, found "+entries.length);
 if ([...html.matchAll(/class="job-icon"/g)].length !== 21) problems.push("Wrong total icon count");
@@ -53,8 +53,8 @@ for (const j of jobs) {
   if (entry.role !== j.role || entry.src !== expectedSrc) problems.push(j.code+": role/icon route mismatch");
   if (used.has(entry.src)) problems.push(j.code+": duplicate icon source");
   used.add(entry.src);
-  if ((j.code === "NIN" && (entry.tag !== "a" || entry.status !== "閱讀 →")) ||
-      (j.code !== "NIN" && (entry.tag !== "span" || entry.status !== "籌備中"))) {
+  if ((j.code === "NIN" && entry.tag !== "a") ||
+      (j.code !== "NIN" && entry.tag !== "span")) {
     problems.push(j.code+": job availability altered");
   }
   const asset = path.join(root,"assets","job-"+j.slug+".svg");
@@ -66,9 +66,27 @@ for (const j of jobs) {
     if ((content.match(/<path\s/g)||[]).length !== 1 || !content.includes('fill-rule="evenodd"')) problems.push(j.code+": not one solid emblem");
     if (/<(?:rect|image|foreignObject|text|canvas)\b/i.test(content)) problems.push(j.code+": icon has non-transparent backing or foreign object");
     if (!content.includes("FINAL FANTASY XIV © SQUARE ENIX")) problems.push(j.code+": copyright credit missing");
+    // Source-specific geometry matters: Scholar uses 1000-unit path coords
+    // and needs its original 0.1 scale when displayed in a 100-unit viewBox.
+    // Check out-of-range opening coordinates for future imports as well.
+    const pathTag = content.match(/<path\b[^>]*\/>/s)?.[0] ?? "";
+    const opening = pathTag.match(/\bd="\s*[mM]\s*([-+]?\d+(?:\.\d+)?)[,\s]+([-+]?\d+(?:\.\d+)?)/);
+    const tr = pathTag.match(/\btransform="([^"]+)"/)?.[1] ?? "";
+    if (!opening) problems.push(j.code+": SVG initial path coordinates missing");
+    else if ((Math.abs(Number(opening[1])) > 125 || Math.abs(Number(opening[2])) > 125) &&
+              !/^scale\(0\.1\)$/.test(tr) && !/^matrix\(0\.099/.test(tr)) {
+      problems.push(j.code+": path starts outside viewBox without source scale transform");
+    }
+    if (j.code === "SCH" && tr !== "scale(0.1)") {
+      problems.push("SCH: required source scale(0.1) lost (invisible icon regression)");
+    }
   } catch(e) { problems.push(j.code+": missing/unreadable SVG "+String(e)); }
 }
 if (used.size !== 21) problems.push("SVG filenames aren't all distinct");
+if (/<small>\d+ 職<\/small>/.test(html)) problems.push("Role counts must remain hidden");
+if (/<small>(?:籌備中|閱讀 →)<\/small>/.test(html)) problems.push("Job status labels must remain hidden");
+if (!html.includes("<h2>➕ 治療</h2>")) problems.push("Healer must use medical-cross emoji");
+if (!html.includes('aria-label="學者尚未開放"')) problems.push("Scholar must remain named and accessible");
 if (!html.includes('href="ninja/" target="_blank" rel="noopener noreferrer"')) problems.push("Ninja must open new tab");
 if (/<a class="job open"[^>]*href="(?!ninja\/)/.test(html)) problems.push("Unexpected newly enabled job link");
 if (problems.length) {
@@ -76,5 +94,5 @@ if (problems.length) {
   for (const problem of problems) console.error(" - "+problem);
   process.exitCode = 1;
 } else {
-  console.log("PASS: 21 unique, transparent, role-colored job SVGs and correct unlock states.");
+  console.log("PASS: 21 visible-geometry job SVGs, correct unlock states, and clean atlas labels.");
 }

@@ -284,3 +284,36 @@ body.page-atlas>.wrap{width:100%;max-width:1330px}
  /* Full names and not-open status stay readable even on narrow phones. */
  .page-atlas .jobs{grid-template-columns:1fr}
 }
+
+/* 2026-10-10 r08: visually compact atlas, roomier only where it aids reading.
+   Keep natural page height; do not lock 100svh or stretch cards. */
+.page-atlas > .wrap,
+.page-atlas .top > .wrap,
+.page-atlas .container {
+  width: 100%;
+  max-width: 1120px;
+}
+.page-atlas .group>header{justify-content:flex-start}
+.page-atlas .job{justify-content:flex-start}
+.page-atlas .job:not(.open){cursor:default}
+/* Linked jobs: legible focus and a modest, intentional mouse hover cue,
+   not garish outlines or saturated solid borders. */
+.page-atlas .job.open{
+  cursor:pointer;
+  transition:background .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+.page-atlas .job.open:hover {
+  background:linear-gradient(112deg,color-mix(in srgb,var(--role) 20%,#fff),color-mix(in srgb,var(--role) 11%,#fff));
+  border-color:color-mix(in srgb,var(--role) 43%,#fff);
+  box-shadow:0 4px 12px color-mix(in srgb,var(--role) 13%,transparent);
+  transform:translateY(-1px);
+}
+.page-atlas .job.open:hover .job-icon{opacity:1}
+.page-atlas .job.open:focus-visible{
+  outline:2px solid var(--role);
+  outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce){
+  .page-atlas .job.open{transition:none}
+  .page-atlas .job.open:hover{transform:none}
+}
