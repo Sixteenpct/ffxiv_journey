@@ -143,3 +143,11 @@ html:has(body.page-r022){scroll-behavior:auto}
 .page-r022 .rhythm-panel .rhythm-note{font-size:15px;line-height:1.8;color:#405e60}
 .page-r022 .mudra-recipe h3 small{font-size:15px;line-height:1.8}
 .page-r022 .course-entry p{font-size:15px;line-height:1.8}
+
+.page-r022 .chapter-body .reading-links{margin:0;padding-left:20px}
+.page-r022 .chapter-body .reading-links li{margin:0 0 14px;padding-left:3px}
+.page-r022 .reading-links li:last-child{margin-bottom:0}
+.page-r022 .reading-links li::marker{color:#a89568}
+.page-r022 .reading-links a{font-size:16px;font-weight:600;color:#386b7c;text-decoration:underline;text-decoration-color:#afc8ce;text-underline-offset:4px}
+.page-r022 .reading-links a:hover{color:#205b75;text-decoration-color:currentColor}
+.page-r022 .reading-links p{margin:4px 0 0;color:#405e60}
