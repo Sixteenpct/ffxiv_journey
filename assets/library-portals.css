@@ -1,0 +1,10 @@
+/* Shared introduction and reciprocal learning portals. */
+.page-course-library .library-intro{margin:0 0 18px;padding:16px 18px;background:rgba(255,255,255,.86);border:1px solid #d3e2df;border-radius:12px;box-shadow:0 2px 8px rgba(52,89,90,.04)}
+.page-course-library .library-intro .library-summary{margin:0 0 10px;font-size:15px;line-height:1.7;color:#42625f}
+.page-course-library .library-cross-portal{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:#edf8ff;border:1px solid #a9d4ed;border-left:4px solid #71b7de;border-radius:8px}
+.page-course-library .library-cross-portal strong{font-size:16px;line-height:1.5;color:#286584}
+.page-course-library .library-cross-portal a{display:inline-flex;align-items:center;justify-content:center;padding:9px 15px;border:1px solid #92c7e5;border-radius:7px;background:#d8efff;color:#215e80;font-size:15px;font-weight:700;line-height:1.5;text-decoration:none;white-space:nowrap;box-shadow:0 2px 3px rgba(43,105,143,.08)}
+.page-course-library .library-cross-portal a:hover{background:#c5e6fb;border-color:#64acd6}
+.page-course-library .library-cross-portal a:focus-visible{outline:3px solid #3a8dbb;outline-offset:3px}
+.page-academy .academy-index-toolbar{justify-content:flex-end;margin-bottom:12px}
+@media(max-width:600px){.page-course-library .library-intro{padding:13px}.page-course-library .library-cross-portal{flex-direction:column;align-items:stretch;gap:9px}.page-course-library .library-cross-portal a{white-space:normal}}
