@@ -65,3 +65,12 @@ body.page-course .chapter-body h3::before{
  flex:none;
  color:currentColor;
 }
+
+/* Job and current-level breadcrumbs share soft, readable role colors. */
+.page-course .breadcrumbs .role-tank{--crumb-color:#4f7298;--crumb-hover:#315578;--crumb-tint:#e4edf6}
+.page-course .breadcrumbs .role-healer{--crumb-color:#427963;--crumb-hover:#295941;--crumb-tint:#e3f1e9}
+.page-course .breadcrumbs .role-dps{--crumb-color:#9b6066;--crumb-hover:#79434a;--crumb-tint:#f5e7e9}
+.page-course .breadcrumbs .breadcrumb-job,
+.page-course .breadcrumbs .breadcrumb-level{color:var(--crumb-color)}
+.page-course .breadcrumbs .breadcrumb-job:hover,
+.page-course .breadcrumbs .breadcrumb-job:focus-visible{color:var(--crumb-hover);background:var(--crumb-tint);text-decoration:underline;text-underline-offset:3px}

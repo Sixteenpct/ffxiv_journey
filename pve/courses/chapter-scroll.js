@@ -2,8 +2,8 @@
   const navigation = document.querySelector('.sidebar');
   if (!navigation) return;
   let frame;
-  navigation.addEventListener('click', event => {
-    const link = event.target.closest('a[href^="#"]');
+  document.addEventListener('click', event => {
+    const link = event.target.closest('.sidebar a[href^="#"], .review-portal[href^="#"]');
     if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     const target = document.getElementById(link.getAttribute('href').slice(1));
     if (!target) return;
