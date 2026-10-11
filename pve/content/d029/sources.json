@@ -46,7 +46,7 @@
       "use": "official minimal scene context and imagery"
     }
   ],
-  "editorial": "Public lesson rewrites mechanism-focused learning points only, never personal outcomes/dates/proficiency. Unverified Traditional Chinese boss/action names use descriptive visual labels. Role responses and recovery prompts are editorial teaching applications.",
+  "editorial": "Public lesson rewrites mechanism-focused learning points only, never personal outcomes/dates/proficiency. Unverified Traditional Chinese boss/action names use descriptive visual labels. Role responses and recovery prompts are editorial teaching applications. External guide/promo URLs are internal provenance only; public reading contains only official soundtrack. Recommended Sage lesson portal stays inside the supporting job note.",
   "boss_photos": [
     {
       "file": "media/einhander.webp",
@@ -90,7 +90,9 @@
     "album": "Before the Fall: FINAL FANTASY XIV Original Soundtrack",
     "length_seconds": 298,
     "verification": "YouTube oEmbed author and watch-page ytInitialPlayerResponse; published album cross-check https://music.apple.com/us/song/1030215668",
-    "url_policy": "canonical single video; removed generated radio parameters"
+    "url_policy": "canonical single video; removed generated radio parameters",
+    "display_title": "Silver Tears",
+    "tc_orchestrion_name": "Not verified: terminology canonical has no item/music entry; web search found no reliable Traditional Chinese client authority. Use verified English album title without translation."
   },
   "policy": {
     "repository": "Sixteenpct/ffxiv_pve_learning",
