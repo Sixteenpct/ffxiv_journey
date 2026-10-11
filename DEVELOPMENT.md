@@ -295,3 +295,6 @@ R005完整七種忍術的印數／末印說明由small改入同級h3「名稱：
 
 ## 2026-10-11 c35｜職業分組篩選／導覽字級與 PvE 傳送門
 本批先備份 `backup/pve-before-role-optgroup-20261011` → `37ca5da6043d2e045d827fc43919352df0b52e45`。依當前學院五大職能／21 職排序將 `pve/courses/lectures/index.html` 的單層 option 包入五個原生 optgroup，不改 option value 與資料表列，也不改 `library.js` 的 URL 預選及變更流程。講義索引 `library-summary` 定點調成 14px／1.6，並在第二行提供 PvE 內容專修連結。更新職能分組驗證，CSS 只限定講義索引，不牽動學院大廳及內容專修視覺。
+
+## 2026-10-11 c37｜兩表雙色視覺第一版（待本人驗收）
+施工前完整備份 `backup/pve-before-table-visual-polish-20261011` → `b7c052869832bcfd3ab917345061a39ec8c43f33`。共用 `pve/courses/courses.css` 僅針對 `.page-lecture-index`、`.page-content-library` 增加薄荷綠／晴空藍館別主題的表格背景、稍明顯格線、淡交錯底、低飽和讀取按鈕與空狀態底色。原始表格密度、欄寬、課號、`optgroup`、`library.js` 與全部公開講義不變，兩頁 CSS 版本查詢更新為 c37；本版請使用者實際瀏覽器視覺確認後再做下一步。

@@ -93,3 +93,53 @@
 .page-lecture-index #job-course-filter optgroup[label="🏹 遠程物理"]{background-color:#fff2cf;color:#94712e}
 .page-lecture-index #job-course-filter optgroup[label="🪄 遠程魔法"]{background-color:#fff0e4;color:#a76543}
 .page-lecture-index #job-course-filter optgroup option{background-color:#fff;color:#3e6570}
+
+/* c37: catalogue-only visual polish; preserve native tables, 14px type, 6px row padding,
+   grouped dropdowns, filters, routes, and the approved academy card layout. */
+.page-lecture-index .library-track{
+  border-color:#b5d2c2;
+  box-shadow:0 4px 16px #366a5010;
+}
+.page-content-library .library-track{
+  border-color:#b9d2df;
+  box-shadow:0 4px 16px #39799a10;
+}
+.page-lecture-index .library-track>.track-header{
+  background:linear-gradient(112deg,#dff2e6 0%,#f6fcf8 88%,#fff 100%);
+  border-bottom:1px solid #b7d6c2;
+}
+.page-content-library .library-track>.track-header{
+  background:linear-gradient(112deg,#dff0fa 0%,#f7fbfe 88%,#fff 100%);
+  border-bottom:1px solid #bbd4e4;
+}
+.page-lecture-index .library-track h2{color:#326a51}
+.page-content-library .library-track h2{color:#326c8d}
+.page-lecture-index .course-table-scroll{border-color:#b1cebd}
+.page-content-library .course-table-scroll{border-color:#b6cfdf}
+.page-lecture-index .course-table thead{background:#e1f1e8;color:#376b55}
+.page-content-library .course-table thead{background:#e3f1fa;color:#376c8c}
+.page-lecture-index .course-table th,.page-lecture-index .course-table td{border-color:#b8cfc0}
+.page-content-library .course-table th,.page-content-library .course-table td{border-color:#b9d0dd}
+.page-lecture-index .course-table tbody tr:nth-child(even):not([hidden]){background:#f7fbf8}
+.page-content-library .course-table tbody tr:nth-child(even):not([hidden]){background:#f6fafd}
+.page-lecture-index .course-table tbody tr:hover{background:#edf7f0}
+.page-content-library .course-table tbody tr:hover{background:#edf6fc}
+.page-lecture-index .course-table tbody th{color:#2f7155}
+.page-content-library .course-table tbody th{color:#336e8b}
+.page-lecture-index .course-table tbody a[href]{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:3px 8px;border:1px solid #afd2e6;border-radius:6px;
+  background:#eef8fe;color:#266e93;text-decoration:none;font-weight:700;
+}
+.page-lecture-index .course-table tbody a[href]:hover{
+  background:#dff1fc;border-color:#89bfdc;
+}
+.page-lecture-index .course-table tbody a[href]:focus-visible{
+  outline:2px solid #438baf;outline-offset:2px;
+}
+.page-content-library .course-table .table-empty{
+  padding:17px 10px;background:#f4f9fd;color:#638092;text-align:center;
+}
+.page-lecture-index .course-table .table-empty{
+  padding:17px 10px;background:#f5fbf7;color:#5b7c69;text-align:center;
+}
