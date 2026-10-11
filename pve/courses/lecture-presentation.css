@@ -50,3 +50,16 @@ body.page-r022 .reading-masthead .top{
 }
 body.page-course .reading-links{list-style:decimal}
 @media(max-width:620px){body.page-course .chapter-top>h2{font-size:19px}}
+
+/* Compact chapter bands with a little more breathing room on every viewport. */
+body.page-course .chapter-top{padding-top:10px;padding-bottom:11px}
+body.page-course .chapter-body h3{
+ display:flex;
+ align-items:baseline;
+ gap:8px;
+}
+body.page-course .chapter-body h3::before{
+ content:"•";
+ flex:none;
+ color:currentColor;
+}
