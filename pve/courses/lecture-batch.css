@@ -165,3 +165,6 @@ html:has(body.page-batch-lecture){scroll-behavior:auto}
 
 /* The White Mage choice panel needs room for three named healing tools. */
 @media(min-width:1101px){body.page-r001 .rhythm-panels{grid-template-columns:1fr 1fr 1.25fr}}
+
+/* Equal skill columns keep the arrow centered between icons, independent of label length. */
+.page-batch-lecture .rhythm-panel .action-flow:has(> .action-token:nth-child(3):last-child){display:grid;grid-template-columns:minmax(0,1fr) 26px minmax(0,1fr);gap:7px;align-items:start}
