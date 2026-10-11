@@ -8,3 +8,10 @@
 .page-course-library .library-cross-portal a:focus-visible{outline:3px solid #3a8dbb;outline-offset:3px}
 .page-academy .academy-index-toolbar{justify-content:flex-end;margin-bottom:12px}
 @media(max-width:600px){.page-course-library .library-intro{padding:13px}.page-course-library .library-cross-portal{flex-direction:column;align-items:stretch;gap:9px}.page-course-library .library-cross-portal a{white-space:normal}}
+
+.page-course-library .library-portal-pair{display:grid;gap:10px}
+.page-course-library .portal-return{background:#eef9f1;border-color:#b6d9c2;border-left-color:#85b99a}
+.page-course-library .portal-return strong{color:#376f57}
+.page-course-library .portal-return a{background:#dff2e5;border-color:#a4cfb5;color:#2e684b;box-shadow:0 2px 3px rgba(53,112,76,.07)}
+.page-course-library .portal-return a:hover{background:#d0ebd9;border-color:#7eb293}
+.page-course-library .portal-return a:focus-visible{outline-color:#438b65}
