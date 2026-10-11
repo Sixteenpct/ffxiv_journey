@@ -1,0 +1,192 @@
+{
+  "official_guide": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/",
+  "retrieved": "2026-10-11",
+  "sync_level": 50,
+  "rights": "FINAL FANTASY XIV © SQUARE ENIX",
+  "assets": [
+    {
+      "name": "毀滅",
+      "level": 1,
+      "file": "skill-01.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/01.png",
+      "sha256": "93da5bca47da0d852273ccc1047a0e2042c39302141a534f75d7c357c81d86fa"
+    },
+    {
+      "name": "毒化",
+      "level": 2,
+      "file": "skill-02.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/02.png",
+      "sha256": "1a4cbae97a5cf6ae0bcdbb1f403f309dc51ecae4e25b17687a3f0470ee6359a2"
+    },
+    {
+      "name": "醫術",
+      "level": 4,
+      "file": "skill-03.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/03.png",
+      "sha256": "544be71a883638968ba0fdb50d1b15c1ad63c68b9e927011f478dd74b0b876ad"
+    },
+    {
+      "name": "朝日召喚",
+      "level": 4,
+      "file": "skill-04.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/04.png",
+      "sha256": "66563161aacd31082f651435218a389b27785351999c7e11cb37000d686184cc"
+    },
+    {
+      "name": "復生",
+      "level": 12,
+      "file": "skill-05.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/05.png",
+      "sha256": "00e5d5be6ff6726900c0ecc5c125b125b9da0e5df9746ab58666b3ffd5a6f8f0"
+    },
+    {
+      "name": "仙光的低語",
+      "level": 20,
+      "file": "skill-06.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/06.png",
+      "sha256": "950b7f7b2e3f7326a3004f4d58f27bf957aa8dff30e06ec63e14866db6ae553c"
+    },
+    {
+      "name": "中度毒化",
+      "level": 26,
+      "file": "skill-07.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/07.png",
+      "sha256": "4ad55b40fbdbafd5388befd14fc055b47815dddac63332423122c17ca16679d6"
+    },
+    {
+      "name": "鼓舞激勵之策",
+      "level": 30,
+      "file": "skill-08.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/08.png",
+      "sha256": "b3bf1b090a0d0f053875b028cc6fefb35b6f249c13f6be91c7873a232990c8bc"
+    },
+    {
+      "name": "士氣高揚之策",
+      "level": 35,
+      "file": "skill-09.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/09.png",
+      "sha256": "9271bd533415c36f785784d24cec6a251d866654db28fa0d68714181dbb33904"
+    },
+    {
+      "name": "中毀滅",
+      "level": 38,
+      "file": "skill-10.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/10.png",
+      "sha256": "46f02b18d843074c4b9fb2aa67d80449e79175bf987bc838eb7b13af429ef60d"
+    },
+    {
+      "name": "異想的幻光",
+      "level": 40,
+      "file": "skill-11.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/11.png",
+      "sha256": "3071492929115c66915b1856f6fc7d884d72ff3ff22f915a58d4c58553de7ad0"
+    },
+    {
+      "name": "乙太超流",
+      "level": 45,
+      "file": "skill-12.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/12.png",
+      "sha256": "ffecf5578fe0754825a5a0f45fee06bf6e3e1dcd035d9147d65b09ae773e812f"
+    },
+    {
+      "name": "吸取能量",
+      "level": 45,
+      "file": "skill-13.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/13.png",
+      "sha256": "7eb2b398573298e030064521a62c9819593cf50f363170a9a89af7b08938198a"
+    },
+    {
+      "name": "生命活性法",
+      "level": 45,
+      "file": "skill-14.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/14.png",
+      "sha256": "37fdb1a191df7e36f2bf56c1b3a7ed5119a610892b9b503952ab0b7f3be4baf5"
+    },
+    {
+      "name": "破陣法",
+      "level": 46,
+      "file": "skill-15.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/15.png",
+      "sha256": "55c707e5bcd2e295f461c764cb67a45808ffb969b6bca7318237d7c497c0e293"
+    },
+    {
+      "name": "野戰治療陣",
+      "level": 50,
+      "file": "skill-16.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/16.png",
+      "sha256": "e369e2d5b65325171c6c984861434fe4acb1d5ddd152b913aa16f41f6be1db13"
+    },
+    {
+      "name": "仙光的擁抱",
+      "level": 1,
+      "file": "skill-42.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/42.png",
+      "sha256": "944c209cb453af9cd12e65822b4dc9e82baeef4dc8ec0611134805dbd970be7a"
+    },
+    {
+      "name": "沉靜",
+      "level": 8,
+      "file": "skill-57.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/57.png",
+      "sha256": "83b6145aed5ab2675317f1092568749285c81dd52df5ba4abf53b533c14b7b52"
+    },
+    {
+      "name": "復原",
+      "level": 10,
+      "file": "skill-58.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/58.png",
+      "sha256": "02000f33c5cdae4523e623db76f560085bf8a80104711a620c4926caeb6dab90"
+    },
+    {
+      "name": "醒夢",
+      "level": 14,
+      "file": "skill-59.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/59.png",
+      "sha256": "e2df3c9e64bf2117c1013a8b6de182203e57ead34c281f4efc8a2c5316d8a13a"
+    },
+    {
+      "name": "即刻詠唱",
+      "level": 18,
+      "file": "skill-60.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/60.png",
+      "sha256": "af45a0bc3171d6e14151b4204a03bde1dc6c23d75e97216b110368fc48d20759"
+    },
+    {
+      "name": "沉穩詠唱",
+      "level": 44,
+      "file": "skill-61.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/61.png",
+      "sha256": "a579126fe931f05fdf025d9ffaa39b6c5be0e091b3bf917b385ad766010fa327"
+    },
+    {
+      "name": "營救",
+      "level": 48,
+      "file": "skill-62.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/icon/62.png",
+      "sha256": "182169384f47b73a7264eeb407fc3045c01bed62b9ae973419ba14bd7514e60a"
+    }
+  ],
+  "images": [
+    {
+      "file": "job-banner.webp",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/scholar/images/guide_header.jpg",
+      "original_sha256": "ebd4e000e87d446a9aeef8d4c172e741896a5e1d2f01995f13413ea4a823342e",
+      "sha256": "328197aab938b7d2e9e1caf8fc2a1082b71cabd363689be36ce875fea06b7e55"
+    },
+    {
+      "file": "../../r005/media/promo-1.png",
+      "role": "practice_background",
+      "place": "幻龍殘骸密約之塔",
+      "provenance": "共用 R005 已固定選定的練習場地圖片；來源見 R005 圖片來源記錄。",
+      "sha256": "e8bc9bd18139f7fb75a9a7b4256171c969062674442ebea95c82b65155250aba",
+      "url": "https://lds-img.finalfantasyxiv.com/promo/h/B/lIKpc1ONM-lfkqwcH49Oy5cB0s.png",
+      "source": "https://na.finalfantasyxiv.com/pr/sp/special/2_5_Before_the_Fall/dungeons/",
+      "use": "固定裝飾場景；不代表現行機制或玩家實戰證據"
+    }
+  ],
+  "sync_notes": [
+    "Lv.78 前不包含地面陣／堅角清汁的持續恢復",
+    "Lv.94 前即刻詠唱冷卻 60 秒；不直接使用滿等 tooltip",
+    "技能敘述依 Lv.50 可用工具重編；公開來源記錄不存整段官方技能說明"
+  ]
+}

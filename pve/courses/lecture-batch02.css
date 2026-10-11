@@ -1,0 +1,11 @@
+/* Fixed job-guide banners and the shared Keeper of the Lake practice scene. */
+body.page-r003::before,
+body.page-r007::before {
+ background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84)),url('r005/media/promo-1.png') center/cover no-repeat;
+}
+body.page-r003 .reading-masthead .top {
+ background:linear-gradient(90deg,#26373ee8 0%,#26373e99 58%,#26373e55 100%),url('r003/media/job-banner.webp') center/cover no-repeat;
+}
+body.page-r007 .reading-masthead .top {
+ background:linear-gradient(90deg,#26373ee8 0%,#26373e99 58%,#26373e55 100%),url('r007/media/job-banner.webp') center/cover no-repeat;
+}

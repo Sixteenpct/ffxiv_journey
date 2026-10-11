@@ -1,0 +1,185 @@
+{
+  "official_guide": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/",
+  "retrieved": "2026-10-11",
+  "sync_level": 50,
+  "rights": "FINAL FANTASY XIV © SQUARE ENIX",
+  "assets": [
+    {
+      "name": "注藥",
+      "level": 1,
+      "file": "skill-01.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/01.png",
+      "sha256": "8dbdafa721d6b59466ab67bfd2816bee20d554891cdcf3ada4dbe95beb87a8e7"
+    },
+    {
+      "name": "診斷",
+      "level": 2,
+      "file": "skill-02.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/02.png",
+      "sha256": "53386889589c2dc7940c091d67724b865f9945d0d631c3734146f70de8525580"
+    },
+    {
+      "name": "心關",
+      "level": 4,
+      "file": "skill-03.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/03.png",
+      "sha256": "7e88c9f82f6f0508d2e3e63d1ed3f89a5b6514ed9130af07d62fce25b5b79ca3"
+    },
+    {
+      "name": "預後",
+      "level": 10,
+      "file": "skill-04.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/04.png",
+      "sha256": "3566529e245c1b8283426aa482bbc40180344b29fe694d5dcb5f3278ed21de2c"
+    },
+    {
+      "name": "復甦",
+      "level": 12,
+      "file": "skill-05.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/05.png",
+      "sha256": "17f982b8e4c805b3ca5a68d42b9227981d29f7f5e112d1342d12c056a029dba6"
+    },
+    {
+      "name": "自生",
+      "level": 20,
+      "file": "skill-06.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/06.png",
+      "sha256": "ee17b1887f04e7d9e42d7d60db2bad1d4abff367c2cdac6c2b1c968d11bf9ca8"
+    },
+    {
+      "name": "發炎",
+      "level": 26,
+      "file": "skill-07.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/07.png",
+      "sha256": "9de766c1fedc6f6552ddda51c2c5b8aede74274932f4f7e94ffbe6ffea520c52"
+    },
+    {
+      "name": "均衡",
+      "level": 30,
+      "file": "skill-08.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/08.png",
+      "sha256": "69652eb118d08fb25ffc3ba273f7c192a30057546cb2ee8dbf60907a0aa99889"
+    },
+    {
+      "name": "均衡診斷",
+      "level": 30,
+      "file": "skill-09.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/09.png",
+      "sha256": "17ca8af9a96685080cabbe7fe315f03a3b3ae98e4aee3ca904e1e56d83d2570d"
+    },
+    {
+      "name": "均衡預後",
+      "level": 30,
+      "file": "skill-10.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/10.png",
+      "sha256": "e45df64a426a98b019aae3fbfaf67c6df5dfc952d9a16571ad50bf5396e13589"
+    },
+    {
+      "name": "均衡注藥",
+      "level": 30,
+      "file": "skill-11.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/11.png",
+      "sha256": "d4224fc7113f5a24a6dad673e1d5472b96b5a6fe5b910781f8ae7afcc8f29fc1"
+    },
+    {
+      "name": "拯救",
+      "level": 35,
+      "file": "skill-12.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/12.png",
+      "sha256": "6211f5b2c7ced1790b17d0a469399c161142ba6e9104e8eeb3108b21bc05fc28"
+    },
+    {
+      "name": "神翼",
+      "level": 40,
+      "file": "skill-13.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/13.png",
+      "sha256": "90e3def8b4e1f96f9b2b253b13006a0b1df6e0346b8baf93241e41be480080f4"
+    },
+    {
+      "name": "靈橡清汁",
+      "level": 45,
+      "file": "skill-14.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/14.png",
+      "sha256": "973d13834835da9bf6155732586b30a75091e73f8fab2e4cc3a1129f84de9949"
+    },
+    {
+      "name": "失衡",
+      "level": 46,
+      "file": "skill-15.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/15.png",
+      "sha256": "e947e6b2b60ae010831c0b6fc4060955518e414d320a73f64eaf1b02d88b9058"
+    },
+    {
+      "name": "堅角清汁",
+      "level": 50,
+      "file": "skill-16.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/16.png",
+      "sha256": "ef02ca2bed4cd671c8a947d6e081912ebc5025f55c73f629471140eb63a470fa"
+    },
+    {
+      "name": "沉靜",
+      "level": 8,
+      "file": "skill-41.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/41.png",
+      "sha256": "83b6145aed5ab2675317f1092568749285c81dd52df5ba4abf53b533c14b7b52"
+    },
+    {
+      "name": "復原",
+      "level": 10,
+      "file": "skill-42.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/42.png",
+      "sha256": "02000f33c5cdae4523e623db76f560085bf8a80104711a620c4926caeb6dab90"
+    },
+    {
+      "name": "醒夢",
+      "level": 14,
+      "file": "skill-43.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/43.png",
+      "sha256": "e2df3c9e64bf2117c1013a8b6de182203e57ead34c281f4efc8a2c5316d8a13a"
+    },
+    {
+      "name": "即刻詠唱",
+      "level": 18,
+      "file": "skill-44.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/44.png",
+      "sha256": "af45a0bc3171d6e14151b4204a03bde1dc6c23d75e97216b110368fc48d20759"
+    },
+    {
+      "name": "沉穩詠唱",
+      "level": 44,
+      "file": "skill-45.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/45.png",
+      "sha256": "a579126fe931f05fdf025d9ffaa39b6c5be0e091b3bf917b385ad766010fa327"
+    },
+    {
+      "name": "營救",
+      "level": 48,
+      "file": "skill-46.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/icon/46.png",
+      "sha256": "182169384f47b73a7264eeb407fc3045c01bed62b9ae973419ba14bd7514e60a"
+    }
+  ],
+  "images": [
+    {
+      "file": "job-banner.webp",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/sage/images/guide_header.jpg",
+      "original_sha256": "f29a40292198a9e0a6bfd55273fa695221b454fd7e753d06d45ed0eac54f2211",
+      "sha256": "3d56d8dbbfd664281bda983269e844d3c298392447e2528fb0e09b4aa0d1a337"
+    },
+    {
+      "file": "../../r005/media/promo-1.png",
+      "role": "practice_background",
+      "place": "幻龍殘骸密約之塔",
+      "provenance": "共用 R005 已固定選定的練習場地圖片；來源見 R005 圖片來源記錄。",
+      "sha256": "e8bc9bd18139f7fb75a9a7b4256171c969062674442ebea95c82b65155250aba",
+      "url": "https://lds-img.finalfantasyxiv.com/promo/h/B/lIKpc1ONM-lfkqwcH49Oy5cB0s.png",
+      "source": "https://na.finalfantasyxiv.com/pr/sp/special/2_5_Before_the_Fall/dungeons/",
+      "use": "固定裝飾場景；不代表現行機制或玩家實戰證據"
+    }
+  ],
+  "sync_notes": [
+    "Lv.78 前不包含地面陣／堅角清汁的持續恢復",
+    "Lv.94 前即刻詠唱冷卻 60 秒；不直接使用滿等 tooltip",
+    "技能敘述依 Lv.50 可用工具重編；公開來源記錄不存整段官方技能說明"
+  ]
+}
