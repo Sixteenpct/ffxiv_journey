@@ -171,5 +171,18 @@
       "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/42.png",
       "sha256": "182169384f47b73a7264eeb407fc3045c01bed62b9ae973419ba14bd7514e60a"
     }
+  ],
+  "decorative_images": [
+    {
+      "file": "job-banner.webp",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/guide_header.jpg",
+      "source": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/",
+      "rights": "© SQUARE ENIX",
+      "source_sha256": "d16d2714f92478d947b9117bf48866e892d26efed18bfa62cef074451049caad",
+      "sha256": "a5c575efd8ef0e787de6ffef693ec9be66c2da13bc8b33e3de94a4c68838c91a",
+      "width": 1920,
+      "height": 446,
+      "use": "Fixed job illustration for title banner and washed page background; decorative only."
+    }
   ]
 }

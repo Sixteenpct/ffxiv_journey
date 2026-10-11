@@ -187,5 +187,18 @@
       "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/40.png",
       "sha256": "c0a3fa6f4b683e06d5993d996531931fc694bdb9fd09c1764d5046dbecc74532"
     }
+  ],
+  "decorative_images": [
+    {
+      "file": "job-banner.webp",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/guide_header.jpg",
+      "source": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/",
+      "rights": "© SQUARE ENIX",
+      "source_sha256": "79ab4e17718df5bb9a45e68e7679510eeffcc00317de291d0e8905873c296985",
+      "sha256": "f85373c047e0400f60f89b0ebeaa47646d47b728e974458571be1ce5dcc5f2aa",
+      "width": 1920,
+      "height": 446,
+      "use": "Fixed job illustration for title banner and washed page background; decorative only."
+    }
   ]
 }
