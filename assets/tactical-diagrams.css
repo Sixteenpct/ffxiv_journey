@@ -1,0 +1,7 @@
+/* Approved diagram review v5: compact drawing, readable HTML instructions. */
+body .tactical-diagram{margin:18px 0;max-width:none;padding:18px;background:#fff;border:1px solid #cadfd5;border-radius:10px;overflow:hidden}
+body .tactical-diagram svg{display:block;width:100%;max-width:520px;max-height:205px;height:auto;margin:0 auto 14px}
+body .tactical-diagram figcaption{border-top:1px solid #dbe7dd;padding:12px 0 0;font-size:17px;line-height:1.75}
+body .tactical-diagram .diagram-key{display:block;margin:0;padding:9px 12px;background:#fff7df;border-left:3px solid #d8bd77;border-radius:5px;font-size:17px;font-weight:700;color:#665c3d;line-height:1.7}
+body .tactical-diagram .diagram-note{margin:10px 0 0;padding:8px 12px;border-left:4px solid #719f99;border-radius:4px;background:#eef5f2;font-size:17px;font-weight:400;line-height:1.75;color:#284f4b}
+@media(max-width:600px){body .tactical-diagram svg{max-height:180px}}
