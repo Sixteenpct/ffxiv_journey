@@ -1,0 +1,191 @@
+{
+  "official_guide": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/",
+  "guide_updated": "2026-09-29",
+  "sync_level": 50,
+  "assets": [
+    {
+      "name": "重劈",
+      "level": 1,
+      "icon": "images/icon/01.png",
+      "file": "skill-01.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/01.png",
+      "sha256": "9109cf4da02d6427acd5f0d3e8878605c983da000184b1fd305dac95d5867bbf"
+    },
+    {
+      "name": "凶殘裂",
+      "level": 4,
+      "icon": "images/icon/02.png",
+      "file": "skill-02.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/02.png",
+      "sha256": "ce267401532fed36cbf0b9f1cf1b4b211720aa5ea6cc03df51a230dc670555f8"
+    },
+    {
+      "name": "狂暴",
+      "level": 6,
+      "icon": "images/icon/03.png",
+      "file": "skill-03.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/03.png",
+      "sha256": "7aef7f4c80ba36d129069f0839fb0ffef46d29c06fed4def4d58a492645bde30"
+    },
+    {
+      "name": "超壓斧",
+      "level": 10,
+      "icon": "images/icon/04.png",
+      "file": "skill-04.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/04.png",
+      "sha256": "454a6c9e423b515c2fcc5c000b5ed4ad3b63d5d14004fa027042deb2c00aa8a7"
+    },
+    {
+      "name": "守護",
+      "level": 10,
+      "icon": "images/icon/05.png",
+      "file": "skill-05.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/05.png",
+      "sha256": "47cbb16acb25847532326968e18e29185346758e87828b68f97a591b647a7aca"
+    },
+    {
+      "name": "解除守護",
+      "level": 10,
+      "icon": "images/icon/06.png",
+      "file": "skill-06.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/06.png",
+      "sha256": "21c248e93c477014837c8206fb3675fac1a6ea83e39b004d6e15f64559a9e4b0"
+    },
+    {
+      "name": "飛斧",
+      "level": 15,
+      "icon": "images/icon/07.png",
+      "file": "skill-07.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/07.png",
+      "sha256": "311324e22a3b01074032995e7469dca927b60dab46607c30f97b181dd6481862"
+    },
+    {
+      "name": "暴風斬",
+      "level": 26,
+      "icon": "images/icon/08.png",
+      "file": "skill-08.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/08.png",
+      "sha256": "cc200ad75113363a2b130f9b28c3405576f2672dfc2bc60be3254811f03ff250"
+    },
+    {
+      "name": "戰慄",
+      "level": 30,
+      "icon": "images/icon/09.png",
+      "file": "skill-09.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/09.png",
+      "sha256": "a63c3f1220d5d5b56ed581bf4c0598d04c5beae271739760ca6c84a6feeb5bca"
+    },
+    {
+      "name": "原初之魂",
+      "level": 35,
+      "icon": "images/icon/10.png",
+      "file": "skill-10.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/10.png",
+      "sha256": "a5aeac4381b0fda7d8bdbff5c8a01be8ba6950adccdf0bb6e00c790d6b1d74f8"
+    },
+    {
+      "name": "復仇",
+      "level": 38,
+      "icon": "images/icon/11.png",
+      "file": "skill-11.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/11.png",
+      "sha256": "f3b97e05105208a84b00e0cf61b5f04043454b22f38626df4e33a38ebf0377ad"
+    },
+    {
+      "name": "秘銀暴風",
+      "level": 40,
+      "icon": "images/icon/12.png",
+      "file": "skill-12.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/12.png",
+      "sha256": "90b27fa720b1dd677feddc98ee6e3c97b79f60cb617d106152c528aea8ecfe06"
+    },
+    {
+      "name": "死鬥",
+      "level": 42,
+      "icon": "images/icon/13.png",
+      "file": "skill-13.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/13.png",
+      "sha256": "294b49bc37b7f771b5745cb16e238319138bd0e5cfb0a001f3a67cbf0bb39122"
+    },
+    {
+      "name": "鋼鐵旋風",
+      "level": 45,
+      "icon": "images/icon/14.png",
+      "file": "skill-14.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/14.png",
+      "sha256": "9a7b7a01b1dcad4c4cc84336c2761b1f1160c383010ebb856b50fd904e540998"
+    },
+    {
+      "name": "暴風碎",
+      "level": 50,
+      "icon": "images/icon/15.png",
+      "file": "skill-15.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/15.png",
+      "sha256": "39061c6123b2b302969a3a9406ebf5a8e35490fdbd5047ad651068b7e161aba0"
+    },
+    {
+      "name": "戰嚎",
+      "level": 50,
+      "icon": "images/icon/16.png",
+      "file": "skill-16.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/16.png",
+      "sha256": "12b0d2ab7d2ac3dca0d43d912f4d32e1c41554898bfbfe4d353a014c8e363802"
+    },
+    {
+      "name": "鐵壁",
+      "level": 8,
+      "icon": "images/icon/34.png",
+      "file": "skill-34.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/34.png",
+      "sha256": "118f0305cc92d81ab3bde23806f78d5ff98c7bbc7a1feb6d8e203ddb64085d91"
+    },
+    {
+      "name": "下踢",
+      "level": 12,
+      "icon": "images/icon/35.png",
+      "file": "skill-35.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/35.png",
+      "sha256": "d48c55f072e80948a88921a07328708a73051f947a72d3c83f1ae09b98052026"
+    },
+    {
+      "name": "挑釁",
+      "level": 15,
+      "icon": "images/icon/36.png",
+      "file": "skill-36.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/36.png",
+      "sha256": "0bb3d73b506f1b2ad161c7e829a17a8b38a61752b758cc2d033adc41024910f5"
+    },
+    {
+      "name": "插言",
+      "level": 18,
+      "icon": "images/icon/37.png",
+      "file": "skill-37.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/37.png",
+      "sha256": "b10a59492529e511a5aad80cf7cdcd8d3fdf363b0d2e62d16a78ff14b9c209f7"
+    },
+    {
+      "name": "雪仇",
+      "level": 22,
+      "icon": "images/icon/38.png",
+      "file": "skill-38.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/38.png",
+      "sha256": "59e242ace09f22e801455ac0bea610eac5970603c7d808d4ad003025a93a66d0"
+    },
+    {
+      "name": "親疏自行",
+      "level": 32,
+      "icon": "images/icon/39.png",
+      "file": "skill-39.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/39.png",
+      "sha256": "9a347554b0614d00da04390992b031c244736f177e1488fd6109799fafe7a2c2"
+    },
+    {
+      "name": "退避",
+      "level": 48,
+      "icon": "images/icon/40.png",
+      "file": "skill-40.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/warrior/images/icon/40.png",
+      "sha256": "c0a3fa6f4b683e06d5993d996531931fc694bdb9fd09c1764d5046dbecc74532"
+    }
+  ]
+}

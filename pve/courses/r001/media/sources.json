@@ -1,0 +1,175 @@
+{
+  "official_guide": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/",
+  "guide_updated": "2026-09-29",
+  "sync_level": 50,
+  "assets": [
+    {
+      "name": "巨岩",
+      "level": 1,
+      "icon": "images/icon/01.png",
+      "file": "skill-01.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/01.png",
+      "sha256": "174daa0b08f2309b2c33b7c9b9d0fe2bfe54e049a135626a8ac6c912963ed1b4"
+    },
+    {
+      "name": "療傷",
+      "level": 2,
+      "icon": "images/icon/02.png",
+      "file": "skill-02.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/02.png",
+      "sha256": "0fbc0953e77d3348afa547cd15f9c0e4c1d14fb72b23d180e1205ef2d6ef413c"
+    },
+    {
+      "name": "勁風",
+      "level": 4,
+      "icon": "images/icon/03.png",
+      "file": "skill-03.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/03.png",
+      "sha256": "7d7cf7a3a4e03f05e4429f6b43113d6b5979dd35ad997caa94b31c46dd602b73"
+    },
+    {
+      "name": "醫治",
+      "level": 10,
+      "icon": "images/icon/04.png",
+      "file": "skill-04.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/04.png",
+      "sha256": "027e5f5ffcead38b423ef86d781f2e296c5bfbb3f481c279f42a9005446964aa"
+    },
+    {
+      "name": "復活",
+      "level": 12,
+      "icon": "images/icon/05.png",
+      "file": "skill-05.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/05.png",
+      "sha256": "7d4d2966017496edfc5a09831a51b1b5c4102d2c134eff9380f2a7c64097b419"
+    },
+    {
+      "name": "中巨岩",
+      "level": 18,
+      "icon": "images/icon/06.png",
+      "file": "skill-06.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/06.png",
+      "sha256": "e6e9200d3ea52dc93177085fe1336eb4baaa2706e158faa48833ba9e5c7f21fc"
+    },
+    {
+      "name": "中療傷",
+      "level": 30,
+      "icon": "images/icon/07.png",
+      "file": "skill-07.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/07.png",
+      "sha256": "7b2c021fda22e5a52b1b38db2a3383b693bf2e9f572e56b2f6affe1b5549da6d"
+    },
+    {
+      "name": "神速詠唱",
+      "level": 30,
+      "icon": "images/icon/08.png",
+      "file": "skill-08.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/08.png",
+      "sha256": "8f47cd58e14dbdee6b5d65be50a2e4898cce66ad32c06c4f7ae28ab1e0dcd6ff"
+    },
+    {
+      "name": "再生",
+      "level": 35,
+      "icon": "images/icon/09.png",
+      "file": "skill-09.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/09.png",
+      "sha256": "5781cd528b087fea44a0abe94fea5bc1872749c0636f00b1703ccae77c5891f0"
+    },
+    {
+      "name": "大療傷",
+      "level": 40,
+      "icon": "images/icon/10.png",
+      "file": "skill-10.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/10.png",
+      "sha256": "de776c2be95a71a866f0cdedbe8cc73aa5a8b45351e7f7917d6cfefc55d5a5a2"
+    },
+    {
+      "name": "乙太變移",
+      "level": 40,
+      "icon": "images/icon/11.png",
+      "file": "skill-11.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/11.png",
+      "sha256": "315aa796b7ab29a12b894e09c2cbf3b03b67698319405785486fc2fc12fbfbd7"
+    },
+    {
+      "name": "神聖",
+      "level": 45,
+      "icon": "images/icon/12.png",
+      "file": "skill-12.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/12.png",
+      "sha256": "50788be0a1ab7d6edc4f92c13befdb72ef02868b6170318b6f2aa83fff76b10c"
+    },
+    {
+      "name": "中勁風",
+      "level": 46,
+      "icon": "images/icon/13.png",
+      "file": "skill-13.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/13.png",
+      "sha256": "e8409547a296bf2fede62bcdfe0952967f9ad7b58954d8a13207c3266ed25a98"
+    },
+    {
+      "name": "醫濟",
+      "level": 50,
+      "icon": "images/icon/14.png",
+      "file": "skill-14.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/14.png",
+      "sha256": "5313d5048a73e5840c915f064b6dfd4e1d311317095b222f5477765e4f0104a8"
+    },
+    {
+      "name": "天賜祝福",
+      "level": 50,
+      "icon": "images/icon/15.png",
+      "file": "skill-15.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/15.png",
+      "sha256": "6494ef0456bba20b2f52a7d4eb16e2b5057767591056b36dc3836b67f59180e8"
+    },
+    {
+      "name": "沉靜",
+      "level": 8,
+      "icon": "images/icon/37.png",
+      "file": "skill-37.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/37.png",
+      "sha256": "83b6145aed5ab2675317f1092568749285c81dd52df5ba4abf53b533c14b7b52"
+    },
+    {
+      "name": "復原",
+      "level": 10,
+      "icon": "images/icon/38.png",
+      "file": "skill-38.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/38.png",
+      "sha256": "02000f33c5cdae4523e623db76f560085bf8a80104711a620c4926caeb6dab90"
+    },
+    {
+      "name": "醒夢",
+      "level": 14,
+      "icon": "images/icon/39.png",
+      "file": "skill-39.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/39.png",
+      "sha256": "e2df3c9e64bf2117c1013a8b6de182203e57ead34c281f4efc8a2c5316d8a13a"
+    },
+    {
+      "name": "即刻詠唱",
+      "level": 18,
+      "icon": "images/icon/40.png",
+      "file": "skill-40.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/40.png",
+      "sha256": "af45a0bc3171d6e14151b4204a03bde1dc6c23d75e97216b110368fc48d20759"
+    },
+    {
+      "name": "沉穩詠唱",
+      "level": 44,
+      "icon": "images/icon/41.png",
+      "file": "skill-41.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/41.png",
+      "sha256": "a579126fe931f05fdf025d9ffaa39b6c5be0e091b3bf917b385ad766010fa327"
+    },
+    {
+      "name": "營救",
+      "level": 48,
+      "icon": "images/icon/42.png",
+      "file": "skill-42.png",
+      "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/whitemage/images/icon/42.png",
+      "sha256": "182169384f47b73a7264eeb407fc3045c01bed62b9ae973419ba14bd7514e60a"
+    }
+  ]
+}

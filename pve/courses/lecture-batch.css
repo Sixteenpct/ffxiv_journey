@@ -1,0 +1,165 @@
+/* R022 job lecture only; approved reader r14, job atlas and library are untouched. */
+body.page-batch-lecture{background:#e8eeed;isolation:isolate}
+body.page-batch-lecture::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84)),linear-gradient(125deg,#e2efed,#fff4dc) center/cover no-repeat}
+.page-batch-lecture .reading-masthead{background:#f5f8f4}
+.page-batch-lecture .reading-masthead .top{background:linear-gradient(90deg,#26373ee8 0%,#26373e90 60%,#26373eb3 100%);border-bottom:2px solid #b59c66}
+body.page-batch-lecture .top .banner{min-height:150px;align-items:center;padding:12px 0 14px;gap:16px}
+body.page-batch-lecture .top .banner h1{color:#f5f0df;font-size:29px;line-height:1.3;text-shadow:0 2px 5px #17242a55}
+body.page-batch-lecture .top .banner .description{color:#dce8e4;font-size:15.5px}
+body.page-batch-lecture .top .banner .eyebrow{color:#c6b98e;font-size:11px;letter-spacing:.13em;margin-bottom:7px}
+.page-batch-lecture .manual-label{border:1px solid #ae9c72;padding:2px 7px;margin-right:8px;letter-spacing:.07em}
+.page-batch-lecture .course-config{color:#c6d4ce;font-size:12.5px;margin-top:8px}
+.page-batch-lecture .lesson-seal{flex:none;width:124px;display:grid;justify-items:center;gap:8px}
+.page-batch-lecture .lesson-seal>img{filter:drop-shadow(0 0 8px #ffffff66)}
+.page-batch-lecture .seal-mudra{display:flex;gap:5px}
+.page-batch-lecture .seal-mudra img{width:30px;height:30px;border-radius:4px}
+.page-batch-lecture .sidebar>strong{font-size:15px}
+.page-batch-lecture .sidebar{background:#f9fbf7f5;border-color:#c4d4cc;gap:1px}
+.page-batch-lecture .sidebar a{display:grid;grid-template-columns:20px 1fr;gap:4px;font-size:16px;padding:6px 8px;line-height:1.55}
+.page-batch-lecture .nav-number{font:13px/1.9 ui-monospace,monospace;color:#927b50}
+.page-batch-lecture .chapter{background:#fffefaf5;box-shadow:0 4px 18px #2c544512}
+.page-batch-lecture .lead{font-size:18px;color:#405e60}
+.page-batch-lecture .scene{margin:20px 0;border:1px solid #d4dfd8;border-radius:8px;overflow:hidden;background:#eef3ef}
+.page-batch-lecture .scene>a{display:block;background:#34444a}
+.page-batch-lecture .scene img{display:block;width:100%;height:auto}
+.page-batch-lecture figure figcaption{font-size:11.5px;line-height:1.65;color:#637972;padding:9px 12px}
+.page-batch-lecture figure figcaption a{white-space:nowrap}
+.page-batch-lecture .scene-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.page-batch-lecture .scene-pair .scene{margin:8px 0}
+.page-batch-lecture .scene-pair .scene img{aspect-ratio:16/10;object-fit:contain;background:#25353a}
+.page-batch-lecture .action-flow{display:flex;align-items:flex-start;flex-wrap:wrap;gap:7px 9px;margin:15px 0;padding:13px;border:1px solid #d2dfd7;border-radius:7px;background:linear-gradient(110deg,#edf5ee,#f8faf7)}
+.page-batch-lecture .action-token{display:grid;justify-items:center;gap:5px;font-size:18px;font-weight:700;line-height:1.4;color:#426a60;min-width:56px}
+.page-batch-lecture .action-token img{width:40px;height:40px;border-radius:5px;box-shadow:0 2px 6px #223d4526}
+.page-batch-lecture .flow-arrow{flex:none;display:grid;place-items:center;width:26px;height:40px;line-height:1;color:#977326;font-size:30px;font-weight:800}
+.page-batch-lecture .arsenal-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
+.page-batch-lecture .arsenal-item{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #dde7de;border-radius:7px;background:#f5f8f2;min-width:0}
+.page-batch-lecture .arsenal-item img{flex:none;align-self:start;width:40px;height:40px;border-radius:5px}
+.page-batch-lecture .arsenal-item div{display:grid;gap:2px;min-width:0}
+.page-batch-lecture .arsenal-item strong{font-size:18px;color:#3e665e;line-height:1.4}
+.page-batch-lecture .arsenal-item span{font-size:15px;line-height:1.55;color:#6a7d70}
+.page-batch-lecture .field-details{border:1px solid #d4dfd6;border-radius:7px;padding:12px 14px;background:#f5f8f3;margin:18px 0}
+.page-batch-lecture .field-details summary{cursor:pointer;color:#4e7067;font-size:15px;font-weight:700}
+.page-batch-lecture .field-details[open] summary{margin-bottom:13px}
+.page-batch-lecture .fine-note{font-size:13px!important;color:#708077;line-height:1.7}
+.page-batch-lecture .mudra-recipe+.mudra-recipe{border-top:1px solid #e0e6dc;padding-top:7px;margin-top:20px}
+.page-batch-lecture .mudra-recipe h3 small{display:block;font-size:13px;font-weight:400;color:#768876;margin-top:3px}
+.page-batch-lecture .mudra-recipe .action-flow{margin-top:9px}
+.page-batch-lecture .mechanic-table-wrap{overflow-x:auto;margin:17px 0}
+.page-batch-lecture .mechanic-table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.7}
+.page-batch-lecture .mechanic-table th{text-align:left;background:#e9f0e9;color:#476a5b;font-size:15px;font-weight:700}
+.page-batch-lecture .mechanic-table th,.page-batch-lecture .mechanic-table td{padding:8px 10px;border:1px solid #d5e1d8;vertical-align:top}
+.page-batch-lecture .mechanic-table td:first-child{width:30%;color:#876d45;font-weight:600}
+.page-batch-lecture .mechanic-table tbody tr:nth-child(even){background:#f8faf5}
+.page-batch-lecture .tactical-diagram{margin:18px 0;border:1px solid #d3dfd6;border-radius:8px;overflow:hidden;background:#f7faf6}
+.page-batch-lecture .tactical-diagram svg{display:block;width:100%;height:auto}
+.page-batch-lecture .troubleshoot{margin:17px 0}
+.page-batch-lecture .troubleshoot dt{font-size:16px;font-weight:700;color:#436b62;border-top:1px solid #e0e6dd;padding-top:13px;margin-top:13px}
+.page-batch-lecture .troubleshoot dd{margin:4px 0 0;font-size:15px}
+.page-batch-lecture .source-panel{background:#f7faf4f5;border:1px solid #cedccc;padding:18px 21px;border-radius:9px;font-size:13px;line-height:1.8}
+.page-batch-lecture .source-panel h2{font-size:17px;color:#4a6d63;margin:0 0 12px}
+.page-batch-lecture .source-panel li{margin:9px 0}
+.page-batch-lecture .skip-lesson{position:fixed;top:-100px;left:16px;z-index:100;padding:10px 14px;background:#fff;color:#345e50}
+.page-batch-lecture .skip-lesson:focus{top:8px}
+
+@media(max-width:810px){
+ body.page-batch-lecture .top .banner{min-height:150px}
+ .page-batch-lecture .sidebar a{display:flex;flex:none;white-space:nowrap}
+ .page-batch-lecture .chapter,.page-batch-lecture .source{scroll-margin-top:calc(var(--reading-masthead-height,165px) + var(--reading-sidebar-height,52px) + 12px)}
+}
+@media(max-width:620px){
+ body.page-batch-lecture .top .banner{min-height:0;padding:12px 0;gap:8px}
+ body.page-batch-lecture .top .banner h1{font-size:23px}
+ body.page-batch-lecture .top .banner .description{font-size:14px}
+ .page-batch-lecture .course-config{font-size:11.5px;line-height:1.6}
+ .page-batch-lecture .lesson-seal{width:50px;align-self:start;margin-top:22px}
+ .page-batch-lecture .lesson-seal>img{width:43px;height:43px}
+ .page-batch-lecture .seal-mudra{display:none}
+ .page-batch-lecture .arsenal-grid,.page-batch-lecture .scene-pair{grid-template-columns:1fr}
+ .page-batch-lecture .action-flow{gap:6px;padding:10px 7px}
+ .page-batch-lecture .action-token{min-width:49px;font-size:17px}
+ .page-batch-lecture .action-token img{width:36px;height:36px}
+ .page-batch-lecture .flow-arrow{height:36px;font-size:28px;width:24px}
+ .page-batch-lecture .lead{font-size:16px}
+ .page-batch-lecture .source-panel{padding:16px}
+ .page-batch-lecture .manual-label{display:inline-block;margin-bottom:4px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+ body.page-batch-lecture::before,.page-batch-lecture .sidebar,.page-batch-lecture .skip-lesson{display:none}
+ body.page-batch-lecture{background:#fff}
+ .page-batch-lecture .reading-masthead{position:static}
+ .page-batch-lecture .guide-layout{display:block}
+ .page-batch-lecture .chapter{box-shadow:none}
+ .page-batch-lecture .scene,.page-batch-lecture .tactical-diagram,.page-batch-lecture .action-flow{break-inside:avoid}
+}
+
+
+/* Each arrow shares the icon's height; the skill label never affects its center. */
+.page-batch-lecture .rhythm-panels{display:grid;grid-template-columns:1.2fr .7fr 1.2fr;gap:10px;margin:15px 0}
+.page-batch-lecture .rhythm-panel{min-width:0;padding:13px 12px;border:1px solid #d2dfd7;border-radius:7px;background:linear-gradient(110deg,#edf5ee,#f8faf7)}
+.page-batch-lecture .rhythm-panel .rhythm-label{margin:0 0 13px;font-size:15px;color:#806c43;line-height:1.5}
+.page-batch-lecture .rhythm-panel .action-flow{margin:0;padding:0;border:0;background:none;gap:7px;justify-content:center}
+.page-batch-lecture .rhythm-panel .action-token{min-width:0}
+.page-batch-lecture .rhythm-panel .rhythm-note{margin:10px 0 0;font-size:13px;line-height:1.6;color:#60776c;text-align:center}
+@media(max-width:1100px){.page-batch-lecture .rhythm-panels{grid-template-columns:1fr}}
+
+.page-batch-lecture .rhythm-panels{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:1100px){.page-batch-lecture .rhythm-panels{grid-template-columns:1fr}}
+
+/* Legacy active-ninjutsu links land inside the burst chapter below the masthead. */
+.page-batch-lecture .burst-subtopic{scroll-margin-top:calc(var(--reading-masthead-height,165px) + 12px)}
+@media(max-width:810px){.page-batch-lecture .burst-subtopic{scroll-margin-top:calc(var(--reading-masthead-height,165px) + var(--reading-sidebar-height,52px) + 12px)}}
+
+.page-batch-lecture .troubleshoot dt:first-child{border-top:0;padding-top:0;margin-top:0}
+
+/* Compact FAQ spacing, automatic numbering, and shared mint review portals. */
+.page-batch-lecture #errors .chapter-body{padding-top:10px}
+.page-batch-lecture .troubleshoot{margin:0;counter-reset:faq}
+.page-batch-lecture .troubleshoot dt{counter-increment:faq;display:flex;align-items:baseline;gap:9px}
+.page-batch-lecture .troubleshoot dt::before{content:counter(faq,decimal-leading-zero);flex:none;font-size:13px;font-weight:600;color:#927443}
+.page-batch-lecture .troubleshoot dd{margin-left:29px}
+.page-batch-lecture .mechanic-table th:first-child{width:16%}
+.page-batch-lecture .review-portals{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+.page-batch-lecture a.review-portal{display:inline-flex;align-items:center;gap:8px;max-width:100%;padding:9px 13px;border:1px solid #acd0e7;border-radius:9px;background:#e5f4ff;color:#286584;font-size:15px;font-weight:700;line-height:1.6;text-decoration:none;overflow-wrap:anywhere}
+.page-batch-lecture a.review-portal:hover{background:#d3ecfc;border-color:#83badd;color:#205977}
+.page-batch-lecture .field-steps{padding-left:22px;margin:0}
+.page-batch-lecture .field-steps li{margin:8px 0}
+html:has(body.page-batch-lecture){scroll-behavior:auto}
+
+/* Both lectures use the FAQ's reading hierarchy: 15px prose, 16px subheads. */
+.page-batch-lecture .chapter-body{font-size:15px;line-height:1.8;color:#405e60}
+.page-batch-lecture .chapter-body p,.page-batch-lecture .chapter-body li,.page-batch-lecture .troubleshoot dd{font-size:15px;line-height:1.8}
+.page-batch-lecture .chapter-body p{margin:0 0 12px}
+.page-batch-lecture .chapter-body p:last-child{margin-bottom:0}
+.page-batch-lecture .chapter-body h3{font-size:16px;font-weight:700;line-height:1.6;color:#436b62;margin:18px 0 8px}
+.page-batch-lecture .chapter-body h3:first-child{margin-top:0}
+.page-batch-lecture .lead{font-size:15px}
+.page-batch-lecture .fine-note{font-size:15px!important;line-height:1.8;color:#405e60}
+.page-batch-lecture .chapter-body ul,.page-batch-lecture .chapter-body ol{margin:10px 0 12px;padding-left:23px}
+.page-batch-lecture .chapter-body li{margin:6px 0}
+.page-batch-lecture .callout p{margin:0}
+.page-batch-lecture .mechanic-table{font-size:15px;line-height:1.8}
+.page-batch-lecture .arsenal-item span{font-size:15px;line-height:1.8;color:#55514b;font-weight:400}
+.page-batch-lecture .rhythm-panel .rhythm-note{font-size:15px;line-height:1.8;color:#405e60}
+.page-batch-lecture .mudra-recipe h3 small{font-size:15px;line-height:1.8}
+.page-batch-lecture .course-entry p{font-size:15px;line-height:1.8}
+
+.page-batch-lecture .chapter-body .reading-links{margin:0;padding-left:20px}
+.page-batch-lecture .chapter-body .reading-links li{margin:0 0 14px;padding-left:3px}
+.page-batch-lecture .reading-links li:last-child{margin-bottom:0}
+.page-batch-lecture .reading-links li::marker{color:#a89568}
+.page-batch-lecture .reading-links a{font-size:16px;font-weight:600;color:#386b7c;text-decoration:underline;text-decoration-color:#afc8ce;text-underline-offset:4px}
+.page-batch-lecture .reading-links a:hover{color:#205b75;text-decoration-color:currentColor}
+.page-batch-lecture .reading-links p{margin:4px 0 0;color:#405e60}
+
+.page-batch-lecture .chapter-top{border-left:0;border-bottom:0}
+
+.page-batch-lecture .review-context{margin:16px 0 0;padding:12px 14px;border:1px solid #c6e2f3;border-radius:12px;background:#f2f9ff}
+.page-batch-lecture .review-context p{margin:0 0 8px;color:#286584;font-size:15px;font-weight:500;line-height:1.8}
+.page-batch-lecture .review-context .review-portals{margin:0;gap:9px}
+
+/* Batch 01: preserve approved typography; distinguish the two job manuals. */
+.page-batch-lecture .rhythm-panels{grid-template-columns:1fr}
+.page-r001 .reading-masthead .top{background:linear-gradient(110deg,#254a4b,#42675b 65%,#657e6d)}
+.page-r014 .reading-masthead .top{background:linear-gradient(110deg,#344857,#425f77 65%,#677f94)}
+.page-batch-lecture .mechanic-table th:first-child{width:22%;min-width:100px}
