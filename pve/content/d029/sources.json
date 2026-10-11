@@ -1,0 +1,44 @@
+{
+  "checked": "2026-10-11",
+  "canonical": [
+    {
+      "repository": "Sixteenpct/ffxiv_pve_learning",
+      "path": "content_mastery/dungeons/2x/Lv050_2.5_01_幻龍殘骸密約之塔.md",
+      "sha": "f3958a83913ebb701dab91c25487050125c54919"
+    },
+    {
+      "repository": "Sixteenpct/ffxiv_pve_learning",
+      "path": "curriculum/PVE_SPECIALIZATION_SCHEDULE.md",
+      "sha": "d7f34a0a3c362bfcdde82c7c929018ed15dcbae2"
+    },
+    {
+      "repository": "Sixteenpct/ffxiv_pve_learning",
+      "path": "content_mastery/CONTENT_COURSE_SYSTEM.md",
+      "sha": "cc673ca7dd8cbcffd71303b87da422a2a8e3ba8a"
+    }
+  ],
+  "reused": {
+    "diagrams": "pve/courses/d029/PREPARATION.md (ring-title, dragon-title); preserved verbatim",
+    "images": "pve/courses/r005/media/promo-1.png and promo-4.png; original URLs/rights/hash in media/sources.json",
+    "use": "historical official scene identification only; diagrams are schematic, not scaled game captures"
+  },
+  "references": [
+    {
+      "url": "https://www.thonky.com/final-fantasy-xiv/duties/the-keeper-of-the-lake",
+      "use": "current route, visual mechanics, adds and consecutive stack"
+    },
+    {
+      "url": "https://ffxiv.consolegameswiki.com/wiki/The_Keeper_of_the_Lake",
+      "use": "cross-check post-6.2 bosses and phase distinctions"
+    },
+    {
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/5130fef15f5ffc6a72fd818eb1843a592e39b93c",
+      "use": "official three boss adjustments; excludes pre-rework shield strategy"
+    },
+    {
+      "url": "https://na.finalfantasyxiv.com/pr/sp/special/2_5_Before_the_Fall/dungeons/",
+      "use": "official minimal scene context and imagery"
+    }
+  ],
+  "editorial": "Public lesson rewrites mechanism-focused learning points only, never personal outcomes/dates/proficiency. Unverified Traditional Chinese boss/action names use descriptive visual labels. Role responses and recovery prompts are editorial teaching applications."
+}

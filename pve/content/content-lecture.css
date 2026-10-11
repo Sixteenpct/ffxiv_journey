@@ -1,0 +1,13 @@
+/* Content manuals share approved reading dimensions; imagery follows the dungeon. */
+body.page-content-lesson::before{background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84)),url('../courses/r005/media/promo-1.png') center/cover no-repeat}
+body.page-content-lesson .reading-masthead .top{background:linear-gradient(90deg,#193c50ed 0%,#254e6699 58%,#254e6655 100%),url('../courses/r005/media/promo-4.png') center/cover no-repeat}
+.page-content-lesson .survival-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.page-content-lesson .survival-panels>div{padding:13px 12px;border:1px solid #cddfe5;border-radius:7px;background:linear-gradient(110deg,#eff7fa,#fafcfb);min-width:0}
+.page-content-lesson .survival-panels h3{margin:0 0 8px;font-size:17px;color:#526f7e}
+.page-content-lesson .survival-panels p{margin:0;font-size:16px;line-height:1.8}
+.page-content-lesson .route-stops{padding-left:25px;display:grid;gap:12px}
+.page-content-lesson .route-stops li{padding-left:5px}
+.page-content-lesson .route-stops strong,.page-content-lesson .route-stops span{display:block}
+.page-content-lesson .route-stops li::marker{color:#977c4a;font-weight:700}
+.page-content-lesson .enemy-alias{font-size:15px;color:#607b82}
+@media(max-width:1100px){.page-content-lesson .survival-panels{grid-template-columns:1fr}}

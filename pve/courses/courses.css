@@ -126,15 +126,15 @@
 .page-content-library .course-table tbody tr:hover{background:#edf6fc}
 .page-lecture-index .course-table tbody th{color:#2f7155}
 .page-content-library .course-table tbody th{color:#336e8b}
-.page-lecture-index .course-table tbody a[href]{
+:is(.page-lecture-index,.page-content-library) .course-table tbody a[href]{
   display:inline-flex;align-items:center;justify-content:center;
   padding:3px 8px;border:1px solid #afd2e6;border-radius:6px;
   background:#eef8fe;color:#266e93;text-decoration:none;font-weight:700;
 }
-.page-lecture-index .course-table tbody a[href]:hover{
+:is(.page-lecture-index,.page-content-library) .course-table tbody a[href]:hover{
   background:#dff1fc;border-color:#89bfdc;
 }
-.page-lecture-index .course-table tbody a[href]:focus-visible{
+:is(.page-lecture-index,.page-content-library) .course-table tbody a[href]:focus-visible{
   outline:2px solid #438baf;outline-offset:2px;
 }
 .page-content-library .course-table .table-empty{

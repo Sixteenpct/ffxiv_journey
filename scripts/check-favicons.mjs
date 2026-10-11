@@ -48,7 +48,8 @@ for (const file of htmlFiles) {
   if (!okay) failed.push(path.relative(root, file));
   // Owner's fixed rule: every job lesson uses the approved ninja favicon.
   const body = html.match(/<body\b[^>]*>/i)?.[0] ?? "";
-  if (attr(body, "class").split(/\s+/).includes("page-course")) {
+  const classes = attr(body, "class").split(/\s+/);
+  if (classes.includes("page-course") && !classes.includes("page-content-lesson")) {
     const expected = path.join(root, "assets", "favicon-ninja.svg");
     const matches = iconTags.some(tag => path.resolve(path.dirname(file), attr(tag, "href").split(/[?#]/, 1)[0]) === expected);
     if (!matches) failed.push(path.relative(root, file) + " (job lesson must use approved ninja favicon)");
