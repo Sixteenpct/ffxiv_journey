@@ -183,6 +183,19 @@
       "width": 1920,
       "height": 446,
       "use": "Fixed job illustration for title banner and washed page background; decorative only."
+    },
+    {
+      "file": "snowcloak-background.webp",
+      "url": "https://lds-img.finalfantasyxiv.com/promo/h/2/IazV60P8117mE7G1HIxL55719g.png",
+      "source": "https://na.finalfantasyxiv.com/pr/special/2_4_Dreams_of_Ice/dungeons/",
+      "label": "凜冽洞天披雪大冰壁官方場景",
+      "rights": "© SQUARE ENIX",
+      "source_sha256": "64a5b36cfcacad02f8e2c01c80f72739fdf0f4e65276a29816505cbbf18a83b2",
+      "sha256": "ba1650474488646b78a1f7bffffbf7fd002607d1bd0b1f3a1053841b5729a9ed",
+      "bytes": 90352,
+      "width": 880,
+      "height": 440,
+      "use": "固定裝飾圖片；場景僅供氛圍辨識，不代表現行機制或玩家實戰證據"
     }
   ]
 }

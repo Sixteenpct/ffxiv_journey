@@ -199,6 +199,19 @@
       "width": 1920,
       "height": 446,
       "use": "Fixed job illustration for title banner and washed page background; decorative only."
+    },
+    {
+      "file": "praetorium-background.webp",
+      "url": "https://lds-img.finalfantasyxiv.com/itemicon/f9/f99b4b3f60c0ba4da711d84bbe0d770d8363f36a.png?n7.56",
+      "source": "https://na.finalfantasyxiv.com/lodestone/playguide/db/duty/f6de0165484/",
+      "label": "神兵要塞帝國南方堡官方場地預覽",
+      "rights": "© SQUARE ENIX",
+      "source_sha256": "ae51a5b64357802c7cba3d9e4824099bd396c55e8d34db3afc82fcca07350ea3",
+      "sha256": "0c1a05158d21c41bbf9e398fc421c91c1d3fa2ccffcee0800ee2876687c9ec0b",
+      "bytes": 3456,
+      "width": 376,
+      "height": 120,
+      "use": "固定裝飾圖片；場景僅供氛圍辨識，不代表現行機制或玩家實戰證據"
     }
   ]
 }

@@ -7,12 +7,13 @@ body.page-course .skill>div{align-self:flex-start}
 body.page-course .arsenal-item>img,
 body.page-course .skill>img{align-self:flex-start}
 
-body.page-course .chapter-top>span{
- display:block;
- font-size:15px;
- line-height:1.6;
+body.page-course .chapter-top>h2{
+ color:#967e56;
+ font-size:clamp(19px,2vw,22px);
+ line-height:1.38;
+ font-weight:800;
  letter-spacing:.06em;
- margin-bottom:3px;
+ margin:0;
 }
 
 /* Match the approved ninja banner. Text may wrap naturally on narrow screens. */
@@ -23,13 +24,13 @@ body.page-course .reading-masthead .top .banner{
 }
 
 body.page-r001::before{
- background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84)),url('r001/media/job-banner.webp') center/cover no-repeat;
+ background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84)),url('r001/media/snowcloak-background.webp') center/cover no-repeat;
 }
 body.page-r001 .reading-masthead .top{
  background:linear-gradient(90deg,#193e3be8 0%,#254a4b99 58%,#254a4b55 100%),url('r001/media/job-banner.webp') center/cover no-repeat;
 }
 body.page-r014::before{
- background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84)),url('r014/media/job-banner.webp') center/cover no-repeat;
+ background:linear-gradient(105deg,rgba(239,244,241,.86),rgba(245,246,238,.84)),url('r014/media/praetorium-background.webp') center/cover no-repeat;
 }
 body.page-r014 .reading-masthead .top{
  background:linear-gradient(90deg,#263b50e8 0%,#34485799 58%,#34485755 100%),url('r014/media/job-banner.webp') center/cover no-repeat;
@@ -42,3 +43,10 @@ body.page-r014 .reading-masthead .top{
 @media(max-width:620px){
  body.page-course .reading-masthead .top .banner{min-height:0;padding:12px 0}
 }
+
+body.page-r005 .reading-masthead .top,
+body.page-r022 .reading-masthead .top{
+ background:linear-gradient(90deg,#26373ee8 0%,#26373e99 58%,#26373e55 100%),url('r005/media/job-banner.webp') center/cover no-repeat;
+}
+body.page-course .reading-links{list-style:decimal}
+@media(max-width:620px){body.page-course .chapter-top>h2{font-size:19px}}

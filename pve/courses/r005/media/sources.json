@@ -412,5 +412,18 @@
     "use": "Role action available at Lv.50; higher-level trait effects excluded",
     "width": 64,
     "height": 64
+  },
+  {
+    "file": "job-banner.webp",
+    "url": "https://www.ffxiv.com.tw/web/intro/guide/battle/ninja/images/guide_header.jpg",
+    "source": "https://www.ffxiv.com.tw/web/intro/guide/battle/ninja/",
+    "label": "忍者官方職業插畫",
+    "rights": "© SQUARE ENIX",
+    "source_sha256": "57167fefbf14cc88d608091ba4060a360b1e5117069a1039d61d1db4f8831dc9",
+    "sha256": "809bda99eb01abd4aa8457c3d93ee8f3d7d6705ac2879f506dbefd1a5f1fa374",
+    "bytes": 125680,
+    "width": 1920,
+    "height": 446,
+    "use": "固定裝飾圖片；場景僅供氛圍辨識，不代表現行機制或玩家實戰證據"
   }
 ]
