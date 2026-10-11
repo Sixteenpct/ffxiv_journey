@@ -162,3 +162,6 @@ html:has(body.page-batch-lecture){scroll-behavior:auto}
 .page-r001 .reading-masthead .top{background:linear-gradient(110deg,#254a4b,#42675b 65%,#657e6d)}
 .page-r014 .reading-masthead .top{background:linear-gradient(110deg,#344857,#425f77 65%,#677f94)}
 .page-batch-lecture .mechanic-table th:first-child{width:22%;min-width:100px}
+
+/* The White Mage choice panel needs room for three named healing tools. */
+@media(min-width:1101px){body.page-r001 .rhythm-panels{grid-template-columns:1fr 1fr 1.25fr}}
