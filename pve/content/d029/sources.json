@@ -91,8 +91,17 @@
     "length_seconds": 298,
     "verification": "YouTube oEmbed author and watch-page ytInitialPlayerResponse; published album cross-check https://music.apple.com/us/song/1030215668",
     "url_policy": "canonical single video; removed generated radio parameters",
-    "display_title": "Silver Tears",
-    "tc_orchestrion_name": "Not verified: terminology canonical has no item/music entry; web search found no reliable Traditional Chinese client authority. Use verified English album title without translation."
+    "display_title": "銀淚（Silver Tears）",
+    "tc_orchestrion_name": "銀淚",
+    "orchestrion_item_id": 16817,
+    "tc_name_source": {
+      "url": "https://raw.githubusercontent.com/cycleapple/ffxiv-item-search-tc/main/public/data/items-index.json",
+      "item_name": "管弦樂琴樂譜：銀淚",
+      "english_name": "Silver Tears Orchestrion Roll",
+      "japanese_name": "オーケストリオン譜:銀の涙",
+      "method": "match same item ID across Traditional Chinese item data and original-language names; user confirmed TC name; not Simplified-to-Traditional conversion",
+      "verified_date": "2026-10-12"
+    }
   },
   "policy": {
     "repository": "Sixteenpct/ffxiv_pve_learning",
