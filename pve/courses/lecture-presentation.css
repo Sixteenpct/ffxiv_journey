@@ -59,7 +59,9 @@ body.page-course .chapter-body h3{
  gap:8px;
 }
 body.page-course .chapter-body h3::before{
- content:"•";
+ content:"◆";
+ font-size:1em;
+ line-height:inherit;
  flex:none;
  color:currentColor;
 }
