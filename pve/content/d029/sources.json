@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-11",
+  "checked": "2026-10-12",
   "canonical": [
     {
       "repository": "Sixteenpct/ffxiv_pve_learning",
@@ -15,6 +15,12 @@
       "repository": "Sixteenpct/ffxiv_pve_learning",
       "path": "content_mastery/CONTENT_COURSE_SYSTEM.md",
       "sha": "cc673ca7dd8cbcffd71303b87da422a2a8e3ba8a"
+    },
+    {
+      "repository": "Sixteenpct/ffxiv_lore_journey",
+      "path": "dungeons/2版_幻龍殘骸密約之塔_The_Keeper_of_the_Lake.md",
+      "sha": "cf110ec3444b41cd20e861fb6f5eb973269b58b3",
+      "use": "brief preceding story only; excludes personal learning notes"
     }
   ],
   "reused": {
@@ -40,5 +46,56 @@
       "use": "official minimal scene context and imagery"
     }
   ],
-  "editorial": "Public lesson rewrites mechanism-focused learning points only, never personal outcomes/dates/proficiency. Unverified Traditional Chinese boss/action names use descriptive visual labels. Role responses and recovery prompts are editorial teaching applications."
+  "editorial": "Public lesson rewrites mechanism-focused learning points only, never personal outcomes/dates/proficiency. Unverified Traditional Chinese boss/action names use descriptive visual labels. Role responses and recovery prompts are editorial teaching applications.",
+  "boss_photos": [
+    {
+      "file": "media/einhander.webp",
+      "source_page": "https://ffxiv.consolegameswiki.com/wiki/Einhander",
+      "source_url": "https://ffxiv.consolegameswiki.com/mediawiki/images/3/38/Einhander.jpg",
+      "sha256": "52d8f23b3bc3aaea4773f31db4ca41fb7d2e25a3133b67391fdd5dc5fbeaae34",
+      "width": 678,
+      "height": 606,
+      "bytes": 44484,
+      "use": "enemy appearance only; not a historical mechanism illustration",
+      "rights": "Game imagery © SQUARE ENIX; public community screenshot"
+    },
+    {
+      "file": "media/magitek-gunship.webp",
+      "source_page": "https://gamerstips.com/ffxiv-keeper-of-the-lake-dungeon-guide/",
+      "source_url": "https://gamerstips.com/wp-content/uploads/2021/10/image-55-1024x529.jpg",
+      "sha256": "5ff483f60ca253a1349fdda7053e7d56869d6c2bf94e61f20ebe7759e47d5bf1",
+      "width": 720,
+      "height": 372,
+      "bytes": 27856,
+      "use": "enemy appearance only; not a historical mechanism illustration",
+      "rights": "Game imagery © SQUARE ENIX; public community screenshot"
+    },
+    {
+      "file": "media/midgardsormr.webp",
+      "source_page": "https://ffxiv.consolegameswiki.com/wiki/Midgardsormr_(Enemy)",
+      "source_url": "https://ffxiv.consolegameswiki.com/mediawiki/images/a/ad/Midgardsormr_%28Enemy%29.jpg",
+      "sha256": "d350153ec0d6237521672a39a502b8b4db180dfb4b4a7fe1a65948111c24a66e",
+      "width": 680,
+      "height": 720,
+      "bytes": 84868,
+      "use": "enemy appearance only; not a historical mechanism illustration",
+      "rights": "Game imagery © SQUARE ENIX; public community screenshot"
+    }
+  ],
+  "music": {
+    "url": "https://www.youtube.com/watch?v=8ctyuJx31RU",
+    "title": "銀の涙 ～幻龍残骸 黙約の塔～",
+    "channel": "Masayoshi Soken - Topic",
+    "provider": "NexTone Inc.",
+    "album": "Before the Fall: FINAL FANTASY XIV Original Soundtrack",
+    "length_seconds": 298,
+    "verification": "YouTube oEmbed author and watch-page ytInitialPlayerResponse; published album cross-check https://music.apple.com/us/song/1030215668",
+    "url_policy": "canonical single video; removed generated radio parameters"
+  },
+  "policy": {
+    "repository": "Sixteenpct/ffxiv_pve_learning",
+    "path": "LEARNING_CONTAMINATION_POLICY.md",
+    "sha": "7a213ac84296ed26c86d0f7898719789b2a298e0",
+    "application": "obsolete operating assumptions and version-production notes excluded from public prose"
+  }
 }

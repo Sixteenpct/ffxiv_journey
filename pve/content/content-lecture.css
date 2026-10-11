@@ -5,9 +5,15 @@ body.page-content-lesson .reading-masthead .top{background:linear-gradient(90deg
 .page-content-lesson .survival-panels>div{padding:13px 12px;border:1px solid #cddfe5;border-radius:7px;background:linear-gradient(110deg,#eff7fa,#fafcfb);min-width:0}
 .page-content-lesson .survival-panels h3{margin:0 0 8px;font-size:17px;color:#526f7e}
 .page-content-lesson .survival-panels p{margin:0;font-size:16px;line-height:1.8}
-.page-content-lesson .route-stops{padding-left:25px;display:grid;gap:12px}
-.page-content-lesson .route-stops li{padding-left:5px}
-.page-content-lesson .route-stops strong,.page-content-lesson .route-stops span{display:block}
+.page-content-lesson .route-stops{padding-left:25px;margin:0;font-size:inherit;line-height:inherit}
+.page-content-lesson .route-stops li{padding-left:5px;margin:8px 0}
 .page-content-lesson .route-stops li::marker{color:#977c4a;font-weight:700}
-.page-content-lesson .enemy-alias{font-size:15px;color:#607b82}
 @media(max-width:1100px){.page-content-lesson .survival-panels{grid-template-columns:1fr}}
+
+/* Official scenes are static, non-clickable and restrained on desktop. */
+.page-content-lesson .scene{max-width:640px;margin:18px auto}
+.page-content-lesson .scene img{display:block;width:100%;height:auto}
+.page-content-lesson .boss-photo{max-width:560px;margin:18px auto}
+.page-content-lesson .boss-photo img{display:block;width:100%;height:auto;border-radius:5px}
+
+.page-d029 #boss-one .boss-photo,.page-d029 #boss-final .boss-photo{max-width:400px}
