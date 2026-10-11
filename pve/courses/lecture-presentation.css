@@ -17,7 +17,7 @@ body.page-course .chapter-top>span{
 
 /* Match the approved ninja banner. Text may wrap naturally on narrow screens. */
 body.page-course .reading-masthead .top .banner{
- min-height:150px;
+ min-height:166px;
  padding:12px 0 14px;
  align-items:center;
 }
@@ -33,6 +33,10 @@ body.page-r014::before{
 }
 body.page-r014 .reading-masthead .top{
  background:linear-gradient(90deg,#263b50e8 0%,#34485799 58%,#34485755 100%),url('r014/media/job-banner.webp') center/cover no-repeat;
+}
+
+@media(min-width:901px){
+ body.page-course .reading-masthead .top .banner{height:166px}
 }
 
 @media(max-width:620px){

@@ -309,7 +309,7 @@ R005完整七種忍術的印數／末印說明由small改入同級h3「名稱：
 
 
 ## 2026-10-11｜職業講義固定視覺規範與四堂追修
-- 本人新增固定規範見 [LECTURE_STYLE_RULES.md](pve/courses/LECTURE_STYLE_RULES.md)：技能卡圖文頂端對齊；副標題以兩位數編號＋中文側欄名稱，統一 15px；橫幅沿用忍者 150px minimum 及共用窄窗規則；每堂有固定橫幅／背景圖片；所有圖片存入 repo、相對路徑靜態引用；所有職業專頁使用既有忍者 favicon。
+- 本人新增固定規範見 [LECTURE_STYLE_RULES.md](pve/courses/LECTURE_STYLE_RULES.md)：技能卡圖文頂端對齊；副標題以兩位數編號＋中文側欄名稱，統一 15px；桌面橫幅依忍者原實際高度統一為 166px，窄窗允許自然換行；每堂有固定橫幅／背景圖片；所有圖片存入 repo、相對路徑靜態引用；所有職業專頁使用既有忍者 favicon。
 - 四堂 R001／R005／R014／R022 載入共用 `lecture-presentation.css`；修正短描述卡片被 flex 垂直置中往下推的問題；忍者兩堂英文章節副標題改為對應中文名稱。白魔／戰士使用官方職業指南插畫，轉成固定 WebP 資產並記錄來源及雜湊；忍者原選圖保留。
 - 僅修視覺與專頁 favicon，不改教學內容、目錄 c37 視覺、學院／工作坊、Sheet 或私人狀態。後續課程先讀視覺規範，不再因移除忍者專用圖片而退回純漸層。
 - 施工前完整備份 `backup/pve-before-lecture-visual-rules-20261011` → `ee3cd2eb7677be1d5cde8afe370d272ab08fcf96`。
