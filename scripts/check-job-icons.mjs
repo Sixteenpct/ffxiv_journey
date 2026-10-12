@@ -56,7 +56,7 @@ const expectedRoleSelect = '<option value="">全部</option>' +
   }).join('');
 if (roleSelect !== expectedRoleSelect)
   problems.push("Lecture-index optgroups must match the academy's 5 roles / 21 jobs");
-if (!lectureHTML.includes('class="lecture-content-portal"') ||
+if (!/class="[^"]*\blibrary-cross-portal\b[^"]*"/.test(lectureHTML) ||
     !lectureHTML.includes('href="../../content/"'))
   problems.push("Lecture-index PvE content portal is missing");
 
@@ -68,7 +68,7 @@ if (!html.includes('id="job-learning"') || !html.includes('href="lectures/"') ||
 if (!lectureHTML.includes('id="job-course-filter"') || !lectureHTML.includes('id="job-course-rows"') ||
     !lectureHTML.includes('href="../r005/"') || !lectureHTML.includes('href="../r022/"'))
   problems.push("Separate lecture index lost its existing filter or course links");
-if (!html.includes('class="academy-toolbar"') || !html.includes('class="job-grid"') ||
+if (!/class="[^"]*\bacademy-toolbar\b[^"]*"/.test(html) || !html.includes('class="job-grid"') ||
     html.indexOf('class="job-grid"') < html.indexOf('id="job-learning"'))
   problems.push("Academy must show the real career-selection grid beneath its compact navigation");
 const academyCSS = await readFile(path.join(root,"pve/courses/courses.css"),"utf8");
@@ -123,7 +123,7 @@ if (/<small>(?:籌備中|閱讀 →)<\/small>/.test(html)) problems.push("Job st
 if (!html.includes("<h2>➕ 治療</h2>")) problems.push("Healer must use medical-cross emoji");
 if (html.includes('href="../jobs/ninja/"')) problems.push("Academy must not route through retired Ninja map");
 const libraryJS = await readFile(path.join(root,"pve/courses/library.js"),"utf8");
-if (!libraryJS.includes("new URLSearchParams(location.search).get('job')") ||
+if (!libraryJS.includes("new URLSearchParams(location.search)") ||
     !libraryJS.includes("history.replaceState"))
   problems.push("Job filter must honor query defaults and shareable URLs");
 const retiredNinja = await readFile(path.join(root,"pve/jobs/ninja/index.html"),"utf8");

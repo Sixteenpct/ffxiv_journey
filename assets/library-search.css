@@ -1,0 +1,24 @@
+/* Catalogue-only additions: retain approved lecture and academy geometry. */
+.page-course-library .library-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;font-size:14px}
+.page-course-library .library-nav a,.page-course-library .library-nav [aria-current]{padding:6px 12px;border:1px solid #c3d9d4;border-radius:7px;text-decoration:none;color:#426c64;background:#fff}
+.page-course-library .library-nav [aria-current]{background:#e8f5ee;color:#31694f;font-weight:700}
+.page-course-library .library-nav a:hover{background:#edf8ff}
+.page-course-library .library-search{display:flex;align-items:flex-end;flex-wrap:wrap;gap:10px;margin:0 0 12px}
+.page-course-library .search-field{display:flex;flex-direction:column;gap:4px;flex:1 1 280px;font-size:14px;color:#426c64}
+.page-course-library .library-search input{width:100%;min-width:0;padding:9px 11px;border:1px solid #b7cfca;border-radius:6px;background:#fff;color:#334e54;font:inherit;font-size:14px}
+.page-course-library .library-search button{min-height:39px;padding:7px 12px;border:1px solid #afd2e6;border-radius:6px;background:#eef8fe;color:#266e93;font:inherit;font-size:14px;cursor:pointer}
+.page-course-library .library-search button:disabled{opacity:.5;cursor:default}
+.page-course-library .library-search [role=status]{align-self:center;color:#5b766f;font-size:13px;white-space:nowrap}
+.page-course-library .library-nav a:focus-visible,.page-course-library .library-search :is(input,button):focus-visible{outline:2px solid #438baf;outline-offset:3px}
+.page-lecture-index .library-track .course-table{min-width:760px}
+.page-lecture-index .course-table .lecture-title{color:#416a59}
+.page-course-library .course-table [hidden]{display:none}
+.page-course-library .journal-date{width:110px}
+.page-course-library .journal-track{width:115px}
+.page-course-library .journal-course{width:90px}
+.page-journal .library-track>.track-header{background:linear-gradient(112deg,#fff4d9,#fffdf6);border-bottom:1px solid #e2d4ad}
+.page-journal .library-track h2{color:#866b35}
+.page-journal .course-table thead{background:#fff6e3;color:#796438}
+.page-journal .course-table .table-empty{padding:32px 15px;text-align:center;background:#fffdf6;line-height:1.9;color:#796e52}
+.page-journal .course-table .table-empty strong{display:block;font-size:16px;font-weight:650}
+@media(max-width:600px){.page-course-library .library-search [role=status]{flex-basis:100%}.page-course-library .library-nav{margin-bottom:12px}}

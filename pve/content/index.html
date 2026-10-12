@@ -11,27 +11,30 @@
  <link rel="stylesheet" href="../../assets/site-footer.css">
  <link rel="stylesheet" href="../courses/scroll-tools.css?v=20261010-c11">
  <link rel="stylesheet" href="../../assets/library-portals.css?v=20261012-p3">
+ <link rel="stylesheet" href="../../assets/library-search.css?v=20261012-s1">
 </head>
 <body class="page-atlas page-course-library page-content-library">
  <div class="wrap"><div class="topline"><nav class="breadcrumbs" aria-label="麵包屑"><a class="brand-home journey-home" href="../../" target="_blank" rel="noopener noreferrer">FF14 JOURNEY</a> / <span class="breadcrumb-pve">PVE</span> / <span aria-current="page">內容專修</span></nav></div></div>
  <header class="top"><div class="wrap"><div class="banner"><div><p class="eyebrow">PVE · CONTENT STUDIES</p><h1>PvE 內容專修</h1><p class="description"><strong>讀懂流程與機制，掌握每個職能的責任。</strong></p></div></div></div></header>
  <main class="container">
+  <nav class="library-nav" aria-label="學習查閱"><span aria-current="page">內容教材</span><a href="../journal/" target="_blank" rel="noopener noreferrer">課堂紀事 ↗</a></nav>
   <div class="library-intro"><p class="library-summary">以副本與戰鬥內容為主題，學習流程、機制與各職能責任。</p><a class="library-cross-portal" aria-label="延伸學習入口" href="../courses/" target="_blank" rel="noopener noreferrer"><strong>想熟悉職業操作？</strong><span>↗ 前往職業養成學院</span></a></div>
      <section class="library-track content-track" id="content-learning" aria-labelledby="content-library-heading">
     <header class="track-header"><h2 id="content-library-heading">PvE 內容專修講義</h2><span class="track-count">1 堂講義</span></header>
     <div class="track-body">
      <p class="track-description">以內容理解為主：完整走讀流程、機制與各職能責任。推薦職業是這次學習的入場載具。</p>
-     <div class="course-table-scroll" role="region" aria-label="PvE 內容專修講義資料表" tabindex="0">
+     <form class="library-search" role="search" aria-label="搜尋內容教材"><div class="search-field"><label for="library-search">搜尋教材</label><input id="library-search" name="q" type="search" placeholder="課號、內容 ID 或內容名稱" autocomplete="off"></div><button id="library-reset" type="button" disabled>重置</button><span id="library-result-count" role="status" aria-live="polite">顯示 1 / 1 篇</span></form><noscript><p class="track-description">所有教材已列於下表；啟用 JavaScript 後可使用搜尋與篩選。</p></noscript>
+    <div class="course-table-scroll" role="region" aria-label="PvE 內容專修講義資料表" tabindex="0">
       <table class="course-table"><caption class="visually-hidden">PvE 內容專修講義</caption><colgroup><col class="content-course-id"><col class="content-id"><col class="content-version"><col><col class="content-read"></colgroup>
-       <thead><tr><th scope="col">課號</th><th scope="col">內容 ID</th><th scope="col"><span class="column-filter"><label for="content-version-filter">版本</label><select id="content-version-filter" aria-label="篩選內容版本"><option value="">全部</option></select></span></th><th scope="col">內容名稱</th><th scope="col">講義</th></tr></thead>
-       <tbody id="content-course-rows"><tr data-version="2.x"><td>D029</td><td>DG029</td><td>2.x</td><td>幻龍殘骸密約之塔</td><td><a class="read-link" href="d029/" target="_blank" rel="noopener noreferrer">閱讀 ↗</a></td></tr><tr id="content-course-empty"><td colspan="5" class="table-empty" role="status">目前篩選條件下沒有講義。</td></tr></tbody>
+       <thead><tr><th scope="col">課號</th><th scope="col">內容 ID</th><th scope="col"><span class="column-filter"><label for="content-version-filter">版本</label><select id="content-version-filter" aria-label="篩選內容版本"><option value="">全部</option><option value="2.x">2.x</option></select></span></th><th scope="col">內容名稱</th><th scope="col">講義</th></tr></thead>
+       <tbody id="content-course-rows"><tr data-version="2.x"><td>D029</td><td>DG029</td><td>2.x</td><td>幻龍殘骸密約之塔</td><td><a class="read-link" href="d029/" target="_blank" rel="noopener noreferrer">閱讀 ↗</a></td></tr><tr id="content-course-empty" hidden><td colspan="5" class="table-empty" role="status">目前篩選條件下沒有講義。</td></tr></tbody>
       </table>
      </div>
     </div>
    </section>
  </main>
  <footer class="site-footer"><span class="footer-credit">© sixteenpct · FF14 JOURNEY</span><span class="footer-brand">冒險者百科書庫 · 戰鬥分館 / PvE 內容專修</span><small class="footer-rights">FINAL FANTASY XIV © SQUARE ENIX · 非官方玩家網站</small></footer>
- <script src="../courses/library.js?v=20261011-c34"></script>
+ <script src="../courses/library.js?v=20261012-s1"></script>
  <div class="scroll-tools" aria-label="頁面捲動"><button id="scroll-bottom" type="button">捲到底部 ↓</button><button id="scroll-top" type="button">TOP ↑</button></div>
  <script src="../../assets/scroll-tools.js?v=20261011-180ms"></script>
 </body>

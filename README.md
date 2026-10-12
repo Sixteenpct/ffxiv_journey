@@ -13,6 +13,7 @@
 | 戰鬥分館／職業養成學院（21 職業選擇） | pve/courses/ |
 | 戰鬥分館／講義總索引（R001／R003／R005／R007／R014／R022 已開放） | pve/courses/lectures/；正式講義在 pve/courses/r001/、r003/、r005/、r007/、r014/、r022/ |
 | 戰鬥分館／PvE 內容專修（D029 幻龍殘骸密約之塔已開放） | pve/content/；正式講義 pve/content/d029/ |
+| 戰鬥分館／課堂紀事（待逐篇核准，目前零篇） | pve/journal/ |
 | 故事分館／Lore 故事書庫（未建置） | 未來放 lore/stories/ |
 | 故事分館／歷代 FF 致敬（未建置） | 未來放 lore/references/ |
 
