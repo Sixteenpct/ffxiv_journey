@@ -52,3 +52,26 @@
   .page-course-library .library-shortcuts{border:0;padding-left:0;justify-content:flex-start}
   .page-course-library .library-shortcuts a{min-height:38px}
 }
+
+/* Academy-only viewport fit: reclaim dead space above and below the approved job atlas.
+   Keep all 21 tile sizes, per-tile gutters, role group padding and typography intact.
+   Never clip overflow: short screens or zoomed text must be allowed to scroll. */
+@media (min-width:981px) and (min-height:760px) and (max-height:900px){
+  body.page-academy .top .banner{
+    min-height:96px;
+    padding:4px 0 5px;
+  }
+  body.page-academy > main.container{
+    padding-top:8px;
+    padding-bottom:6px;
+  }
+  body.page-academy .library-intro{
+    margin-bottom:7px;
+    padding-top:0;
+    padding-bottom:5px;
+  }
+  body.page-academy > footer.site-footer{
+    padding-top:8px;
+    padding-bottom:8px;
+  }
+}
