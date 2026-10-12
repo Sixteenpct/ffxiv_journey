@@ -18,3 +18,7 @@
 
 未建置路徑僅是命名規則；目前不建立空網頁或假入口。
 接手工程先讀 [GPT_CONTEXT.md](GPT_CONTEXT.md)，維護方法見 [DEVELOPMENT.md](DEVELOPMENT.md)。
+
+## 退役原始碼封存
+
+已停用的 `ffxiv_workbench` 舊站最後完整原始碼（9 檔）保存在本 repo 的獨立 [封存分支 `archive/ffxiv-workbench-legacy-20261012`](https://github.com/Sixteenpct/ffxiv_journey/tree/archive/ffxiv-workbench-legacy-20261012/ffxiv_workbench)，來源為舊 repo `27ff046253b3a20e483b22f6241f88e5f8771a7c`；逐檔 Git blob SHA 均已核對一致。封存分支不參與本站 Pages 發布，不得當作第二份網站維護。現行功能程式只維護 main 分支。
