@@ -75,3 +75,38 @@
     padding-bottom:8px;
   }
 }
+
+/* p6 — A conspicuous reciprocal-learning sky-blue button and real secondary buttons. */
+.page-course-library .library-cross-portal{
+  min-height:40px;padding:7px 12px;
+  border:1px solid #55a7d5;
+  background:linear-gradient(112deg,#82c5eb 0%,#bfe4f8 100%);
+  box-shadow:inset 0 1px 0 #ffffffad,0 3px 10px #3c94bf45;color:#144a6a;
+}
+.page-course-library .library-cross-portal span{font-size:13.5px;font-weight:650;line-height:1.5;color:#1d5775}
+.page-course-library .library-cross-portal strong{font-size:14px;font-weight:800;line-height:1.5;color:#104767}
+.page-course-library .library-cross-portal:hover{
+  background:linear-gradient(112deg,#6db9e5 0%,#a9daf4 100%);
+  border-color:#3d96c6;
+  box-shadow:inset 0 1px 0 #ffffffc9,0 4px 12px #3188b357;
+}
+.page-course-library .library-shortcuts{gap:6px;border-left:0;padding-left:0}
+.page-course-library .library-shortcuts a{
+  min-height:38px;padding:6px 11px;border:1px solid #bfd8e5;border-radius:7px;
+  background:linear-gradient(115deg,#f9fdff,#ebf7fc);
+  box-shadow:inset 0 1px 0 #ffffffd1;font-size:12.5px;color:#356e87;font-weight:700;
+}
+.page-course-library .library-shortcuts a:hover{
+  border-color:#90bfd7;background:linear-gradient(115deg,#e6f6ff,#d9f0fc);color:#195f82;
+}
+
+/* Academy-only 24-inch desktop density, with natural scrolling at smaller viewports. */
+@media(min-width:901px){
+  body.page-academy .job-grid{gap:16px}
+  body.page-academy .group-stack{gap:10px}
+  body.page-academy .group>header{padding:7px 12px}
+  body.page-academy .group h2{font-size:16px}
+  body.page-academy .jobs{padding:8px;column-gap:12px;row-gap:8px}
+  body.page-academy .job{min-height:40px;padding:6px 9px;font-size:15px}
+  body.page-academy .job-icon{width:24px;height:24px;flex:0 0 24px}
+}

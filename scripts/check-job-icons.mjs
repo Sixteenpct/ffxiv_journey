@@ -62,9 +62,10 @@ if (!/class="[^"]*\blibrary-cross-portal\b[^"]*"/.test(lectureHTML) ||
 
 if (!html.includes("<h1>職業養成學院</h1>")) problems.push("Academy H1 is missing");
 if (html.includes('class="job-picker"')) problems.push("Academy job choices must not be collapsed");
-if (!html.includes('id="job-learning"') || !html.includes('href="lectures/"') ||
-    html.includes('id="lecture-index"') || !lectureHTML.includes('id="lecture-index"'))
-  problems.push("Lecture index must be separate from the job academy and linked from its hall");
+if (!html.includes('id="job-learning"') || !html.includes('href="lectures/?job=') ||
+    html.includes('href="lectures/"') || html.includes('id="lecture-index"') ||
+    !lectureHTML.includes('id="lecture-index"'))
+  problems.push("Keep the separate filtered lecture catalogue reachable by all job tiles, without an independent index shortcut");
 if (!lectureHTML.includes('id="job-course-filter"') || !lectureHTML.includes('id="job-course-rows"') ||
     !lectureHTML.includes('href="../r005/"') || !lectureHTML.includes('href="../r022/"'))
   problems.push("Separate lecture index lost its existing filter or course links");
@@ -73,6 +74,17 @@ if (!/class="[^"]*\bacademy-toolbar\b[^"]*"/.test(html) || !html.includes('class
   problems.push("Academy must show the real career-selection grid beneath its compact navigation");
 const academyCSS = await readFile(path.join(root,"pve/courses/courses.css"),"utf8");
 const readerCSS = await readFile(path.join(root,"pve/reader.css"),"utf8");
+const portalCSS = await readFile(path.join(root,"assets/library-portals.css"),"utf8");
+const contentHTML = await readFile(path.join(root,"pve/content/index.html"),"utf8");
+const journalHTML = await readFile(path.join(root,"pve/journal/index.html"),"utf8");
+for (const [name, page] of [["academy",html],["content",contentHTML],["journal",journalHTML]]) {
+  if (page.includes(">講義總索引 ↗</a>")) problems.push(name+": independent lecture-index shortcut must remain removed");
+}
+if (!html.includes('href="../content/"') || !contentHTML.includes('href="../courses/"') ||
+    !portalCSS.includes("background:linear-gradient(112deg,#82c5eb") ||
+    !portalCSS.includes("body.page-academy .job{min-height:40px") ||
+    !portalCSS.includes("body.page-academy .group>header{padding:7px 12px}"))
+  problems.push("Approved p6 brighter reciprocal PvE gateways and compact desktop academy layout missing");
 if (/\.academy-hall\s+\.(?:job|jobs|group|job-grid|group-stack)/.test(academyCSS) ||
     !readerCSS.includes(".page-atlas .jobs{column-gap:16px;row-gap:15px}") ||
     !readerCSS.includes(".page-atlas .job{min-height:48px;padding:8px 11px}"))
