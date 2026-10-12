@@ -186,3 +186,50 @@
   .page-course-library .library-cross-portal{min-height:40px}
   .page-course-library .library-shortcuts a{min-height:40px}
 }
+
+/* p8 | A palette: truly flat sky blue and marshmallow purple, 2026-10-13.
+   Pure fills only: no gradients or decorative shadows. Layout is unchanged. */
+.page-course-library .library-cross-portal{
+  background:#D5EFFB;
+  border-color:#93C7DE;
+  color:#245E7B;
+  box-shadow:none;
+}
+.page-course-library .library-cross-portal span,
+.page-course-library .library-cross-portal strong{color:#245E7B}
+.page-course-library .library-cross-portal:hover{
+  background:#C7E8F8;
+  border-color:#7AB9D8;
+  box-shadow:none;
+}
+.page-course-library .library-shortcuts a{
+  background:#D5EFFB;
+  border-color:#93C7DE;
+  color:#245E7B;
+  box-shadow:none;
+}
+.page-course-library .library-shortcuts a:hover{
+  background:#C7E8F8;
+  border-color:#7AB9D8;
+  color:#245E7B;
+  box-shadow:none;
+}
+/* Purple on every journal destination AND on the journal page's own return links. */
+.page-course-library .library-shortcuts a[href$="/journal/"],
+.page-course-library.page-journal .library-shortcuts a{
+  background:#F1E5FB;
+  border-color:#CDB4E7;
+  color:#74558F;
+  box-shadow:none;
+}
+.page-course-library .library-shortcuts a[href$="/journal/"]:hover,
+.page-course-library.page-journal .library-shortcuts a:hover{
+  background:#EADAF8;
+  border-color:#B896D4;
+  color:#64447F;
+  box-shadow:none;
+}
+.page-course-library.page-journal .library-shortcuts a:focus-visible{
+  outline:2px solid #926BB3;
+  outline-offset:3px;
+}

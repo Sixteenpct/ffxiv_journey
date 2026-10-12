@@ -80,7 +80,7 @@ const journalHTML = await readFile(path.join(root,"pve/journal/index.html"),"utf
 for (const [name, page] of [["academy",html],["content",contentHTML],["journal",journalHTML]]) {
   if (page.includes(">講義總索引 ↗</a>")) problems.push(name+": independent lecture-index shortcut must remain removed");
 }
-const p7 = portalCSS.split("/* p7 |")[1] ?? "";
+const p7 = portalCSS.split("/* p7 |")[1]?.split("/* p8 |")[0] ?? "";
 if (!html.includes('href="../content/"') || !contentHTML.includes('href="../courses/"') ||
     !html.includes('<span>想學副本？</span><strong>PvE 內容專修 ↗</strong>') ||
     !contentHTML.includes('<span>想練職業？</span><strong>職業養成學院 ↗</strong>') ||
@@ -93,6 +93,20 @@ if (!html.includes('href="../content/"') || !contentHTML.includes('href="../cour
     !p7.includes("body.page-academy .jobs{padding:6px 7px;column-gap:16px;row-gap:11px}") ||
     p7.includes(".banner"))
   problems.push("Approved p7 B2/T3 capsule + marshmallow-purple journal or spacious compact academy layout missing; fixed hero must not be changed");
+
+/* p8: user-selected palette A is flat, across all four catalogue/journal pages.
+   The journal's own two return buttons must not keep the older blue-grey fill. */
+const p8 = portalCSS.split("/* p8 |")[1] ?? "";
+const p8Rules = p8.replace(/\/\*[\s\S]*?\*\//g, "");
+const expectedFlatColors = ["#D5EFFB","#93C7DE","#245E7B","#F1E5FB","#CDB4E7","#74558F"];
+if (!expectedFlatColors.every(color => p8Rules.includes(color)) ||
+    !p8Rules.includes(".page-course-library.page-journal .library-shortcuts a{") ||
+    !p8Rules.includes('a[href$="/journal/"]') ||
+    !p8Rules.includes("box-shadow:none") ||
+    /(?:linear|radial|conic)-gradient|\.banner\b|body\.page-academy \.job\b/.test(p8Rules) ||
+    [html,contentHTML,lectureHTML,journalHTML].some(page => !page.includes("library-portals.css?v=20261013-p8")))
+  problems.push("Approved flat A sky-blue/marshmallow-purple palette, including journal-page return buttons, is missing or unexpectedly changes layout");
+
 if (/\.academy-hall\s+\.(?:job|jobs|group|job-grid|group-stack)/.test(academyCSS) ||
     !readerCSS.includes(".page-atlas .jobs{column-gap:16px;row-gap:15px}") ||
     !readerCSS.includes(".page-atlas .job{min-height:48px;padding:8px 11px}"))
