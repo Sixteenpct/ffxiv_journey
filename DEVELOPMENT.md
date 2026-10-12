@@ -429,3 +429,7 @@ D029 曲名改為「銀淚（Silver Tears）」；來源以物品 ID 16817 對�
 - main 移除 pve/jobs/ 與 pve/jobs/ninja/ 的相容轉址頁；正式入口直接使用 pve/courses/ 與 pve/courses/lectures/?job=忍者。
 - 移除學院頁 #content-learning、#lecture-index 舊錨點的自動轉址；直接使用 pve/content/ 與 pve/courses/lectures/。
 - 既有備份分支及 Git 歷史保留；不得依上方歷史 checkpoint 重建退休路由。正式教材、篩選與分享網址保留。
+
+## 2026-10-13｜首頁顯示字體升級（獨立微型 checkpoint）
+- 根據本人現有首頁截圖，原全站入口字重／字族太像一般 UI；在 `index.html` 加入 Google Fonts Cinzel＋Noto Serif TC 並於內嵌 CSS 最後使用有限的 display font selectors。Cinzel 用於首頁英文字標、Noto Serif TC 用於中文主標／分館／六入口標題；內文與資訊性小字仍沿用原 sans。
+- 加入 `fonts.googleapis.com`／`fonts.gstatic.com` preconnect、`display=swap`，提供未載入情境 fallback。不提交 font files，也不覆蓋三館幾何、背景照片、SVG、色卡、連結路由、footer／favicon；字級／行高／版面高度均維持。核對補入前後除字型載入標籤與 CSS 尾段外 index body 完全一致。
