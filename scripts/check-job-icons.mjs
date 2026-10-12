@@ -80,11 +80,19 @@ const journalHTML = await readFile(path.join(root,"pve/journal/index.html"),"utf
 for (const [name, page] of [["academy",html],["content",contentHTML],["journal",journalHTML]]) {
   if (page.includes(">講義總索引 ↗</a>")) problems.push(name+": independent lecture-index shortcut must remain removed");
 }
+const p7 = portalCSS.split("/* p7 |")[1] ?? "";
 if (!html.includes('href="../content/"') || !contentHTML.includes('href="../courses/"') ||
-    !portalCSS.includes("background:linear-gradient(112deg,#82c5eb") ||
-    !portalCSS.includes("body.page-academy .job{min-height:40px") ||
-    !portalCSS.includes("body.page-academy .group>header{padding:7px 12px}"))
-  problems.push("Approved p6 brighter reciprocal PvE gateways and compact desktop academy layout missing");
+    !html.includes('<span>想學副本？</span><strong>PvE 內容專修 ↗</strong>') ||
+    !contentHTML.includes('<span>想練職業？</span><strong>職業養成學院 ↗</strong>') ||
+    !lectureHTML.includes('<span>想學副本？</span><strong>PvE 內容專修 ↗</strong>') ||
+    !p7.includes("background:linear-gradient(110deg,#b7def3") ||
+    !p7.includes('a[href$="/journal/"]') ||
+    !p7.includes("body.page-academy .job{min-height:35px") ||
+    !p7.includes("body.page-academy .jobs{padding:7px 8px;column-gap:18px;row-gap:12px}") ||
+    !p7.includes("body.page-academy .job{min-height:33px") ||
+    !p7.includes("body.page-academy .jobs{padding:6px 7px;column-gap:16px;row-gap:11px}") ||
+    p7.includes(".banner"))
+  problems.push("Approved p7 B2/T3 capsule + marshmallow-purple journal or spacious compact academy layout missing; fixed hero must not be changed");
 if (/\.academy-hall\s+\.(?:job|jobs|group|job-grid|group-stack)/.test(academyCSS) ||
     !readerCSS.includes(".page-atlas .jobs{column-gap:16px;row-gap:15px}") ||
     !readerCSS.includes(".page-atlas .job{min-height:48px;padding:8px 11px}"))
