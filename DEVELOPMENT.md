@@ -423,3 +423,9 @@ D029 曲名改為「銀淚（Silver Tears）」；來源以物品 ID 16817 對�
 - 新增 pve/journal/ 清單入口，目前 0 篇。逐篇本人審閱及同版公開同意後才可收錄，私人草稿不進公開 Git。生成與核准指紋檢查見 docs/LEARNING_LIBRARY_DESIGN.md。
 - Dev Garden 技術學習維持獨立私人空間；本期不發布。不以課堂結課推定紀事核准，不復活撤回心得。
 - 適用驗證：favicon／footer 15 頁、21職、166 項 DOM／靜態行為、紀事核准正反例；實際瀏覽器視覺未驗，保留本人驗收。原始碼保存後核對同 commit Pages。
+
+
+## 2026-10-12｜本人核准清除舊轉址（覆寫歷史相容規則）
+- main 移除 pve/jobs/ 與 pve/jobs/ninja/ 的相容轉址頁；正式入口直接使用 pve/courses/ 與 pve/courses/lectures/?job=忍者。
+- 移除學院頁 #content-learning、#lecture-index 舊錨點的自動轉址；直接使用 pve/content/ 與 pve/courses/lectures/。
+- 既有備份分支及 Git 歷史保留；不得依上方歷史 checkpoint 重建退休路由。正式教材、篩選與分享網址保留。

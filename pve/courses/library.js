@@ -1,9 +1,5 @@
 /* Static catalogues stay readable without JavaScript; filters share URL state. */
 (() => {
-  if (document.body.classList.contains('page-academy')) {
-    if (location.hash === '#content-learning') return location.replace('../content/#content-learning');
-    if (location.hash === '#lecture-index') return location.replace('lectures/#lecture-index');
-  }
   const normalise = value => value.normalize('NFKC').toLocaleLowerCase().trim();
   const configurations = [
     {rows:'#job-course-rows tr[data-job]', empty:'#job-course-empty', filters:{job:'#job-course-filter', sync:'#sync-course-filter'}},

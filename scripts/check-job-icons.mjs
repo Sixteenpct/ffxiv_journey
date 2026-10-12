@@ -126,10 +126,10 @@ const libraryJS = await readFile(path.join(root,"pve/courses/library.js"),"utf8"
 if (!libraryJS.includes("new URLSearchParams(location.search)") ||
     !libraryJS.includes("history.replaceState"))
   problems.push("Job filter must honor query defaults and shareable URLs");
-const retiredNinja = await readFile(path.join(root,"pve/jobs/ninja/index.html"),"utf8");
-if (!retiredNinja.includes('http-equiv="refresh"') ||
-    !retiredNinja.includes("courses/lectures/?job="+encodeURIComponent("忍者")))
-  problems.push("Retired Ninja route must redirect into filtered lectures");
+for (const retired of ["pve/jobs/index.html", "pve/jobs/ninja/index.html"]) {
+  try { await access(path.join(root, retired)); problems.push("Retired route must remain removed: " + retired); }
+  catch (e) { if (e.code !== "ENOENT") throw e; }
+}
 if (problems.length) {
   console.error("FAIL job atlas icons:");
   for (const problem of problems) console.error(" - "+problem);

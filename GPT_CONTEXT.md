@@ -256,3 +256,9 @@ D029 曲名改為「銀淚（Silver Tears）」；來源以物品 ID 16817 對�
 - 課堂紀事獨立 pve/journal/ 清單，目前 0 篇；只有逐篇本人核准收錄與同版公開同意的文章才可進公開 Git。不得自動搬入私人進度／完成日期／問答／撤回心得。
 - 正式文章及索引欄位核准指紋由 scripts/build-journal.mjs 驗證；提交前必跑，不能只填 approved 欄位代替本人核准。完整資料邊界與流程見 docs/LEARNING_LIBRARY_DESIGN.md。
 - FF14 與 Dev Garden 工作技術學習完全分離；本期僅前者查閱層施工，後者仍私有，下一階段才建私人介面。六堂職業講義及 D029 正文／圖解不改。
+
+
+## 2026-10-12｜本人核准清除舊轉址（覆寫歷史相容規則）
+- main 移除 pve/jobs/ 與 pve/jobs/ninja/ 的相容轉址頁；正式入口直接使用 pve/courses/ 與 pve/courses/lectures/?job=忍者。
+- 移除學院頁 #content-learning、#lecture-index 舊錨點的自動轉址；直接使用 pve/content/ 與 pve/courses/lectures/。
+- 既有備份分支及 Git 歷史保留；不得依上方歷史 checkpoint 重建退休路由。正式教材、篩選與分享網址保留。
