@@ -96,7 +96,7 @@ if (!html.includes('href="../content/"') || !contentHTML.includes('href="../cour
 
 /* p8: user-selected palette A is flat, across all four catalogue/journal pages.
    The journal's own two return buttons must not keep the older blue-grey fill. */
-const p8 = portalCSS.split("/* p8 |")[1] ?? "";
+const p8 = portalCSS.split("/* p8 |")[1]?.split("/* p9 |")[0] ?? "";
 const p8Rules = p8.replace(/\/\*[\s\S]*?\*\//g, "");
 const expectedFlatColors = ["#D5EFFB","#93C7DE","#245E7B","#F1E5FB","#CDB4E7","#74558F"];
 if (!expectedFlatColors.every(color => p8Rules.includes(color)) ||
@@ -104,8 +104,42 @@ if (!expectedFlatColors.every(color => p8Rules.includes(color)) ||
     !p8Rules.includes('a[href$="/journal/"]') ||
     !p8Rules.includes("box-shadow:none") ||
     /(?:linear|radial|conic)-gradient|\.banner\b|body\.page-academy \.job\b/.test(p8Rules) ||
-    [html,contentHTML,lectureHTML,journalHTML].some(page => !page.includes("library-portals.css?v=20261013-p8")))
+    [html,contentHTML,lectureHTML,journalHTML].some(page => !page.includes("library-portals.css?v=20261013-p9")))
   problems.push("Approved flat A sky-blue/marshmallow-purple palette, including journal-page return buttons, is missing or unexpectedly changes layout");
+
+/* p9: all nine navigation buttons must take color from their destination,
+   never the page hosting them; old p8 visual rule is historical only. */
+const p9 = portalCSS.split("/* p9 |")[1] ?? "";
+const desiredColors = {
+  career:["#DDF5EC","#A7D2BF","#2F6C58"],
+  pve:["#CFEAFB","#8FC2DD","#245F7A"],
+  journal:["#F1E5FB","#CDB4E7","#74558F"]
+};
+for(const [destination,colors] of Object.entries(desiredColors)){
+  if(!p9.includes('data-learning-destination="'+destination+'"') ||
+     colors.some(color => !p9.includes(color))){
+    problems.push("Incorrect/missing destination color tokens: "+destination);
+  }
+}
+const mapping = [
+  ["academy",html,[["pve","../content/"],["journal","../journal/"]]],
+  ["content",contentHTML,[["career","../courses/"],["journal","../journal/"]]],
+  ["lectures",lectureHTML,[["pve","../../content/"],["career","../"],["journal","../../journal/"]]],
+  ["journal",journalHTML,[["career","../courses/"],["pve","../content/"]]]
+];
+for(const [pageName,page,expected] of mapping){
+  const actual = [...page.matchAll(/<a\b[^>]*data-learning-destination="([^"]+)"[^>]*href="([^"]+)"[^>]*>/g)].map(m=>[m[1],m[2]]);
+  if(JSON.stringify(actual)!==JSON.stringify(expected))
+    problems.push(pageName+": portal destination identity or URL mismatch");
+}
+const p9Rules = p9.replace(/\/\*[\s\S]*?\*\//g,"");
+if(/(?:linear|radial|conic)-gradient|\.banner\b|body\.page-academy \.job\b|height\s*:|padding\s*:|margin\s*:/.test(p9Rules) ||
+   !p9Rules.includes("background:var(--portal-bg)") ||
+   !p9Rules.includes("color:var(--portal-text)") ||
+   !p9Rules.includes(".library-shortcuts a[data-learning-destination]")){
+  problems.push("Destination palette layer must remain flat, specific and free of layout changes");
+}
+
 
 if (/\.academy-hall\s+\.(?:job|jobs|group|job-grid|group-stack)/.test(academyCSS) ||
     !readerCSS.includes(".page-atlas .jobs{column-gap:16px;row-gap:15px}") ||

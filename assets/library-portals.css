@@ -233,3 +233,49 @@
   outline:2px solid #926BB3;
   outline-offset:3px;
 }
+
+/* p9 | Destination identity is the single authority for navigation colors.
+   Flat, no shadow, same approved capsule geometry and T3 text. */
+.page-course-library [data-learning-destination="career"]{
+  --portal-bg:#DDF5EC;
+  --portal-border:#A7D2BF;
+  --portal-text:#2F6C58;
+  --portal-hover-bg:#CFEEE1;
+  --portal-hover-border:#8BC6AA;
+}
+.page-course-library [data-learning-destination="pve"]{
+  --portal-bg:#CFEAFB;
+  --portal-border:#8FC2DD;
+  --portal-text:#245F7A;
+  --portal-hover-bg:#BFE1F6;
+  --portal-hover-border:#70B2D3;
+}
+.page-course-library [data-learning-destination="journal"]{
+  --portal-bg:#F1E5FB;
+  --portal-border:#CDB4E7;
+  --portal-text:#74558F;
+  --portal-hover-bg:#EADAF8;
+  --portal-hover-border:#B896D4;
+}
+body.page-course-library .library-cross-portal[data-learning-destination],
+body.page-course-library .library-shortcuts a[data-learning-destination]{
+  background:var(--portal-bg);
+  border-color:var(--portal-border);
+  color:var(--portal-text);
+  box-shadow:none;
+}
+body.page-course-library .library-cross-portal[data-learning-destination] :is(span,strong){
+  color:var(--portal-text);
+}
+body.page-course-library .library-cross-portal[data-learning-destination]:hover,
+body.page-course-library .library-shortcuts a[data-learning-destination]:hover{
+  background:var(--portal-hover-bg);
+  border-color:var(--portal-hover-border);
+  color:var(--portal-text);
+  box-shadow:none;
+}
+body.page-course-library .library-shortcuts a[data-learning-destination]:focus-visible,
+body.page-course-library .library-cross-portal[data-learning-destination]:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:3px;
+}
