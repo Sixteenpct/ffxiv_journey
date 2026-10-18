@@ -736,3 +736,6 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 /* Route A direct-demand partition: display delivery and crafting separately. */
 .node-stock .demand-split{display:flex;flex-direction:column;align-items:center;gap:6px;max-width:100%}
 .node-stock .demand-split .qty{display:block;max-width:100%;white-space:normal;text-align:center;line-height:1.4}
+
+/* Route A: visually distinguish directly delivered items from crafting inputs. */
+.node-stock .demand-split .qty.delivery-qty{background:#ffe4c8;color:#924b16;border:1px solid #e7b684;font-weight:700}
