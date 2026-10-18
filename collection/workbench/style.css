@@ -739,3 +739,10 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 
 /* Route A: visually distinguish directly delivered items from crafting inputs. */
 .node-stock .demand-split .qty.delivery-qty{background:#ffe4c8;color:#924b16;border:1px solid #e7b684;font-weight:700}
+
+/* Route A inventory tree: direct-versus-conditional copy and two equal-weight use pills. */
+.node-context .use .demand-fixed,.node-context .use .demand-conditional{display:block;line-height:1.6}
+.node-context .use .demand-conditional{margin-top:3px;color:#647d86}
+.node-stock .demand-split .qty{display:flex;align-items:center;justify-content:center;width:114px;min-height:32px;max-width:100%;padding:6px 8px;border:1px solid;border-radius:7px;font-size:12px;font-weight:650;letter-spacing:0;line-height:1.4;box-shadow:none}
+.node-stock .demand-split .qty.delivery-qty{background:#f8e8df;border-color:#e5c9bb;color:#765541;font-weight:650}
+.node-stock .demand-split .qty.crafting-qty{background:#f6edda;border-color:#e2d6be;color:#736248;font-weight:650}
