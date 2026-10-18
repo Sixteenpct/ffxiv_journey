@@ -732,3 +732,7 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 #target-results .target-add-qty input{width:66px;height:34px;padding:5px 6px;border:1px solid #c7e1e7;border-radius:6px;background:#fbfefe;color:#315569;font-size:13px;text-align:center}
 #target-results .target-add-qty input:focus-visible{outline:2px solid #7bbbd4;outline-offset:1px}
 @media(max-width:650px){#target-results .search-row{grid-template-columns:minmax(0,1fr) max-content max-content;gap:8px}}
+
+/* Route A direct-demand partition: display delivery and crafting separately. */
+.node-stock .demand-split{display:flex;flex-direction:column;align-items:center;gap:6px;max-width:100%}
+.node-stock .demand-split .qty{display:block;max-width:100%;white-space:normal;text-align:center;line-height:1.4}
