@@ -724,3 +724,11 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 #import-preview:not(:empty){margin-top:24px}
 #apply-import.import-confirm-progress{background:#FAF0CA;border-color:color-mix(in srgb,#FAF0CA 80%,#69572B);color:#69572B;box-shadow:0 2px 5px #ab985412}
 #apply-import.import-confirm-progress:hover{background:#F5EBC6;border-color:#d5c597;filter:none}
+
+
+/* Route A: quantity belongs to each search result; keep the target list while searching again. */
+#target-results .search-row{grid-template-columns:295.2px max-content max-content}
+#target-results .target-add-qty{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-size:12px;color:#557784;font-weight:600}
+#target-results .target-add-qty input{width:66px;height:34px;padding:5px 6px;border:1px solid #c7e1e7;border-radius:6px;background:#fbfefe;color:#315569;font-size:13px;text-align:center}
+#target-results .target-add-qty input:focus-visible{outline:2px solid #7bbbd4;outline-offset:1px}
+@media(max-width:650px){#target-results .search-row{grid-template-columns:minmax(0,1fr) max-content max-content;gap:8px}}
