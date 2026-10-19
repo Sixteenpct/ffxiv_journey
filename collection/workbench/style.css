@@ -750,3 +750,31 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 /* The middle column is dedicated to entered inventory; demand-use badges live with the material description. */
 .node-stock{justify-content:flex-start}
 .node-stock .stock-value{margin-top:3px}
+
+/* Guided download, progress import and independent full-backup recovery. */
+.data-center .data-intro{font-size:13px;line-height:1.75;color:#526d75;margin-bottom:18px}
+.data-flow{display:grid;gap:16px;margin-top:14px}
+.data-step{border:1px solid #d7e5e7;background:#fbfdfd;border-radius:12px;padding:17px 18px;min-width:0}
+.data-step-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.data-step-head h3{font-size:16px;font-weight:750;color:#305e70;margin:0}
+.data-step-number{display:inline-grid;place-items:center;width:31px;height:31px;border:1px solid #b5d7e4;background:#eaf5f8;border-radius:9px;font-size:13px;color:#326985;font-weight:800;flex:none}
+.data-step>p{font-size:13px;line-height:1.75;color:#536d73;margin:8px 0 13px}
+.data-step .data-small{font-size:12px;color:#6c8586;margin:9px 0 0}
+.data-step .file-button,.data-step>button{display:inline-flex;justify-content:center;align-items:center;box-sizing:border-box;text-decoration:none;max-width:100%;font-size:13px;padding:10px 16px;min-height:40px}
+.data-step .template-download{background:#e4edf9;border:1px solid #b6cede;color:#345f80;font-weight:750;border-radius:8px}
+.data-step .template-download:hover{background:#d8e8f7;filter:none}
+.data-step .data-pick-file{background:#d8f1e3;border:1px solid #b0cfbc;color:#355b43;font-weight:750;border-radius:8px}
+.data-step .data-pick-file:hover{background:#cce9d9;filter:none}
+.data-instructions{padding-left:24px;margin:12px 0 18px;font-size:13px;color:#355969;line-height:1.95}
+.data-instructions li{padding-left:3px}
+.data-step .backup-actions{margin-top:8px}
+.data-step .backup-action{grid-template-columns:230px minmax(0,1fr)}
+.data-step .backup-action p{font-size:12.5px;line-height:1.65}
+.data-step .backup-action .backup-export,.data-step .backup-action .backup-import{width:100%;min-height:40px;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+.data-step .data-import-result{background:#ecf7f1;border:1px solid #c5e3d2;padding:12px 14px;margin-top:14px;border-radius:9px;color:#295e4d;font-size:13px}
+.data-step .data-import-result p{margin:6px 0 0;font-size:12px}
+.data-sync-option{display:flex;align-items:flex-start;gap:8px;margin:12px 0;color:#52636c;font-size:12.5px;line-height:1.55;cursor:pointer}
+.data-sync-option input{margin-top:2px;flex:none}
+#restore-preview:not(:empty){margin-top:16px}
+.data-step #apply-import,.data-step #apply-restore{margin-top:9px;min-height:38px;font-size:13px}
+@media(max-width:650px){.data-step{padding:13px}.data-step .backup-action{grid-template-columns:minmax(0,1fr);gap:10px}.data-step-head h3{font-size:15px}}

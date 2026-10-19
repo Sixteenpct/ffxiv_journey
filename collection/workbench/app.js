@@ -7,7 +7,7 @@ const jobRank=job=>{const n=craftingJobOrder.indexOf(job);return n<0?99:n;};
 const compareJobs=(a,b)=>jobRank(a)-jobRank(b)||String(a||'').localeCompare(String(b||''),'zh-Hant');
 const compareRecipes=(a,b)=>compareJobs(a?.job,b?.job)||(a?.level||0)-(b?.level||0)||e.name(a?.item).localeCompare(e.name(b?.item),'zh-Hant',{numeric:true})||(a?.id||0)-(b?.id||0);
 function compareRecipeTargets(a,b){return compareRecipes(e.recipes.get(a.recipe),e.recipes.get(b.recipe))||e.name(a.item).localeCompare(e.name(b.item),'zh-Hant',{numeric:true})||String(a.key||'').localeCompare(String(b.key||''));}
-let state=S.empty(),plan=null,zero=null,branchPlan=null,tab='home',collectionPage=0,importPending=null,stockPage=0,historyPage=0;
+let state=S.empty(),plan=null,zero=null,branchPlan=null,tab='home',collectionPage=0,importPending=null,restorePending=null,stockPage=0,historyPage=0;
 let stockQueried=false,collectionQueried=false,targetPage=0;
 let stockFilter={q:'',categories:[],versions:[],nonzeroOnly:false,zeroOnly:false},collectionFilter={q:'',kind:'all',only:false,columns:{}};
 try{const stored=localStorage.getItem(S.KEY);if(stored)state=S.validate(JSON.parse(stored));else if(globalThis.FF14_BOOTSTRAP)state=S.validate(globalThis.FF14_BOOTSTRAP);}catch(err){$('notice').className='warning';$('notice').textContent='原備份讀取失敗，尚未覆蓋瀏覽器資料。請先匯出原資料或使用備份恢復：'+err.message;}
@@ -22,7 +22,7 @@ function update(fn){const next=structuredClone(state);fn(next);commit(next);}
 function safe(fn){try{return fn();}catch(err){notify(err.message,true);}}
 function download(name,text,type='application/json'){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 function backup(){if(storageBlocked){download('ff14-original-recovery.json',localStorage.getItem(S.KEY)||'{}');return;}download('ff14-workbench-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(state,null,2));}
-const titles={home:['素材製作工坊','製作備料、素材用途、背包盤點與收藏進度。'],a:['指定成品，展開備料','加入這次要做的東西，素材製作工坊會一起計算庫存、批次與缺料。'],b:['從素材，找到收藏用途','先保留完整下游母清單，再把選定目標交給同一套備料計算。'],stock:['盤點背包','填好現貨，讓每一層半成品都能正確切斷上游需求。'],collection:['製作與收藏進度','製作筆記與永久收藏共用介面，各自保留正確的完成身分。'],history:['留下記錄，下次接著做','實際製作、盤點與工作備註，都留在這個素材製作工坊。'],data:['資料與備份','下載備份、補上勾選進度，或恢復整份資料。']};
+const titles={home:['素材製作工坊','製作備料、素材用途、背包盤點與收藏進度。'],a:['指定成品，展開備料','加入這次要做的東西，素材製作工坊會一起計算庫存、批次與缺料。'],b:['從素材，找到收藏用途','先保留完整下游母清單，再把選定目標交給同一套備料計算。'],stock:['盤點背包','填好現貨，讓每一層半成品都能正確切斷上游需求。'],collection:['製作與收藏進度','製作筆記與永久收藏共用介面，各自保留正確的完成身分。'],history:['留下記錄，下次接著做','實際製作、盤點與工作備註，都留在這個素材製作工坊。'],data:['資料與備份','下載空白製作圖鑑、匯入進度，或備份整個工坊。']};
 function showTab(key){tab=key;document.querySelector('.scroll-tools').hidden=key==='home'||key==='data';document.body.classList.toggle('route-a-open',key==='a');$('route-toc').hidden=key!=='a';$('tab-'+key).prepend($('notice'));if(!storageBlocked)notify('');else $('notice').hidden=key!=='data';$('toast').hidden=true;document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='tab-'+key);document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===key));$('page-title').textContent=titles[key][0];$('crumb').textContent=key==='home'?'首頁':document.querySelector('nav button[data-tab="'+key+'"]').textContent.replace(/^\d+\s*/, '').trim();$('back-home').hidden=key==='home';$('page-description').textContent=titles[key][1];if(key==='stock')renderStock();if(key==='collection')renderCollection();if(key==='history')renderHistory();if(key==='a')highlightToc();}
 document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
 $('back-home').addEventListener('click',()=>showTab('home'));
@@ -167,8 +167,51 @@ $('backup').addEventListener('click',backup);
 function csvText(rows){return '\uFEFF'+rows.map(r=>r.map(c=>'"'+String(c??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');}
 $('export-stock')?.addEventListener('click',()=>download('ff14-inventory.csv',csvText([['item_id','物品','庫存'],...Object.entries(state.inventory).map(([id,q])=>[id,e.name(Number(id)),q])]),'text/csv;charset=utf-8'));
 $('export-plan')?.addEventListener('click',()=>{if(!plan)return;download('ff14-material-plan.csv',csvText([['item_id','物品','直接份額','條件份額','已啟用需求','現貨抵扣','還缺','批次','產出','剩餘'],...plan.rows.filter(r=>!r.pureTarget).map(r=>[r.item,e.name(r.item),r.direct,r.conditional,r.need,r.usedStock,r.shortage,r.batches,r.produced,r.surplus])]),'text/csv;charset=utf-8');});
-$('import-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{const text=await file.text();if(file.name.endsWith('.json')){const next=S.validate(JSON.parse(text));e.normalize(next.targets);importPending={type:'backup',next};$('import-preview').innerHTML=`<div class="warning"><strong>匯入並覆蓋整個工坊：</strong>這份檔案包含 ${Object.keys(next.inventory).length} 種庫存紀錄、${Object.keys(next.completion).length} 筆勾選紀錄、${next.targets.length} 項備料目標及 ${next.history.length} 筆工作記錄。確認後，<strong>目前工坊的全部資料會換成這份備份的內容</strong>，不是只補幾筆進度。</div><button id="apply-import" class="import-confirm-progress">確定匯入</button>`;}else{const changes=S.csvImport(text,e);importPending={type:'merge',changes};const stockCount=Object.keys(changes.inventory).length,checkedCount=Object.keys(changes.completion).length,details=[stockCount?stockCount+' 種物品的庫存數量':'',checkedCount?checkedCount+' 筆勾選紀錄':''].filter(Boolean).join('、')||'0 筆可更新的資料';$('import-preview').innerHTML=`<div class="warning"><strong>補上進度：</strong>這份檔案有 ${details}。只更新檔案裡列出的項目；其他勾選、庫存、備料目標與工作記錄都保留。相同項目以檔案裡的勾選或數量為準（包含取消勾選或將庫存設為 0）。</div><button id="apply-import" class="import-confirm-progress">確定匯入</button>`;}}catch(err){importPending=null;$('import-preview').textContent='匯入未套用：'+err.message;}event.target.value='';});
-$('import-preview').addEventListener('click',event=>safe(()=>{if(event.target.id!=='apply-import'||!importPending)return;const restoringAll=importPending.type==='backup',wasBlocked=storageBlocked;const next=restoringAll?importPending.next:S.merge(state,importPending.changes);if(restoringAll)storageBlocked=false;try{commit(next);}catch(err){storageBlocked=wasBlocked;throw err;}importPending=null;$('import-preview').textContent='';$('toast').hidden=true;renderTargets();calculate();renderMother();window.alert('匯入完成！');}));
+
+function clearImportPreview(){importPending=null;$('import-preview').textContent='';}
+$('import-file').addEventListener('change',async event=>{
+ const file=event.target.files[0];if(!file)return;clearImportPreview();
+ try{
+  if(!/\.csv$/i.test(file.name))throw Error('請選擇「製作圖鑑」分頁下載的 CSV 檔案。');
+  const changes=S.csvImport(await file.text(),e),entries=Object.entries(changes.completion);
+  if(!entries.length)throw Error('找不到製作圖鑑的勾選資料。請確認下載的是「製作圖鑑」分頁。');
+  const completed=entries.filter(([,checked])=>checked).length;
+  importPending={type:'progress',changes};
+  $('import-preview').innerHTML=
+   '<div class="data-import-result"><strong>讀取 '+fmt(entries.length)+' 筆配方，已勾選 '+fmt(completed)+' 筆。</strong><p>預設只新增已完成項目；原有庫存、備料目標和其他勾選保留不動。</p></div>'+
+   '<label class="data-sync-option"><input id="import-sync-unchecked" type="checkbox"> 以試算表為準，同步取消未勾選項目（進階選項）</label>'+
+   '<button id="apply-import" class="import-confirm-progress" type="button">確定匯入勾選進度</button>';
+ }catch(err){$('import-preview').textContent='尚未匯入：'+err.message;}
+ event.target.value='';
+});
+$('import-preview').addEventListener('click',event=>safe(()=>{
+ if(event.target.id!=='apply-import'||!importPending)return;
+ const syncAll=!!$('import-sync-unchecked')?.checked;
+ const completed=Object.fromEntries(Object.entries(importPending.changes.completion).filter(([,checked])=>syncAll||checked));
+ if(!Object.keys(completed).length){clearImportPreview();notify('這份圖鑑沒有已勾選項目，工坊資料沒有變動。');return;}
+ const next=S.merge(state,{inventory:{},completion:completed});commit(next);
+ clearImportPreview();renderTargets();calculate();renderMother();renderCollection();
+ notify('製作圖鑑勾選進度已匯入，庫存與備料目標保持不變。');
+}));
+$('restore-file').addEventListener('change',async event=>{
+ const file=event.target.files[0];if(!file)return;restorePending=null;$('restore-preview').textContent='';
+ try{
+  if(!/\.json$/i.test(file.name))throw Error('請選擇工坊先前下載的 JSON 完整備份。');
+  const next=S.validate(JSON.parse(await file.text()));e.normalize(next.targets);restorePending=next;
+  $('restore-preview').innerHTML=
+   '<div class="warning"><strong>這是整份還原，不是補上勾選！</strong>檔案包含 '+fmt(Object.keys(next.inventory).length)+' 種庫存、'+fmt(Object.keys(next.completion).length)+' 筆完成狀態、'+fmt(next.targets.length)+' 項備料目標及 '+fmt(next.history.length)+' 筆工作記錄。<strong>確定還原後會取代本機全部工坊資料。</strong></div>'+
+   '<button id="apply-restore" class="import-confirm-progress" type="button">確認還原整個工坊</button>';
+ }catch(err){$('restore-preview').textContent='尚未還原：'+err.message;}
+ event.target.value='';
+});
+$('restore-preview').addEventListener('click',event=>safe(()=>{
+ if(event.target.id!=='apply-restore'||!restorePending)return;
+ if(!window.confirm('確定使用這份 JSON 備份取代目前工坊的全部資料嗎？'))return;
+ const before=storageBlocked;storageBlocked=false;
+ try{commit(restorePending);}catch(err){storageBlocked=before;throw err;}
+ restorePending=null;$('restore-preview').textContent='';renderTargets();calculate();renderMother();renderCollection();
+ notify('整個工坊備份已還原。');
+}));
 renderTargets();calculate();renderMother();
 
 
