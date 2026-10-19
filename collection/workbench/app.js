@@ -172,9 +172,15 @@ function clearImportPreview(){importPending=null;$('import-preview').textContent
 $('import-file').addEventListener('change',async event=>{
  const file=event.target.files[0];if(!file)return;clearImportPreview();
  try{
-  if(!/\.csv$/i.test(file.name))throw Error('請選擇「製作圖鑑」分頁下載的 CSV 檔案。');
-  const changes=S.csvImport(await file.text(),e),entries=Object.entries(changes.completion);
-  if(!entries.length)throw Error('找不到製作圖鑑的勾選資料。請確認下載的是「製作圖鑑」分頁。');
+  if(!/\.(csv|xlsx)$/i.test(file.name))throw Error('請選擇 Excel（.xlsx）或 CSV 製作圖鑑檔案。');
+  let csv;
+  if(/\.xlsx$/i.test(file.name)){
+   if(typeof window.FF14XlsxProgress?.parse!=='function')throw Error('Excel 讀取功能未載入，請重新整理網頁。');
+   const rows=await window.FF14XlsxProgress.parse(await file.arrayBuffer());
+   csv=rows.map(row=>row.join(',')).join('\n');
+  }else csv=await file.text();
+  const changes=S.csvImport(csv,e),entries=Object.entries(changes.completion);
+  if(!entries.length)throw Error('找不到製作圖鑑的勾選資料。請檢查選擇的檔案。');
   const completed=entries.filter(([,checked])=>checked).length;
   importPending={type:'progress',changes};
   $('import-preview').innerHTML=

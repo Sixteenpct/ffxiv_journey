@@ -34,12 +34,12 @@
 <div class="atlas-step-number" aria-hidden="true">1</div>
 <div class="atlas-step-content">
 <h3 id="data-template-title">準備製作圖鑑 <small>已有自己的圖鑑可跳過</small></h3>
-<p>第一次使用？先下載 <strong>FF14_製作圖鑑主控台</strong> 空白模板，再放到 Google 試算表記錄進度。</p>
+<p>第一次使用？先下載 <strong>FF14_製作圖鑑主控台</strong> 空白模板，可以在 Excel 或 Google 試算表記錄進度。</p>
 <a class="file-button template-download" id="template-download" href="templates/FF14_製作圖鑑主控台_空白模板.xlsx?v=20261020-clean-template" download="FF14_製作圖鑑主控台_空白模板.xlsx">下載空白製作圖鑑（Excel）</a>
 <details class="atlas-help"><summary>第一次使用 Google 試算表？看勾選設定教學</summary>
 <ol>
 <li>把下載的 Excel 上傳 Google 雲端硬碟，用 Google 試算表開啟並另存為 Google 試算表格式。</li>
-<li>切到「製作圖鑑」，選取 <strong>A 欄的勾選區域（不要包含第 1 列「已登錄」標題）</strong>，點選「插入 → 核取方塊」。原本的 TRUE／FALSE 才會變成可點選的勾選框。</li>
+<li>切到「製作圖鑑」，選取 <strong>A 欄的勾選區域（不要包含第 1 列「已登錄」標題）</strong>，<strong>點選「插入 → 核取方塊」。</strong>原本的 TRUE／FALSE 才會變成可點選的勾選框。</li>
 <li>開始勾選自己完成的配方；之後要同步工坊時，不用重新下載空白模板。</li>
 </ol>
 <p>提醒：只有上傳 Excel，不會自動出現核取方塊。</p>
@@ -50,9 +50,9 @@
 <div class="atlas-step-number" aria-hidden="true">2</div>
 <div class="atlas-step-content">
 <h3 id="data-import-title">把勾選進度帶進工坊</h3>
-<p>在 Google 試算表切到「製作圖鑑」分頁，點選 <strong>「檔案 → 下載 → 逗號分隔值（.csv，目前工作表）」</strong>，再點下方按鈕選取剛下載的檔案。</p>
-<label class="file-button backup-import data-pick-file" aria-describedby="import-description">選擇製作圖鑑 CSV，預覽進度<input id="import-file" accept=".csv,text/csv" type="file" aria-describedby="import-description"/></label>
-<p class="data-small" id="import-description">選好 CSV 後，會先顯示讀取筆數與已完成數量，按「確定匯入」才會保存。預設只補上已完成項目，其他原有紀錄不會被清除。</p>
+<p>勾選完成後，直接選取圖鑑檔案即可匯入。使用 Google 試算表的玩家，請從 <strong>「檔案 → 下載 → Microsoft Excel（.xlsx）」</strong> 取得檔案；原本下載的 CSV 也能繼續使用。</p>
+<label class="file-button backup-import data-pick-file" aria-describedby="import-description">選擇製作圖鑑檔案<input id="import-file" accept=".xlsx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv" type="file" aria-describedby="import-description"/></label>
+<p class="data-small" id="import-description">支援 Excel（.xlsx）與 CSV，會先顯示讀取筆數與已完成數量，按「確定匯入」才會保存。預設只補上已完成項目，其他原有紀錄不會被清除。</p>
 <div id="import-preview" role="status" aria-live="polite"></div>
 </div></div>
 
@@ -61,7 +61,7 @@
 
 </div></div></section>
 <footer class="foot"><span class="footer-credit">© sixteenpct · FF14 JOURNEY</span><span class="footer-brand">冒險者百科書庫 · 收藏分館 / 素材製作工坊</span><small class="footer-rights">FINAL FANTASY XIV © SQUARE ENIX · 非官方玩家網站</small></footer></main><details id="route-toc" class="route-toc" hidden open><summary>本頁目錄</summary><div id="route-toc-links"></div></details><div class="scroll-tools" hidden aria-label="頁面捲動"><button id="scroll-bottom" type="button">捲到底部 ↓</button><button id="scroll-top" type="button">TOP ↑</button></div>
-<script src="catalog.js"></script><script src="core.js?v=sky-atlas-lists-1"></script><script src="state.js"></script><script src="../../assets/scroll-tools.js?v=20261011-180ms"></script><script src="app.js?v=20261020-data-center"></script></body></html>
+<script src="catalog.js"></script><script src="core.js?v=sky-atlas-lists-1"></script><script src="state.js"></script><script src="xlsx-progress.js?v=20261020-xlsx-import"></script><script src="../../assets/scroll-tools.js?v=20261011-180ms"></script><script src="app.js?v=20261020-xlsx-import"></script></body></html>
 
 
 
