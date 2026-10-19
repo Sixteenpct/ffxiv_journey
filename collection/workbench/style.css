@@ -778,3 +778,36 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 #restore-preview:not(:empty){margin-top:16px}
 .data-step #apply-import,.data-step #apply-restore{margin-top:9px;min-height:38px;font-size:13px}
 @media(max-width:650px){.data-step{padding:13px}.data-step .backup-action{grid-template-columns:minmax(0,1fr);gap:10px}.data-step-head h3{font-size:15px}}
+
+/* Data & backup: two user goals. Full workshop protection first, atlas steps together below. */
+.data-center .data-intro{margin:0 0 18px}
+.data-flow{gap:18px}
+.data-step{padding:20px 22px}
+.data-section-head{margin-bottom:16px}
+.data-section-head h2{font-size:17px;margin:0 0 6px;color:#305e70}
+.data-section-head>p{font-size:13px;line-height:1.7;margin:0;color:#58757e}
+.data-backup-section .backup-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:0}
+.data-backup-section .backup-action{display:flex;flex-direction:column;align-items:stretch;gap:11px;min-width:0;border:1px solid #d5e3e6;background:#fff;border-radius:10px;padding:16px;min-height:140px}
+.data-backup-section .backup-action:first-child,.data-backup-section .backup-action:last-child{padding:16px}
+.data-backup-section .backup-action>p{font-size:12.5px;line-height:1.7;color:#5c747b;margin:0}
+.data-backup-section .backup-action .backup-export,.data-backup-section .backup-action .backup-import{width:100%;min-height:42px;display:inline-flex;justify-content:center;align-items:center;font-size:13px}
+.atlas-workflow{display:grid;gap:0;border:1px solid #d7e5e7;border-radius:10px;background:#fff;padding:2px 18px}
+.atlas-step{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:13px;padding:17px 0}
+.atlas-step+.atlas-step{border-top:1px solid #e1ebec}
+.atlas-step-number{display:grid;place-items:center;width:30px;height:30px;border:1px solid #b4d5e4;background:#e9f5f9;border-radius:9px;color:#356781;font-size:13px;font-weight:800}
+.atlas-step-content{min-width:0}
+.atlas-step-content h3{font-size:15px;font-weight:750;margin:3px 0 8px;color:#315e70}
+.atlas-step-content h3 small{font-size:12px;font-weight:500;color:#73848c;margin-left:5px}
+.atlas-step-content>p{font-size:13px;line-height:1.85;margin:0 0 13px;color:#536d73}
+.atlas-step-content .file-button{display:inline-flex;align-items:center;justify-content:center;max-width:100%;min-height:40px;font-size:13px;padding:9px 16px;text-decoration:none}
+.atlas-step-content .data-small{margin-top:9px;font-size:12px;line-height:1.75;color:#72848a}
+.atlas-step-content .template-download{border:1px solid #bad1df;background:#e4edf9;color:#345f80;border-radius:8px;font-weight:750}
+.atlas-step-content .template-download:hover{background:#d8e8f7;filter:none}
+.atlas-help{margin:12px 0 0;padding:10px 12px;border-radius:8px;border:1px solid #dce8e9;background:#f7fbfa;color:#4e6c73}
+.atlas-help summary{font-size:12.5px;font-weight:650;cursor:pointer;color:#3e7388}
+.atlas-help ol{font-size:12.5px;line-height:1.8;margin:12px 0 8px;padding-left:22px}
+.atlas-help li{padding:2px 0}
+.atlas-help p{margin:8px 0 2px;color:#677e82;font-size:12px;line-height:1.75}
+.atlas-step .data-pick-file{border:1px solid #b0cfbc;background:#d8f1e3;color:#355b43;border-radius:8px;font-weight:750}
+.atlas-step .data-pick-file:hover{background:#cce9d9;filter:none}
+@media(max-width:650px){.data-step{padding:15px 12px}.data-backup-section .backup-actions{grid-template-columns:minmax(0,1fr);gap:10px}.data-backup-section .backup-action{min-height:0}.atlas-workflow{padding:0 12px}.atlas-step{grid-template-columns:27px minmax(0,1fr);gap:9px;padding:14px 0}.atlas-step-number{width:26px;height:26px}.atlas-step-content h3 small{display:block;margin:4px 0 0}}
