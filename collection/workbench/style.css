@@ -811,3 +811,43 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 .atlas-step .data-pick-file{border:1px solid #b0cfbc;background:#d8f1e3;color:#355b43;border-radius:8px;font-weight:750}
 .atlas-step .data-pick-file:hover{background:#cce9d9;filter:none}
 @media(max-width:650px){.data-step{padding:15px 12px}.data-backup-section .backup-actions{grid-template-columns:minmax(0,1fr);gap:0}.data-backup-section .backup-action{grid-template-columns:minmax(0,1fr);gap:10px;min-height:0}.atlas-workflow{padding:0 12px}.atlas-step{grid-template-columns:27px minmax(0,1fr);gap:9px;padding:14px 0}.atlas-step-number{width:26px;height:26px}.atlas-step-content h3 small{display:block;margin:4px 0 0}}
+
+/* Route A: owner-approved warm highlights for shortage quantities and cool
+   highlights for fully covered stock; preserve all branch calculations. */
+#tree .gate > .gate-batch-line,
+#tree .gate > .branch-material > .gate-material-line {
+  display:block;
+  background:#fff3dc;
+  color:#344c59;
+  overflow-wrap:anywhere;
+}
+#tree .gate > .gate-batch-line {
+  margin-top:5px;
+  padding:6px 9px 2px;
+  border-radius:7px 7px 0 0;
+  font-weight:550;
+}
+#tree .gate > .branch-material > .gate-material-line {
+  padding:2px 9px;
+  font-weight:600;
+}
+#tree .gate > .branch-material > .gate-material-line .muted {font-weight:400}
+#tree .gate > .branch-material:has(> .gate) > .gate-material-line,
+#tree .gate > .branch-material:last-child > .gate-material-line {
+  padding-bottom:6px;
+  border-radius:0 0 7px 7px;
+}
+#tree .gate > .branch-material:has(> .gate) + .branch-material > .gate-material-line {
+  padding-top:6px;
+  border-radius:7px 7px 0 0;
+}
+#tree .gate > .gate-batch-line:last-child {padding-bottom:6px;border-radius:7px}
+#tree .gate > .gate-stock-covered {
+  margin-top:5px;
+  padding:6px 9px;
+  border:1px solid #c9e0ed;
+  border-radius:7px;
+  background:#eaf4fb;
+  color:#345c73;
+  font-weight:600;
+}
