@@ -295,3 +295,8 @@ D029 曲名改為「銀淚（Silver Tears）」；來源以物品 ID 16817 對�
 - 本人要求入口首頁換成更有氣質的字體；僅 `index.html` 的 typographic display 實施，沒有重設版面或改 PVE／Collection／Lore 內頁。英文 `FF14 Journey`／`Collection`／`PvE`／`Lore` 標題指定 **Cinzel 700**；中文首頁 `冒險者百科書庫`、三座分館名、六個入口標題指定 **Noto Serif TC**（主題 600／分館與入口 700）。透過 Google Fonts CSS 載入（`display=swap`、雙域 preconnect），並為英文／繁中各設 fallback。
 - 原本主要說明文字、入口說明、頁尾及功能性 UI 仍為清晰無襯線字體；`wordmark`、`identity h1`、`english`、`branch h2`、`entry-name` 的原字級、行高及顏色不變，僅指定字族、字重、少量字距。**首頁香檳金橫幅高度、三館尺寸／配色／間距、卡片按鈕尺寸與連結／未開通提示、footer／favicon 完全不動**。中文字型網路不可用時保留系統字體回退，不因遠端字型失效導致介面功能失效。
 - 此排版只作本次首頁修飾；不要擅自將字型變更擴及職業教材或各工具工作台。桌面 27／24 吋與窄窗仍須關注字型載入後是否意外換行、首頁首屏可見性。 
+
+## 2026-10-23｜收藏分館水晶標記｜03 本人核准
+- 收藏分館採 03「水晶標記」：淺藍綠、清透、平面、低彩度；單枚幾何菱形晶標、中央白色星芒、兩側小菱形，底部低對比青綠地景，與素材製作工坊天光及山丘橫幅一致。禁止改回淺藍灰、珠寶切面及繁複金屬徽章。
+- **同一檔案即同一圖形**：`assets/favicon-collection.svg` 同時是 Journey 首頁收藏卡片的頂部圖示（`index.html` 的 `<img>`）及收藏分館素材製作工坊分頁 favicon（`collection/workbench/index.html` 的 `<link rel="icon">`）。不得另繪首頁圓形衍生版；不同位置僅縮放同一 SVG。
+- 收藏卡片 palette 同步改淺藍綠以吻合已核准圖案；僅收藏分館生效。總站 `assets/favicon-journey-light.svg`、戰鬥及故事兩館圖標／配色、首頁香檳金標頭、玻璃框與排版、字型、文字、導航、工坊功能及資料一律不動。其他分館圖標待本人另案審閱。

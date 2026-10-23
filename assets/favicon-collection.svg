@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="FF14 Journey 收藏分館水晶標記">
+ <defs><clipPath id="board"><rect x="1" y="1" width="62" height="62" rx="13"/></clipPath></defs>
+ <rect x="1" y="1" width="62" height="62" rx="13" fill="#F3FBF8"/>
+ <g clip-path="url(#board)">
+  <circle cx="52" cy="14" r="14" fill="#FFFDF0" opacity=".5"/>
+  <path d="M0 43Q13 39 22 45T44 45T64 43V64H0Z" fill="#E1F3F2"/>
+  <path d="M0 49Q12 44 22 51T44 49T64 47V64H0Z" fill="#BFE5DF"/>
+  <path d="M0 54Q12 51 24 56T45 55T64 52V64H0Z" fill="#A7DCD7"/>
+ </g>
+ <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#C1E8E9" stroke-width=".9"/>
+ <path d="M32 8.5 33.55 12.25 37.2 13.7 33.55 15.15 32 18.9 30.45 15.15 26.8 13.7 30.45 12.25Z" fill="#84C8CB"/>
+ <path d="M14.5 32 16.45 28.3 18.4 32 16.45 35.7Z" fill="#83CBD0"/>
+ <path d="M45.6 32 47.55 28.3 49.5 32 47.55 35.7Z" fill="#83CBD0"/>
+ <path d="M32 17.7 43.85 32 32 50.8 20.15 32Z" fill="#F6FFFD"/>
+ <path d="M32 17.7 20.15 32H32Z" fill="#92D9DF"/>
+ <path d="M32 17.7 43.85 32H32Z" fill="#BFEAEC"/>
+ <path d="M20.15 32 32 50.8V32Z" fill="#76C9CA"/>
+ <path d="M43.85 32 32 50.8V32Z" fill="#66BDB9"/>
+ <path d="M32 17.7 20.15 32 32 50.8 43.85 32Z" fill="none" stroke="#ECFFFF" stroke-width="1.1" stroke-linejoin="round"/>
+ <path d="M32 25.9 33.7 30.3 38.1 32 33.7 33.7 32 38.1 30.3 33.7 25.9 32 30.3 30.3Z" fill="#FFFFF9"/>
+</svg>
