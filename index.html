@@ -3,7 +3,7 @@
 <title>FF14 Journey｜冒險者百科書庫</title><link rel="icon" type="image/svg+xml" href="assets/favicon-journey-light.svg"><meta name="description" content="收藏、戰鬥與故事，三座分館與六個入口，典藏一路累積的 FF14 冒險。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Noto+Serif+TC:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Noto+Serif+TC:wght@400;500;600;700&amp;display=swap">
 <style>
 :root{color-scheme:light;--ink:#343d3b;--muted:#66706d;--line:#d9d7cd;--paper:#f0ede4;--sans:"Noto Sans TC","Microsoft JhengHei","PingFang TC",system-ui,sans-serif}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;color:var(--ink);background:var(--paper);font-family:var(--sans);font-size:16px;letter-spacing:.01em;-webkit-font-smoothing:antialiased;background-image:radial-gradient(ellipse at 40% 0%,#fffdf6 0%,#fffdf600 70%)}
@@ -94,8 +94,8 @@ footer .footer-credit{font-weight:650}footer .footer-rights{display:block;font-s
 .entry-name{color:var(--label)}
 
 /* Homepage typography v1: engraved Latin titles, literary Traditional Chinese.
-   Selective display fonts only: keep navigation descriptions, chrome and
-   footer in their existing readable sans; preserve all established geometry. */
+   Display headings use literary serif typography. Homepage descriptions also
+   use Noto Serif TC; navigation chrome and footer retain readable sans. */
 :root{
   --journey-display-latin:"Cinzel","Palatino Linotype","Book Antiqua",Georgia,serif;
   --journey-display-tc:"Noto Serif TC","Source Han Serif TC","Songti TC","Microsoft JhengHei",serif;
@@ -129,6 +129,10 @@ footer .footer-credit{font-weight:650}footer .footer-rights{display:block;font-s
 /* Swap homepage Collection / PvE card palettes only; no layout or artwork changes. */
 .collection{--accent:#526d78;--label:#3e5965;--edge:#bccbd0;--tint:#dce7e9;--base:#eff3f3;--header-gradient:linear-gradient(120deg,#eff8fa 0%,#e5eff1 52%,#edf1f5 100%);--panel-gradient:linear-gradient(160deg,#f3f7f7 0%,#eaf0f2 100%);--entry-gradient:linear-gradient(110deg,#fffefd 0%,#f3f8f9 60%,#eaf2f4 100%)}
 .battle{--accent:#66836b;--label:#48694f;--edge:#c7d9c5;--tint:#e1ecdd;--base:#f1f7ed;--header-gradient:linear-gradient(120deg,#eef7e8 0%,#e4efdf 52%,#e7f1e8 100%);--panel-gradient:linear-gradient(160deg,#f3f8ef 0%,#eaf3e5 100%);--entry-gradient:linear-gradient(110deg,#fdfff9 0%,#f4f9ef 60%,#eaf3e4 100%)}
+/* Homepage supporting text: match the literary serif headings without competing with them. */
+.identity .lead{font-family:var(--journey-display-tc);font-weight:500;color:#756e63}
+.branch .intro{font-family:var(--journey-display-tc);font-weight:500;color:color-mix(in srgb,var(--label) 55%,#5e6667)}
+.entry-description{font-family:var(--journey-display-tc);font-weight:500;color:#5b6663}
 </style></head><body>
 <main><div class="identity"><svg class="welcome-portal" viewBox="0 0 1240 200" preserveAspectRatio="none" aria-hidden="true"><defs>
 <linearGradient id="welcome-glass" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#ffedc1" stop-opacity=".97"/><stop offset=".5" stop-color="#fff8e1" stop-opacity=".97"/><stop offset="1" stop-color="#f8dfa3" stop-opacity=".97"/></linearGradient>
