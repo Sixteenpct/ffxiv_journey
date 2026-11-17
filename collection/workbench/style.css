@@ -875,3 +875,24 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 #collection-export{min-width:104px;min-height:38.54px;padding:7px 12px;white-space:nowrap;border-color:#b3d4c1;background:#D8F1E3;color:#355B43;font-size:13.12px;font-weight:650}
 #collection-export:hover:not(:disabled){background:#cbe9d8;filter:none}
 #collection-export:disabled{opacity:.5;cursor:progress}
+
+/* Route A two-column Google Sheets paste workflow. */
+.route-bulk-panel{margin:12px 0 16px;border:1px solid #bbd2d7;border-radius:10px;background:#f8fcfd;padding:11px 13px}
+.route-bulk-panel>summary{color:#245e72;font-size:13px;font-weight:750;cursor:pointer}
+.route-bulk-panel[open]>summary{margin-bottom:9px}
+.route-bulk-note{font-size:12px;line-height:1.65;margin:5px 0 8px;color:#5a737b}
+#route-bulk-input{display:block;width:100%;min-height:114px;max-height:280px;resize:vertical;white-space:pre;overflow:auto;margin:6px 0 5px;font-size:13px;line-height:1.55;background:#fff}
+.route-bulk-controls{display:flex;align-items:end;gap:8px;flex-wrap:wrap;margin:10px 0}
+.route-bulk-controls label{display:flex;align-items:center;gap:8px;font-size:12px}
+#route-bulk-mode{max-width:100%;font-size:12px;background:#fff}
+#route-bulk-check,#route-bulk-clear,#route-bulk-apply{font-size:12px;min-height:33px}
+.route-bulk-ok{background:#e9f6ee;border:1px solid #b6dfc2;border-radius:7px;color:#285f44;padding:9px 11px;line-height:1.55;font-size:12px;margin:8px 0}
+#route-bulk-feedback .error{font-size:12px;line-height:1.6}
+#route-bulk-feedback ul{margin:7px 0 0 19px;padding:0}
+.route-bulk-table{max-height:262px;overflow:auto;border:1px solid #d4e2e4;border-radius:6px;margin:8px 0}
+.route-bulk-table table{width:100%;min-width:470px}
+.route-bulk-table th{position:sticky;top:0;z-index:1;background:#e8f2f3}
+.route-bulk-table td,.route-bulk-table th{font-size:12px;vertical-align:middle}
+.route-bulk-table select{max-width:350px;width:100%;font-size:12px}
+#route-bulk-apply{margin:2px 0 5px}
+@media(max-width:650px){.route-bulk-panel{padding:9px}.route-bulk-controls label{flex:1 1 100%;align-items:flex-start;flex-direction:column;gap:4px}#route-bulk-mode{width:100%}#route-bulk-input{min-height:145px}}

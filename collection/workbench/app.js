@@ -38,6 +38,48 @@ function routeHasData(route){return route==='a'?(state.targets.length>0||!!$('ta
 function queryRoute(route){if(route==='a'){recipeSearch();return;}const populated=routeHasData(route);if(populated&&!window.confirm('查詢將清空當前畫面資料，確定嗎？'))return;clearMother();$('material-feedback').textContent='';materialSearch();}
 $('target-query').addEventListener('submit',event=>{event.preventDefault();safe(()=>queryRoute('a'));});
 $('target-results').addEventListener('click',event=>safe(()=>{const b=event.target.closest('[data-add]');if(!b)return;const recipe=Number(b.dataset.add);const raw=b.parentElement.querySelector('[data-add-qty]')?.value.trim()||'';if(!/^\d+$/.test(raw))throw Error('加入數量請輸入 1～999999 的整數');const qty=FF14Core.integer(raw,'加入數量');if(qty<1||qty>999999)throw Error('加入數量請輸入 1～999999 的整數');update(s=>{const existing=s.targets.find(t=>t.mode==='craft'&&t.recipe===recipe);if((existing?.qty||0)+qty>999999)throw Error('累加後的目標數量不得超過 999999');s.targets.push({mode:'craft',recipe,qty});s.targets=e.normalize(s.targets);});renderTargets();calculate();notify('已加入本次目標。');}));
+
+let routeBulkPending=null;
+function routeBulkResetPreview(){
+ routeBulkPending=null;
+ $('route-bulk-preview').innerHTML='';
+ $('route-bulk-apply').hidden=true;
+}
+$('route-bulk-input').addEventListener('input',()=>{routeBulkResetPreview();$('route-bulk-feedback').textContent='';});
+$('route-bulk-mode').addEventListener('change',()=>{if(routeBulkPending)$('route-bulk-feedback').textContent='清單已檢查，可依目前選擇的匯入方式確認。';});
+$('route-bulk-clear').addEventListener('click',()=>{$('route-bulk-input').value='';routeBulkResetPreview();$('route-bulk-feedback').textContent='';$('route-bulk-input').focus();});
+$('route-bulk-check').addEventListener('click',()=>safe(()=>{
+ routeBulkResetPreview();
+ const parsed=FF14BulkTargets.parse($('route-bulk-input').value,e);
+ if(parsed.errors.length){
+  const shown=parsed.errors.slice(0,12);
+  $('route-bulk-feedback').innerHTML='<div class="error"><strong>尚未匯入，請修正以下問題（共 '+parsed.errors.length+' 項）：</strong><ul>'+shown.map(msg=>'<li>'+h(msg)+'</li>').join('')+'</ul>'+(parsed.errors.length>shown.length?'<p>其餘 '+(parsed.errors.length-shown.length)+' 項錯誤未列出。</p>':'')+'</div>';
+  return;
+ }
+ routeBulkPending=parsed;
+ const ambiguous=parsed.rows.filter(row=>row.options.length);
+ $('route-bulk-feedback').innerHTML='<div class="route-bulk-ok">✅ 已檢查 '+parsed.count+' 列，合併為 '+parsed.rows.length+' 種道具、需求 '+fmt(parsed.total)+' 個'+(parsed.duplicates?'（合併 '+parsed.duplicates+' 列重複道具）':'')+'。'+(ambiguous.length?'其中 '+ambiguous.length+' 種道具需要先選擇配方。':'請確認下方資料。')+'</div>';
+ $('route-bulk-preview').innerHTML='<div class="route-bulk-table"><table><thead><tr><th>道具名稱</th><th>需求數量</th><th>製作配方</th></tr></thead><tbody>'+parsed.rows.map(row=>'<tr><td>'+h(row.name)+'</td><td class="num">'+fmt(row.qty)+'</td><td>'+(row.options.length?'<select data-bulk-recipe="'+row.item.id+'" aria-label="'+h(row.name)+'製作配方"><option value="">請選擇配方</option>'+row.options.slice().sort(compareRecipes).map(recipe=>'<option value="'+recipe.id+'">'+h(recipeLabel(recipe))+'</option>').join('')+'</select>':row.recipe?h(recipeLabel(row.recipe)):'待確認')+'</td></tr>').join('')+'</tbody></table></div>';
+ $('route-bulk-apply').hidden=false;
+}));
+$('route-bulk-apply').addEventListener('click',()=>safe(()=>{
+ const current=$('route-bulk-input').value.replace(/^\uFEFF/,'');
+ if(!routeBulkPending||routeBulkPending.input!==current)throw Error('貼上內容已變動，請重新檢查清單。');
+ const choices={};
+ $('route-bulk-preview').querySelectorAll('[data-bulk-recipe]').forEach(select=>{if(select.value)choices[Number(select.dataset.bulkRecipe)]=Number(select.value);});
+ const mode=$('route-bulk-mode').value;
+ const targets=FF14BulkTargets.buildTargets(routeBulkPending,choices,state.targets,mode,e);
+ if(mode==='replace'&&state.targets.length&&!window.confirm('確定以這批 '+routeBulkPending.rows.length+' 種道具取代現有的 '+state.targets.length+' 項目標？此操作會清空本次備料現貨，但不影響背包與完成進度。'))return;
+ const amount=routeBulkPending.rows.length;
+ update(s=>{s.targets=targets;if(mode==='replace')s.routeInventory={};});
+ targetPage=0;
+ $('target-results').innerHTML='';
+ renderTargets();calculate();
+ $('route-bulk-input').value='';
+ routeBulkResetPreview();
+ $('route-bulk-feedback').innerHTML='<div class="route-bulk-ok">✅ 已'+(mode==='replace'?'取代':'加入')+' '+amount+' 種道具，本次目標共 '+state.targets.length+' 項。請查看下方備料結果；若出現配方分歧提示，依提示選擇即可。</div>';
+ notify('已匯入 '+amount+' 種道具。');
+}));
 function renderTargets(){const ts=state.targets.map((t,index)=>({t,index})).sort((a,b)=>compareRecipeTargets(a.t,b.t)),pages=Math.max(1,Math.ceil(ts.length/12));targetPage=Math.min(targetPage,pages-1);$('target-count').textContent=ts.length+' 項';$('targets').innerHTML=ts.length?`<div class="table-scroll"><table style="min-width:645px">${fixedColumns([280,90,110,90,75])}<thead><tr><th>成品</th><th>製作職業</th><th>目的</th><th>數量</th><th></th></tr></thead><tbody>${ts.slice(targetPage*12,(targetPage+1)*12).map(({t,index:i})=>{return `<tr><td>${h(e.name(t.item||e.recipes.get(t.recipe)?.item))}</td><td>${t.recipe?h(e.recipes.get(t.recipe).job):'—'}</td><td>${t.mode==='completion'?'製作筆記':t.mode==='unlock'?'永久收藏':'指定製作'}</td><td>${t.mode==='craft'?`<input type="number" min="1" max="999999" aria-label="${h(e.name(t.item))}需求量" value="${t.qty}" data-target-qty="${i}">`:'1'}</td><td><button class="secondary" data-remove="${i}" aria-label="移除${h(e.name(t.item))}">移除</button></td></tr>`;}).join('')}</tbody></table></div>${routePager('target',targetPage,ts.length,12)}`:'<div class="empty">從上方搜尋，加入第一個成品。</div>';}
 $('targets').addEventListener('click',event=>safe(()=>{const jump=event.target.closest('[data-target-page]');if(jump){targetPage=Math.max(0,Math.min(Math.ceil(state.targets.length/12)-1,Number(jump.dataset.targetPage)));renderTargets();return;}const b=event.target.closest('[data-remove]');if(!b)return;update(s=>s.targets.splice(Number(b.dataset.remove),1));renderTargets();calculate();}));
 $('targets').addEventListener('submit',event=>{if(event.target.id!=='target-jump')return;event.preventDefault();safe(()=>jumpRoutePage('target',12,state.targets.length,targetPage,n=>targetPage=n,renderTargets));});
