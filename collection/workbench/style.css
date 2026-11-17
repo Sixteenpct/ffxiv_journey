@@ -548,7 +548,7 @@ body.compact th,body.compact td,.stock-table th,.stock-table td{padding:5px 8px}
 
 /* Owner feedback: scroll-only lower lists, closed table grids, readable summary. */
 .plan-lists{display:block}.fixed-list-card .table-scroll{height:330px;overflow:auto}.fixed-list-card th{position:sticky;top:0;z-index:1}.fixed-list-card .empty{min-height:330px}
-#targets tbody tr:last-child td,#shortages tbody tr:last-child td,#crafts tbody tr:last-child td,#zero-raw tbody tr:last-child td,#mother tbody tr:last-child td,#collection-list tbody tr:last-child td{border-bottom:1px solid var(--border)}
+#targets tbody tr:last-child td,#crafts tbody tr:last-child td,#zero-raw tbody tr:last-child td,#mother tbody tr:last-child td,#collection-list tbody tr:last-child td{border-bottom:1px solid var(--border)}
 .summary-card .stat span{font-size:15px}.summary-actions .query-submit{min-height:38.54px;padding:8.2px 18.04px;font-size:13.12px!important}
 #mother table{min-width:700px}#mother td:nth-child(5){min-width:150px}#mother td:nth-child(2),#mother td:nth-child(3),#mother td:nth-child(4){white-space:nowrap}.branch-material>.gate{margin-top:3px;margin-bottom:6px}
 @media(max-width:650px){.fixed-list-card .table-scroll{height:300px}.fixed-list-card .empty{min-height:300px}.summary-card .stat span{font-size:14px}}
@@ -585,7 +585,7 @@ table{table-layout:fixed}th,td{overflow-wrap:anywhere}#collection-list th select
 .route-toc a[aria-current]{background:#def1f7;color:#165a7f;font-weight:750}
 .route-toc .toc-category{padding-left:14px}
 .route-a-open .main{padding-right:190px}
-#a-targets,#a-summary,#a-tree,#a-shortages,#a-crafts,#a-raw,.tree-category{scroll-margin-top:24px}
+#a-targets,#a-summary,#a-tree,#a-crafts,#a-raw,.tree-category{scroll-margin-top:24px}
 .raw-total-card[open]>summary{margin-bottom:18px}
 .backup-action{align-items:center}
 .brand-home{color:#147fa8;text-decoration:underline;text-underline-offset:3px}
@@ -855,3 +855,13 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
   color:#345c73;
   font-weight:600;
 }
+
+/* Route A: every material level edits the same plan-local inventory, not legacy bag counts. */
+.route-stock-note{font-size:12px;line-height:1.65;color:#617b86;margin:6px 0 0;max-width:850px}
+#tree .route-stock-control{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:650;color:#446d7d;white-space:nowrap;flex-shrink:0}
+#tree .route-stock-control input[type=number]{width:74px;min-width:0;height:30px;min-height:30px;padding:4px 7px;border:1px solid #a9cfdb;border-radius:7px;background:#fff;color:#284e69;text-align:right;font:inherit;font-weight:650}
+#tree .route-stock-control input[type=number]:focus-visible{outline:2px solid #79b9d2;outline-offset:2px}
+#tree .node-stock .route-stock-control{flex-direction:column;justify-content:flex-start;align-items:center;margin-top:3px}
+#tree .gate > .branch-material > .gate-material-line{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;padding-top:5px;padding-bottom:5px}
+#tree .gate-material-name{flex:1 1 160px;min-width:0;overflow-wrap:anywhere}
+@media(max-width:650px){#tree .gate > .branch-material > .gate-material-line{align-items:flex-start;gap:6px 10px}#tree .gate-material-name{flex-basis:100%}#tree .route-stock-control input[type=number]{width:72px}}
