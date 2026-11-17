@@ -865,3 +865,5 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 #tree .gate > .branch-material > .gate-material-line{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 12px;padding-top:5px;padding-bottom:5px}
 #tree .gate-material-name{flex:1 1 160px;min-width:0;overflow-wrap:anywhere}
 @media(max-width:650px){#tree .gate > .branch-material > .gate-material-line{align-items:flex-start;gap:6px 10px}#tree .gate-material-name{flex-basis:100%}#tree .route-stock-control input[type=number]{width:72px}}
+
+#tree .leaf-stock-summary{display:block;margin:3px 9px 7px;color:#587480;font-size:11.5px;font-weight:600;line-height:1.5}
