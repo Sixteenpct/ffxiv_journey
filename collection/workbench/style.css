@@ -870,3 +870,8 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 
 /* Sidebar branding: no field-guide heading; keep breathing room before navigation. */
 @media(min-width:651px){.sidebar .nav{margin-top:24px}}
+
+/* Full collection export (unfiltered source, original atlas template). */
+#collection-export{min-width:104px;min-height:38.54px;padding:7px 12px;white-space:nowrap;border-color:#b3d4c1;background:#D8F1E3;color:#355B43;font-size:13.12px;font-weight:650}
+#collection-export:hover:not(:disabled){background:#cbe9d8;filter:none}
+#collection-export:disabled{opacity:.5;cursor:progress}
