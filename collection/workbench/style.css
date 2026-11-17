@@ -895,3 +895,13 @@ input[type=checkbox]:disabled{opacity:.5;cursor:default}
 .route-bulk-table select{max-width:350px;width:100%;font-size:12px}
 #route-bulk-apply{margin:2px 0 5px}
 @media(max-width:650px){.route-bulk-panel{padding:9px}#route-bulk-input{min-height:145px}}
+
+
+/* Route A: jump to the single authoritative root row for shared materials. */
+#tree .branch-main-link{color:#256b8d;font-weight:700;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+#tree .branch-main-link:hover{color:#174f70;text-decoration-thickness:2px}
+#tree .branch-main-link:focus-visible{outline:2px solid #77b8d4;outline-offset:2px;border-radius:2px}
+#tree .tree-node[id^="route-material-"]{scroll-margin-top:32px}
+#tree .tree-node:target{animation:route-main-row-arrive 2s ease-out 1}
+@keyframes route-main-row-arrive{0%,35%{box-shadow:0 0 0 3px #6cb7d0;border-color:#6cb7d0;background:#edf9fd}100%{box-shadow:0 0 0 0 transparent}}
+@media(prefers-reduced-motion:reduce){#tree .tree-node:target{animation:none;outline:2px solid #6cb7d0;outline-offset:2px}}
