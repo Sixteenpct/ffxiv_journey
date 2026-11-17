@@ -20,7 +20,8 @@ function save(){if(storageBlocked)throw Error('原資料尚未恢復，禁止覆
 function commit(next){const old=state;state=next;try{save();}catch(err){state=old;throw err;}}
 function update(fn){const next=structuredClone(state);fn(next);commit(next);}
 function safe(fn){try{return fn();}catch(err){notify(err.message,true);}}
-function download(name,text,type='application/json'){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function downloadBlob(name,blob){const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+function download(name,text,type='application/json'){downloadBlob(name,new Blob([text],{type}));}
 function backup(){if(storageBlocked){download('ff14-original-recovery.json',localStorage.getItem(S.KEY)||'{}');return;}download('ff14-workbench-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(state,null,2));}
 const titles={home:['素材製作工坊','製作備料、素材用途與收藏進度。'],a:['指定成品，展開備料','加入這次要做的東西，素材製作工坊會一起計算庫存、批次與缺料。'],b:['從素材，找到收藏用途','先保留完整下游母清單，再把選定目標交給同一套備料計算。'],collection:['製作與登錄進度','管理製作筆記與永久登錄項目的完成狀態，掌握尚待完成的製作目標。'],history:['留下記錄，下次接著做','實際製作與工作備註，都留在這個素材製作工坊。'],data:['資料與備份','下載空白製作圖鑑、匯入進度，或備份整個工坊。']};
 function showTab(key){tab=key;document.querySelector('.scroll-tools').hidden=key==='home'||key==='data';document.body.classList.toggle('route-a-open',key==='a');$('route-toc').hidden=key!=='a';$('tab-'+key).prepend($('notice'));if(!storageBlocked)notify('');else $('notice').hidden=key!=='data';$('toast').hidden=true;document.querySelectorAll('.page').forEach(x=>x.hidden=x.id!=='tab-'+key);document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.tab===key));$('page-title').textContent=titles[key][0];$('crumb').textContent=key==='home'?'首頁':document.querySelector('nav button[data-tab="'+key+'"]').textContent.replace(/^\d+\s*/, '').trim();$('back-home').hidden=key==='home';$('page-description').textContent=titles[key][1];if(key==='collection')renderCollection();if(key==='history')renderHistory();if(key==='a')highlightToc();}
@@ -136,6 +137,29 @@ function renderCollection(){if(!collectionQueried){$('collection-rows').innerHTM
 $('collection-query').addEventListener('submit',event=>{event.preventDefault();collectionFilter={q:$('collection-search').value.trim(),kind:$('collection-kind').value,only:$('only-unfinished').checked,columns:Object.fromEntries(columnKeys.map(key=>[key,$(`collection-filter-${key}`).value.trim()]))};collectionQueried=true;collectionPage=0;renderCollection();});
 $('collection-reset').addEventListener('click',()=>{if(!window.confirm('確定清除查詢條件，返回尚未查詢的初始畫面？'))return;$('collection-search').value='';for(const option of $('collection-kind').options)option.removeAttribute('selected');$('collection-kind').querySelector('option[value="all"]').selected=true;$('only-unfinished').checked=false;for(const key of columnKeys){const control=$(`collection-filter-${key}`);if(control.options){for(const option of control.options)option.removeAttribute('selected');control.querySelector('option[value=""]').selected=true;}else control.value='';}collectionFilter={q:'',kind:'all',only:false,columns:{}};collectionQueried=false;collectionPage=0;renderCollection();});
 bindPager('collection',()=>collectionPage,n=>collectionPage=n,()=>collectionMatches().length,renderCollection);
+
+function allUnlockExportRows(){
+ return collectionRows.unlock.map(t=>({
+  item:t.item,completed:state.completion[t.key]===true,
+  version:collectionValue(t,'version'),job:collectionValue(t,'job').join('／')||'—',
+  level:collectionValue(t,'level').join('／')||'—',name:e.name(t.item),category:collectionValue(t,'category')
+ }));
+}
+$('collection-export').addEventListener('click',async()=>{
+ const btn=$('collection-export');if(btn.disabled)return;btn.disabled=true;
+ try{
+  if(storageBlocked)throw Error('原始存檔讀取失敗，請先使用資料備份功能還原。');
+  if(typeof window.FF14XlsxExport?.fromTemplate!=='function')throw Error('Excel 匯出功能未載入，請重新整理頁面。');
+  const response=await window.fetch('templates/FF14_製作圖鑑主控台_空白模板.xlsx?v=20261020-clean-template');
+  if(!response.ok)throw Error('無法讀取製作圖鑑模板（HTTP '+response.status+'）。');
+  const result=await window.FF14XlsxExport.fromTemplate(await response.arrayBuffer(),state.completion,allUnlockExportRows());
+  const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).replace(/\D/g,'');
+  downloadBlob('FF14_製作圖鑑主控台_進度匯出_'+date+'.xlsx',result.blob);
+  notify('已匯出完整製作圖鑑 '+fmt(result.recipeCount)+' 筆、永久收藏 '+fmt(result.unlockCount)+' 筆。');
+ }catch(err){notify('Excel 匯出失敗：'+err.message,true);}
+ finally{btn.disabled=false;}
+});
+
 function resetRoute(route){if(routeHasData(route)&&!window.confirm('將會清空當前畫面資料，確定嗎？'))return;if(route==='a'){clearRouteA();$('target-search').value='';}else{clearMother();$('material-search').value='';$('material-feedback').textContent='';}notify('');}
 $('target-reset').addEventListener('click',()=>safe(()=>resetRoute('a')));$('material-reset').addEventListener('click',()=>safe(()=>resetRoute('b')));
 function historyStamp(at){const d=new Date(at);if(!Number.isFinite(d.getTime()))return '<span>日期未確認</span>';const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(d),v=key=>parts.find(p=>p.type===key).value;return `<span class="journal-date">${v('year')}/${v('month')}/${v('day')}</span> <span class="journal-clock">${v('hour')}:${v('minute')}:${v('second')}</span>`;}
