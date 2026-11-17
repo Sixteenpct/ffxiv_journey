@@ -65,14 +65,14 @@ function patchAtlas(sheet,completion){
  const replaced=sheet.replace(/(<x:row\b[^>]*\br="(\d+)"[^>]*>)([\s\S]*?)(<\/x:row>)/g,(all,open,line,inside,close)=>{
   const no=Number(line);if(no===1)return all;
   const id=inside.match(new RegExp('<x:c r="I'+no+'"[^>]*><x:v>(\\d+)(?:\\.0)?</x:v></x:c>'));
-  if(!id)throw Error('Excel 模板第 '+no+' 列缺少配方 ID。');
+  if(!id)return all; // Leave formatting-only or non-recipe rows untouched.
   const flag=completion['recipe_completion:'+Number(id[1])]===true?'1':'0';
   const cell=new RegExp('(<x:c r="A'+no+'"[^>]*t="b"[^>]*><x:v>)[01](</x:v></x:c>)');
   if(!cell.test(inside))throw Error('Excel 模板第 '+no+' 列缺少登錄欄。');
   rowCount++;if(flag==='1')doneCount++;
   return open+inside.replace(cell,(_,a,b)=>a+flag+b)+close;
  });
- if(rowCount<6000)throw Error('Excel 模板資料筆數不足，停止匯出。');
+ if(rowCount!==6093)throw Error('Excel 模板配方數量不符（'+rowCount+' / 6093），停止匯出。');
  return{xml:replaced,rows:rowCount,done:doneCount};
 }
 function newUnlockSheet(rows){
