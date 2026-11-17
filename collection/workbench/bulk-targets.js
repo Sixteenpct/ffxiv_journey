@@ -25,11 +25,14 @@ function parse(input,engine){
  let count=0,duplicates=0,first=true;
  for(let i=0;i<lines.length;i++){
   if(!lines[i].trim())continue;
-  const cols=lines[i].split('\t').map(v=>v.trim());
-  if(first){first=false;if(cols.length===2&&isHeader(cols[0],cols[1]))continue;}
+  const line=lines[i].trim();
+  // The final space-separated token is the quantity; spaces within item names are preserved.
+  // A direct two-column paste from Google Sheets also works because tabs are whitespace.
+  const match=line.match(/^(.*?)\s+(\S+)$/u);
+  if(first){first=false;if(match&&isHeader(match[1].trim(),match[2].trim()))continue;}
   count++;
-  if(cols.length!==2){errors.push('第 '+(i+1)+' 列：請從試算表複製「道具名稱、需求數量」兩欄（以 Tab 分隔）。');continue;}
-  const [name,rawQty]=cols;
+  if(!match){errors.push('第 '+(i+1)+' 列：請輸入「道具名稱 空白 數量」，例如：白鈦戰斧 4。');continue;}
+  const name=match[1].trim(),rawQty=match[2].trim();
   const qty=parseQty(rawQty);
   if(!name){errors.push('第 '+(i+1)+' 列：道具名稱不可空白。');continue;}
   if(qty===null){errors.push('第 '+(i+1)+' 列「'+name+'」：數量需為 1～999999 的整數。');continue;}
@@ -55,22 +58,16 @@ function parse(input,engine){
  const rows=[...groups.values()],total=rows.reduce((n,r)=>n+r.qty,0);
  return {rows,errors,count,total,duplicates,input:raw};
 }
-function buildTargets(parsed,choices,existing,mode,engine){
- if(!parsed||parsed.errors.length)throw Error('請先修正清單錯誤，再重新檢查。');
- if(!['replace','append'].includes(mode))throw Error('批次匯入模式無效。');
- const old=existing||[],incoming=[];
+function buildTargets(parsed,choices,engine){
+ if(!parsed||parsed.errors.length)throw Error('請先修正清單錯誤，再重新加入。');
+ const incoming=[];
  for(const row of parsed.rows){
-  const current=mode==='append'?old.find(t=>t.mode==='craft'&&Number(t.item)===row.item.id):null;
-  const selection=choices?.[row.item.id];
-  if(current&&selection&&Number(selection)!==Number(current.recipe))throw Error('「'+row.name+'」已在本次目標中使用另一配方，請先移除舊目標或沿用原配方。');
-  const recipeId=current?Number(current.recipe):selection?Number(selection):row.recipe?.id;
+  const selected=choices?.[row.item.id],recipeId=selected?Number(selected):row.recipe?.id;
   const recipe=engine.recipes.get(recipeId);
-  if(!recipe||recipe.item!==row.item.id||(row.options.length&&!(row.options.some(r=>r.id===recipeId)||current)))throw Error('「'+row.name+'」有多種配方，請先選擇要用的製作配方。');
+  if(!recipe||recipe.item!==row.item.id||(row.options.length&&!row.options.some(r=>r.id===recipeId)))throw Error('「'+row.name+'」有多種配方，請先選擇要用的製作配方。');
   incoming.push({mode:'craft',recipe:recipe.id,qty:row.qty});
  }
- const result=engine.normalize(mode==='append'?[...old,...incoming]:incoming);
- if(result.some(t=>t.mode==='craft'&&t.qty>MAX_QTY))throw Error('合併後的目標數量超過 999999，請減少數量。');
- return result;
+ return engine.normalize(incoming);
 }
 const api={parse,buildTargets,parseQty,nameKey};
 if(typeof module!=='undefined'&&module.exports)module.exports=api;
