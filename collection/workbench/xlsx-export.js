@@ -73,7 +73,10 @@ function patchAtlas(sheet,completion){
   return open+inside.replace(cell,(_,a,b)=>a+flag+b)+close;
  });
  if(rowCount!==6093)throw Error('Excel 模板配方數量不符（'+rowCount+' / 6093），停止匯出。');
- return{xml:replaced,rows:rowCount,done:doneCount};
+ // TRUE/FALSE list works in older Excel versions without checkbox controls.
+ const validation='<x:dataValidations count="1"><x:dataValidation type="list" allowBlank="0" showErrorMessage="1" errorTitle="無效完成值" error="請選擇 TRUE 或 FALSE" sqref="A2:A6094"><x:formula1>"TRUE,FALSE"</x:formula1></x:dataValidation></x:dataValidations>';
+ const validXml=replaced.includes('<x:dataValidations')?replaced:replaced.replace('</x:sheetData>','</x:sheetData>'+validation);
+ return{xml:validXml,rows:rowCount,done:doneCount};
 }
 function newUnlockSheet(rows){
  const fields=['已登錄','版本','製作職業','等級','物品名稱','物品分類','配方範圍','item_id','recipe_id','registration_status','result_yield'];
@@ -89,7 +92,9 @@ function newUnlockSheet(rows){
   +'<x:sheetViews><x:sheetView workbookViewId="0"><x:pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></x:sheetView></x:sheetViews>'
   +'<x:sheetFormatPr defaultColWidth="12.63" defaultRowHeight="15.75"/>'
   +'<x:cols><x:col min="1" max="1" width="8.5" customWidth="1"/><x:col min="2" max="2" width="7" customWidth="1"/><x:col min="3" max="3" width="18" customWidth="1"/><x:col min="4" max="4" width="8" customWidth="1"/><x:col min="5" max="5" width="34" customWidth="1"/><x:col min="6" max="7" width="16" customWidth="1"/><x:col min="8" max="11" hidden="1"/></x:cols>'
-  +'<x:sheetData>'+all+'</x:sheetData><x:autoFilter ref="A1:G'+(rows.length+1)+'"/></x:worksheet>';
+  +'<x:sheetData>'+all+'</x:sheetData>'
+  +'<x:dataValidations count="1"><x:dataValidation type="list" allowBlank="0" showErrorMessage="1" errorTitle="無效完成值" error="請選擇 TRUE 或 FALSE" sqref="A2:A'+(rows.length+1)+'"><x:formula1>"TRUE,FALSE"</x:formula1></x:dataValidation></x:dataValidations>'
+  +'<x:autoFilter ref="A1:G'+(rows.length+1)+'"/></x:worksheet>';
 }
 function addUnlockSheet(entries,rows){
  const wb='xl/workbook.xml',rels='xl/_rels/workbook.xml.rels',types='[Content_Types].xml',name='xl/worksheets/sheet4.xml',relId='RFF14CollectionUnlock';
