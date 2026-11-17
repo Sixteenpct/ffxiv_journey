@@ -212,6 +212,7 @@ $('import-file').addEventListener('change',async event=>{
 $('import-preview').addEventListener('click',event=>safe(()=>{
  if(event.target.id!=='apply-import'||!importPending)return;
  const syncAll=!!$('import-sync-unchecked')?.checked;
+ if(syncAll&&Object.values(importPending.changes.completion).some(done=>!done)&&!window.confirm('將依照匯入檔案取消未登錄的項目，可能清除目前已完成的勾選。只影響檔案內存在的項目。確定要同步取消嗎？'))return;
  const completed=Object.fromEntries(Object.entries(importPending.changes.completion).filter(([,checked])=>syncAll||checked));
  if(!Object.keys(completed).length){clearImportPreview();notify('這份圖鑑沒有已勾選項目，工坊資料沒有變動。');return;}
  const next=S.merge(state,{inventory:{},completion:completed});commit(next);
