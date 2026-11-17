@@ -138,21 +138,34 @@ $('collection-query').addEventListener('submit',event=>{event.preventDefault();c
 $('collection-reset').addEventListener('click',()=>{if(!window.confirm('確定清除查詢條件，返回尚未查詢的初始畫面？'))return;$('collection-search').value='';for(const option of $('collection-kind').options)option.removeAttribute('selected');$('collection-kind').querySelector('option[value="all"]').selected=true;$('only-unfinished').checked=false;for(const key of columnKeys){const control=$(`collection-filter-${key}`);if(control.options){for(const option of control.options)option.removeAttribute('selected');control.querySelector('option[value=""]').selected=true;}else control.value='';}collectionFilter={q:'',kind:'all',only:false,columns:{}};collectionQueried=false;collectionPage=0;renderCollection();});
 bindPager('collection',()=>collectionPage,n=>collectionPage=n,()=>collectionMatches().length,renderCollection);
 
-function allUnlockExportRows(){
+function allUnlockExportRows(completion=state.completion){
  return collectionRows.unlock.map(t=>({
-  item:t.item,completed:state.completion[t.key]===true,
+  item:t.item,completed:completion[t.key]===true,
   version:collectionValue(t,'version'),job:collectionValue(t,'job').join('／')||'—',
   level:collectionValue(t,'level').join('／')||'—',name:e.name(t.item),category:collectionValue(t,'category')
  }));
 }
+const ATLAS_TEMPLATE_URL='templates/FF14_製作圖鑑主控台_空白模板.xlsx?v=20261020-clean-template';
+async function atlasWorkbook(completion){
+ if(typeof window.FF14XlsxExport?.fromTemplate!=='function')throw Error('Excel 產生功能未載入，請重新整理頁面。');
+ const response=await window.fetch(ATLAS_TEMPLATE_URL);
+ if(!response.ok)throw Error('無法讀取製作圖鑑基底檔案（HTTP '+response.status+'）。');
+ return window.FF14XlsxExport.fromTemplate(await response.arrayBuffer(),completion,allUnlockExportRows(completion));
+}
+$('template-download').addEventListener('click',async()=>{
+ const button=$('template-download');if(button.disabled)return;button.disabled=true;
+ try{
+  const result=await atlasWorkbook({});
+  downloadBlob('FF14_製作圖鑑主控台_空白模板.xlsx',result.blob);
+  notify('已下載完整空白模板：'+fmt(result.recipeCount)+' 筆製作筆記、'+fmt(result.unlockCount)+' 筆永久收藏，全部未登錄。');
+ }catch(err){notify('無法下載空白模板：'+err.message,true);}
+ finally{button.disabled=false;}
+});
 $('collection-export').addEventListener('click',async()=>{
  const btn=$('collection-export');if(btn.disabled)return;btn.disabled=true;
  try{
   if(storageBlocked)throw Error('原始存檔讀取失敗，請先使用資料備份功能還原。');
-  if(typeof window.FF14XlsxExport?.fromTemplate!=='function')throw Error('Excel 匯出功能未載入，請重新整理頁面。');
-  const response=await window.fetch('templates/FF14_製作圖鑑主控台_空白模板.xlsx?v=20261020-clean-template');
-  if(!response.ok)throw Error('無法讀取製作圖鑑模板（HTTP '+response.status+'）。');
-  const result=await window.FF14XlsxExport.fromTemplate(await response.arrayBuffer(),state.completion,allUnlockExportRows());
+  const result=await atlasWorkbook(state.completion);
   const date=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()).replace(/\D/g,'');
   downloadBlob('FF14_製作圖鑑主控台_進度匯出_'+date+'.xlsx',result.blob);
   notify('已匯出完整製作圖鑑 '+fmt(result.recipeCount)+' 筆、永久收藏 '+fmt(result.unlockCount)+' 筆。');
@@ -176,18 +189,21 @@ $('import-file').addEventListener('change',async event=>{
  const file=event.target.files[0];if(!file)return;clearImportPreview();
  try{
   if(!/\.(csv|xlsx)$/i.test(file.name))throw Error('請選擇 Excel（.xlsx）或 CSV 製作圖鑑檔案。');
-  let csv;
+  let changes;
   if(/\.xlsx$/i.test(file.name)){
-   if(typeof window.FF14XlsxProgress?.parse!=='function')throw Error('Excel 讀取功能未載入，請重新整理網頁。');
-   const rows=await window.FF14XlsxProgress.parse(await file.arrayBuffer());
-   csv=rows.map(row=>row.join(',')).join('\n');
-  }else csv=await file.text();
-  const changes=S.csvImport(csv,e),entries=Object.entries(changes.completion);
+   if(typeof window.FF14XlsxProgress?.parseAll!=='function')throw Error('Excel 讀取功能未載入，請重新整理網頁。');
+   const data=await window.FF14XlsxProgress.parseAll(await file.arrayBuffer());
+   const recipes=S.csvImport(data.recipes.map(row=>row.join(',')).join('\n'),e);
+   const unlocks=data.unlocks.length?S.csvImport(data.unlocks.map(row=>row.join(',')).join('\n'),e):{inventory:{},completion:{}};
+   changes={inventory:{},completion:{...recipes.completion,...unlocks.completion}};
+  }else changes=S.csvImport(await file.text(),e);
+  const entries=Object.entries(changes.completion);
   if(!entries.length)throw Error('找不到製作圖鑑的勾選資料。請檢查選擇的檔案。');
   const completed=entries.filter(([,checked])=>checked).length;
+  const recipeCount=entries.filter(([k])=>k.startsWith('recipe_completion:')).length,unlockCount=entries.filter(([k])=>k.startsWith('permanent_unlock:')).length;
   importPending={type:'progress',changes};
   $('import-preview').innerHTML=
-   '<div class="data-import-result"><strong>讀取 '+fmt(entries.length)+' 筆配方，已勾選 '+fmt(completed)+' 筆。</strong><p>預設只新增已完成項目；原有庫存、備料目標和其他勾選保留不動。</p></div>'+
+   '<div class="data-import-result"><strong>讀取 '+fmt(recipeCount)+' 筆配方、'+fmt(unlockCount)+' 筆永久收藏；已勾選 '+fmt(completed)+' 筆。</strong><p>預設只新增已完成項目；原有庫存、備料目標和其他勾選保留不動。</p></div>'+
    '<label class="data-sync-option"><input id="import-sync-unchecked" type="checkbox"> 以試算表為準，同步取消未勾選項目（進階選項）</label>'+
    '<button id="apply-import" class="import-confirm-progress" type="button">確定匯入勾選進度</button>';
  }catch(err){$('import-preview').textContent='尚未匯入：'+err.message;}
