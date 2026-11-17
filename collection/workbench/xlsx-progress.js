@@ -43,7 +43,7 @@ function unzip(bytes){
   return utf8.decode(result);
  };
 }
-function sheetId(xml){const re=/<(?:[\w.-]+:)?sheet\b([^>]*?)\/?\s*>/g;let m;while((m=re.exec(xml))!==null)if(unxml(attr(m[1],'name')||'')==='製作圖鑑')return attr(m[1],'r:id');return null;}
+function sheetId(xml,name){const re=/<(?:[\w.-]+:)?sheet\b([^>]*?)\/?\s*>/g;let m;while((m=re.exec(xml))!==null)if(unxml(attr(m[1],'name')||'')===name)return attr(m[1],'r:id');return null;}
 function sheetTarget(xml,id){const re=/<(?:[\w.-]+:)?Relationship\b([^>]*?)\/?\s*>/g;let m;while((m=re.exec(xml))!==null)if(attr(m[1],'Id')===id&&/\/worksheet$/.test(attr(m[1],'Type')||''))return unxml(attr(m[1],'Target')||'');return null;}
 function pathOf(target){const p=target.startsWith('/xl/')?target.slice(1):target.startsWith('xl/')?target:'xl/'+target;if(!/^xl\/worksheets\/[\w.-]+\.xml$/.test(p))fail('Excel 工作表路徑不正確。');return p;}
 function strings(xml){if(!xml)return [];const out=[],re=/<(?:[\w.-]+:)?si\b[^>]*>([\s\S]*?)<\/(?:[\w.-]+:)?si\s*>/g;let m;while((m=re.exec(xml))!==null)out.push(val(m[1],'t'));return out;}
@@ -60,13 +60,47 @@ function rowsOf(xml,sst){
  if(rows[0]?.[0]!=='已登錄')fail('找不到「製作圖鑑」的必要欄位。');
  return rows;
 }
-async function parse(buffer){
+function unlockRowsOf(xml,sst){
+ const rows=[['已登錄','completion_type','completion_id']];
+ const re=/<(?:[\w.-]+:)?row\b([^>]*?)>([\s\S]*?)<\/(?:[\w.-]+:)?row\s*>/g;
+ let match;const seen=new Set();let headersOk=false;
+ while((match=re.exec(xml))!==null){
+  const num=Number(attr(match[1],'r'));
+  if(!Number.isSafeInteger(num)||num<1)fail('永久收藏列號無效。');
+  const cells=new Map(),cs=/<(?:[\w.-]+:)?c\b([^>]*?)>([\s\S]*?)<\/(?:[\w.-]+:)?c\s*>/g;let m;
+  while((m=cs.exec(match[2]))!==null){
+   const address=attr(m[1],'r');
+   if(['A','H','J'].some(c=>address===c+num))cells.set(address[0],cell(m[2],m[1],sst));
+  }
+  if(num===1){
+   if(cells.get('A')!=='已登錄'||cells.get('H')!=='item_id'||cells.get('J')!=='registration_status')fail('永久收藏欄位與模板不符。');
+   headersOk=true;continue;
+  }
+  if(!cells.size)continue;
+  const done=String(cells.get('A')??'').trim(),id=String(cells.get('H')??'').trim(),kind=String(cells.get('J')??'').trim();
+  const item=Number(id);
+  if(kind!=='unlock'||!Number.isSafeInteger(item)||item<=0||!['TRUE','FALSE','1','0'].includes(done.toUpperCase()))fail('永久收藏第 '+num+' 列的完成值或 ID 不正確。');
+  if(seen.has(item))fail('永久收藏有重複的 item_id：'+item);
+  seen.add(item);rows.push([done,'permanent_unlock',String(item)]);
+ }
+ if(!headersOk||rows.length<2)fail('永久收藏工作表是空白或缺少必要欄位。');
+ return rows;
+}
+async function parseAll(buffer){
  const read=unzip(buffer instanceof Uint8Array?buffer:new Uint8Array(buffer));
  const workbook=await read('xl/workbook.xml'),rels=await read('xl/_rels/workbook.xml.rels');
- const id=sheetId(workbook);if(!id)fail('找不到「製作圖鑑」工作表。');
+ const id=sheetId(workbook,'製作圖鑑');if(!id)fail('找不到「製作圖鑑」工作表。');
  const target=sheetTarget(rels,id);if(!target)fail('找不到製作圖鑑工作表內容。');
- const sheet=await read(pathOf(target)),sst=strings(await read('xl/sharedStrings.xml',true));
- return rowsOf(sheet,sst);
+ const sst=strings(await read('xl/sharedStrings.xml',true));
+ const recipes=rowsOf(await read(pathOf(target)),sst);
+ const permanentId=sheetId(workbook,'永久收藏');
+ let unlocks=[];
+ if(permanentId){
+  const permanentTarget=sheetTarget(rels,permanentId);if(!permanentTarget)fail('找不到「永久收藏」工作表內容。');
+  unlocks=unlockRowsOf(await read(pathOf(permanentTarget)),sst);
+ }
+ return{recipes,unlocks};
 }
-const api={parse};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.FF14XlsxProgress=api;
+async function parse(buffer){return (await parseAll(buffer)).recipes;}
+const api={parse,parseAll};if(typeof module!=='undefined'&&module.exports)module.exports=api;root.FF14XlsxProgress=api;
 })(typeof window!=='undefined'?window:globalThis);
