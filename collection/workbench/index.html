@@ -27,7 +27,7 @@
 </section>
 
 <section class="data-step data-atlas-section" aria-labelledby="data-atlas-title">
-<div class="data-section-head"><h2 id="data-atlas-title">製作圖鑑進度匯入</h2><p>把在 Google 試算表勾好的製作項目帶進工坊，不用再一筆一筆勾選；這項操作不會修改本次備料現貨和備料目標。</p></div>
+<div class="data-section-head"><h2 id="data-atlas-title">製作圖鑑進度匯入</h2><p>把 Excel 或 Google 試算表中標記的完成進度帶進工坊，不用再一筆一筆操作；這項操作不會修改本次備料現貨和備料目標。</p></div>
 <div class="atlas-workflow">
 
 <div class="atlas-step" aria-labelledby="data-template-title">
@@ -38,19 +38,19 @@
 <button class="file-button template-download" id="template-download" type="button">下載空白製作圖鑑（Excel）</button>
 <details class="atlas-help"><summary>Excel 與 Google 試算表怎麼標記完成？</summary>
 <ol>
-<li>在「製作圖鑑」或「永久收藏」工作表中，找到 <strong>A 欄「已登錄」</strong>。<strong>TRUE（或 1）表示已完成，FALSE（或 0）表示未完成</strong>。可直接用 A 欄的 TRUE／FALSE 下拉選單（舊版 Excel 也支援），或直接修改儲存格值，不需要核取方塊元件。</li>
-<li>使用 Google 試算表時，可將 Excel 上傳雲端硬碟並轉成 Google 試算表。若喜歡點選式核取方塊，可<strong>自行選取任一進度工作表 A 欄的資料區域（不要包含第 1 列標題）</strong>，再選「插入 → 核取方塊」。<strong>這只是顯示與操作方式的選項，不是匯入必要步驟。</strong></li>
-<li>請勿更動原有的 item_id、recipe_id 或工作表名稱；完成後把整份活頁簿存為 .xlsx，再回到工坊匯入。</li>
+<li>開啟「製作圖鑑」或「永久收藏」工作表，找到 <strong>A 欄「已登錄」</strong>。<strong>TRUE（或 1）表示已完成，FALSE（或 0）表示未完成</strong>。使用 A 欄下拉選單，或直接修改儲存格值即可。</li>
+<li>若使用 Google 試算表，可把 Excel 上傳 Google 雲端硬碟並轉為 Google 試算表格式，直接修改 A 欄的完成值；完成後下載成 <strong>Microsoft Excel（.xlsx）</strong> 檔案。</li>
+<li>請勿更動工作表名稱、item_id 或 recipe_id，以免匯入時無法正確對應。</li>
 </ol>
-<p>匯入依據是「已登錄」欄的 TRUE／FALSE 完成值及對應 ID，<strong>不是核取方塊的外觀</strong>。</p>
+<p>工坊會依「已登錄」欄的完成值及對應 ID 匯入，不需要其他設定。</p>
 </details>
 </div></div>
 
 <div class="atlas-step" aria-labelledby="data-import-title">
 <div class="atlas-step-number" aria-hidden="true">2</div>
 <div class="atlas-step-content">
-<h3 id="data-import-title">把勾選進度帶進工坊</h3>
-<p>修改兩張進度表的「已登錄」欄後，直接匯入整份製作圖鑑即可。如果使用 Google 試算表，請先選 <strong>「檔案 → 下載 → Microsoft Excel（.xlsx）」</strong>，再選擇下載的檔案；不必另行建立核取方塊。</p>
+<h3 id="data-import-title">把完成進度帶進工坊</h3>
+<p>修改兩張進度表的「已登錄」欄後，直接匯入整份製作圖鑑即可。如果使用 Google 試算表，請先選 <strong>「檔案 → 下載 → Microsoft Excel（.xlsx）」</strong>，再選擇下載的檔案。</p>
 <label class="file-button backup-import data-pick-file" aria-describedby="import-description">匯入製作圖鑑檔案<input id="import-file" accept=".xlsx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv" type="file" aria-describedby="import-description"/></label>
 <p class="data-small" id="import-description">建議使用 Excel（.xlsx），一次同步「製作圖鑑」與「永久收藏」；也支援單張工作表的 CSV。會先預覽讀取與已完成筆數，按「確定匯入」才會保存。預設只補上已完成項目，不會取消既有勾選；若選進階「同步取消未勾選」，只會同步檔案中實際存在的完成身分，不會清空缺少的工作表。</p>
 <div id="import-preview" role="status" aria-live="polite"></div>
